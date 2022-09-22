@@ -2,7 +2,7 @@
   "name": "grupo_11_buenavid",
   "version": "1.0.0",
   "description": "Trabajo Integrador",
-  "main": "prueba.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fmusladino/Grupo_11_buenavid/issues"
   },
-  "homepage": "https://github.com/fmusladino/Grupo_11_buenavid#readme"
+  "homepage": "https://github.com/fmusladino/Grupo_11_buenavid#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
