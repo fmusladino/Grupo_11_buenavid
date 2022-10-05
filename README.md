@@ -19,3 +19,7 @@ Trabajo Integrador
 -https://vinotecaligier.com/
 -https://beermarket.com.ar/
 -https://www.amazon.com/
+
+
+#Trello
+Link: https://trello.com/b/pDVptUkP/grupo-buena-vid
