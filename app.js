@@ -8,6 +8,19 @@ app.listen(app_port, ()=> {
 console.log('Servidor en el puerto ' + app_port);
 })
 
+
 app.get('/', (req,res) => {
     res.sendFile(path.resolve('views/index.html'))
+})
+
+app.get('/producto',(req,res) => {
+    res.sendFile(path.resolve('views/productDetail.html'))
+})
+
+app.get('/carrito',(req,res)=>{
+    res.sendFile(path.resolve('views/productCar.html'))
+})
+
+app.get('/login-registro',(req,res)=>{
+    res.sendFile(path.resolve('views/register-login.html'))
 })
