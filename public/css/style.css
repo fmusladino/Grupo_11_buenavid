@@ -1,10 +1,8 @@
 *{
-<<<<<<< HEAD
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #ebebeb;
@@ -93,6 +91,30 @@ padding: 2px ;
     width: 20%;
     margin-bottom: 20px;
 }
+.fa-bitcoin{
+    color: #f7931a;
+}
+.fa-instagram{
+    color: #C13584;
+}
+.fa-twitter{
+    color: #1DA1F2;
+}
+.fa-facebook-square{
+    color: #4267B2;
+}
+.fa-cc-visa{
+    color: #1a1f71;
+}
+.fa-cc-mastercard{
+    color: black;
+}
+.fa-money-bill{
+    color: #6B8068;
+}
+.fa-cc-amex{
+    color: #2e77BB;
+}
 .foto4 img{
     width: 20%;
     margin-bottom: 20px;
@@ -101,7 +123,6 @@ padding: 2px ;
     border: none;
     border-radius: 5px;
     background-color: red;
-=======
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -123,19 +144,30 @@ ul li{
 }
 .newsletter{
     display: flex;
-    padding-left: 50px;
+    padding-left: auto;
     background-color: #895575;
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
-    
+    flex-direction: column;
+    width:100%;
+    text-align: center;
 }
+
 .redes, .pagos{
     padding: 10px;
 }
 .fondo{
     display: flex;
     justify-content: space-around;
+    width:100%;
+    
+}
+.novedades{
+    text-align: center;
+}
+body{
+    width:100%;
 }
 .fa-wine-bottle{
     text-align: center;
@@ -149,11 +181,20 @@ ul li{
     margin: auto;
     border: none;
     padding: 5px;
+    flex-direction: column;
 }
 .boton{
     background-color: #E7D3CC;
     color: #342D50;
     border-radius: 5px;
     padding: 5px
->>>>>>> e2bd9c928e1b3571bc7c1fe2dc15308e8eca5447
+}
+@media (min-width: 768px){
+    .newsletter, .novedades{
+        flex-direction: row;
+    }
+    .fa-wine-bottle{
+        margin-top: 10px;
+        margin-left: 15px;
+    }
 }
