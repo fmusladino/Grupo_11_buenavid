@@ -1,12 +1,18 @@
 const { executionAsyncResource } = require('async_hooks');
 const express = require('express');
 const app = express();
+<<<<<<< HEAD
 const path = require('path');
 const public_User = path.resolve('public');
 app.use(express.static(public_User))
 app.use(express.json());
 
 const app_port = 3000;
+=======
+const publicPath = path.resolve('public');
+app.use(express.static(publicPath));
+const app_port = process.env.PORT || 3000;
+>>>>>>> e2bd9c928e1b3571bc7c1fe2dc15308e8eca5447
 app.listen(app_port, ()=> {
 console.log('Servidor en el puerto ' + app_port);
 })
