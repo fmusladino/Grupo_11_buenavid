@@ -1,4 +1,107 @@
 *{
+<<<<<<< HEAD
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
+    width: 90%;
+}
+
+
+.nav-contenedor{
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.164);
+    margin:auto;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    
+}
+.main-cuerpo{
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.164);
+    margin:auto;
+    margin-top: 20px;
+}
+
+
+.nav-hamburguesa{
+    width: 30px;
+    height: 50px;
+    background-image: url(/Images/icons8-menú-30.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-position: center;
+    margin-left: 5px;
+    
+}
+
+.form-nav{
+    border: none;
+    padding: 20px 0;
+    
+}
+
+.input-nav{
+    border: none;
+    border-bottom: solid 1px black;
+    width: 150px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    outline: none;
+    font-size: 12px;
+}
+.img-banner{
+    width: 50%;
+    height: 50%;
+}
+
+
+.img-menu{
+    width: 20px;
+    height: 20px;
+}
+.menu_ul a{ 
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 14px;
+}
+.menu_ul li{
+list-style: none;
+padding: 2px ;
+
+}
+
+.menu_ul li img{
+    width: 15px;
+    padding-right: 5px;
+    
+    }
+.foto1 img {
+    width: 20%;
+    margin-bottom: 20px;
+}
+.foto2 img{
+    width: 20%;  
+    margin-bottom: 20px; 
+}
+.foto3 img{
+    width: 20%;
+    margin-bottom: 20px;
+}
+.foto4 img{
+    width: 20%;
+    margin-bottom: 20px;
+}
+.btn{
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+=======
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -52,4 +155,5 @@ ul li{
     color: #342D50;
     border-radius: 5px;
     padding: 5px
+>>>>>>> e2bd9c928e1b3571bc7c1fe2dc15308e8eca5447
 }

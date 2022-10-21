@@ -2,7 +2,8 @@
   "name": "grupo_11_buenavid",
   "version": "1.0.0",
   "description": "Trabajo Integrador",
-  "main": "app.js",
+  "main": "index.js",
+  "start": "nodemon app.js",
   "scripts": {
     "test": "nodemon index.js",
     "start": "node index.js"
