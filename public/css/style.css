@@ -1,6 +1,52 @@
-* {
+*{
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+ul{
+    list-style: none;
+    padding: 5px;
+}
+li{
+    padding: 5px;
+    margin: 1px;
+}
+.fin{
+    padding: 20px
+}
+.newsletter{
+    display: flex;
+    padding-left: 50px;
+    background-color: #895575;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.redes, .pagos{
+    padding: 10px;
+}
+.fondo{
+    display: flex;
+    justify-content: space-around;
+}
+.fa-wine-bottle{
+    text-align: center;
+}
+.name, .mail{
+    padding: 5px;
+    border-radius: 6px;
+}
+.novedades{
+    display: flex;
+    margin: auto;
+    border: none;
+    padding: 5px;
+}
+.boton{
+    background-color: #E7D3CC;
+    color: #342D50;
+    border-radius: 5px;
+    padding: 5px
 }
