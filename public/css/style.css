@@ -12,6 +12,9 @@ li{
     padding: 5px;
     margin: 1px;
 }
+ul li{
+    margin-left: 5px;
+}
 .fin{
     padding: 20px
 }
