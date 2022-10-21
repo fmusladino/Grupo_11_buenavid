@@ -3,26 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Buena Vid</title>
 </head>
 <body>
     <h1>Bienvenidos a Buena Vid</h1>
     <a href="/views/producto.html">Productos</a>
+
+   <header>
+    <logo></logo>
+    <buscador></buscador>
+    <logIn></logIn>
+    <carrito></carrito>
+    <contacto></contacto>
     
+   </header>
+   <main>
+    <banner></banner>
+    <masVendidos></masVendidos>
+    <vinos></vinos>
+
+   </main>
     
     <footer>
         <div class="newsletter">
-            <i class="fa-light fa-wine-bottle"></i><p>¿Querés recibir ofertas en tu mail?</p>
+            <i class="fas fa-wine-bottle">¿Querés recibir ofertas en tu mail?</i>
             <form method="POST" action="/" class="novedades">
                 <div class="formulario">
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" placeholder="Nombre" class="name">
                 </div>
             
                 <div class="formulario">
-                    <label for="mail">Email</label>
-                    <input type="email" name="mail" id="mail">
+                    <label for="mail"></label>
+                    <input type="email" name="mail" id="mail" placeholder="E-mail" class="mail">
+                </div>
+                <div class="formulario">
+                    <button type="submit" class="boton">Enviar</button>
                 </div>
          
             </form> 

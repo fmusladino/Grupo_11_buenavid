@@ -1,0 +1,28 @@
+.newsletter{
+    display: flex;
+    padding-left: 50px;
+    background-color: #895575;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+.fa-wine-bottle{
+    text-align: center;
+}
+.name, .mail{
+    padding: 5px;
+    border-radius: 6px;
+}
+.novedades{
+    display: flex;
+    margin: auto;
+    border: none;
+    padding: 5px;
+}
+.boton{
+    background-color: #E7D3CC;
+    color: #342D50;
+    border-radius: 5px;
+    padding: 5px
+}
