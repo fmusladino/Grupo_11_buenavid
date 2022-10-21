@@ -2,7 +2,8 @@
   "name": "grupo_11_buenavid",
   "version": "1.0.0",
   "description": "Trabajo Integrador",
-  "main": "app.js",
+  "main": "index.js",
+  "start": "nodemon app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/fmusladino/Grupo_11_buenavid#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
   }
 }
