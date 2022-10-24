@@ -62,6 +62,25 @@ main .img-banner{
     height: 200px;
 
 }
+.form{
+    position: absolute;
+    z-index: 0;
+    margin-left: 800px;
+    margin-top: 100px;
+}
+.form .buscador{
+    text-align: right;
+    z-index: 1;
+    position: relative;
+    opacity: 0.8;
+    margin: auto;
+    text-align: left;
+}
+.buscador, .btn-form{
+    padding: 8px;
+    border-radius: 5px;
+    
+}
 .foto{
     opacity: 0.7;
     height: 50%;
