@@ -1,3 +1,11 @@
+h3{
+  color: #1E0233;
+  text-align: center;
+}
+footer{
+  margin-top: 30px;
+}
+
 table {
     background: white;
     width: 50vw;
@@ -5,23 +13,69 @@ table {
     margin-top: 2%;
     border-collapse: collapse;
     text-align: center;
-
+border: 1px solid transparent;
+border-radius: 10px;
+margin-left: 20px;
+margin-right:10px;
+margin-left: 10px;
   }
   
 
   th{
-    background-color: #342D50;
+    background-color: #895575;
     height: 35px;
     border-bottom: 1px solid rgb(210, 220, 250);
-    color: rgb(120, 120, 120);
+    color: rgb(255, 255, 255);
   }
   
 
+.imagen-tamano{
+    width: 40vw;
+}
+
+.border-imagen:hover{
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+figcaption:hover{
+  display: block;
+}
+
+figcaption{
+  display: none;
+}
+
+.margin-bottom{
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.margin-top{
+margin-top: 10px;
+padding: 5px;
+}
+
+.top{
+ padding-top: 20px;
+}
 
 .metodo-flex{
-display: flex;
-justify-content: space-between;
+  display: flex;
+  
 }
-@media (min-width: 768px){
 
+@media (min-width: 768px){
+  h3{
+    font-size: 27px;
+    margin-left: 20px;
+    text-align: unset;
+  }
+    table{
+      width: 100vw;
+    }
+  
+  .imagen-tamano{
+        width: 10vw;
+    }
+  
 }

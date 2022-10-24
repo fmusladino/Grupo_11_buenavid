@@ -16,60 +16,130 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <form class="form" action="" method="get">
+            <input class="buscador" type="search" id="search" name="search" placeholder="Buscar productos">
+            <button class="btn-form"><i class="fa fa-search"></i></button>
+        </form>
+        <logo class="logoPrincipal">
+            <img src="/img/Logo Buenavid 2.jpg" alt="Logo de BuenaVid" class="foto">
+        </logo>
+        <div class="banner">
+            <img src="images/high-altitude.jpeg" class="img-banner">
+        </div>
+    </header>
+    <buscador class="buscadorHeader"> </buscador>
+    <login class="formLogin"> </login>
+    <carrito class="carrito"> </carrito>
+    <contacto Class="contacto"> </contacto>
+    </header>
     <main>
         <section>
             <div class="centrar-icono-h3">
                 <h3>Mi compra <i class="fas fa-shopping-basket"></i></h3>
                 <table>
-                <thead>
-                    <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Unidades</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="/Images/vino1.webp"></td>
-                        <td>$...</td>
-                        <td><select name="unidades" id="unidades" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </td>
-                    <td>$...</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Unidades</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <figure class="border-imagen"><img src="/Images/vino1.webp"
+                                        class="imagen-tamano margin-bottom">
+                                    <figcaption>Vino (nombre)</figcaption>
+                                </figure>
+                            </td>
+                            <td>$...</td>
+                            <td><select name="unidades" id="unidades" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </td>
+                            <td>$...</td>
+                        </tr>
 
-                    <tr>
-                        <td><img src="/Images/vino2.webp"></td>
-                        <td>$...</td>
-                        <td><select name="unidades" id="unidades" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </td>
-                    <td>$...</td>
-                    </tr>
-                </tbody>
+                        <tr>
+                            <td>
+                                <figure class="border-imagen"><img src="/Images/vino2.webp"
+                                        class="imagen-tamano margin-top">
+                                    <figcaption>Vino (nombre)</figcaption>
+                                </figure>
+                            </td>
+                            <td>$...</td>
+                            <td><select name="unidades" id="unidades" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </td>
+                            <td>$...</td>
+                        </tr>
+                    </tbody>
 
-<tfoot>
-    <tr>
-        <form class="metodo-flex" method="get" action="/">
-<td><button type="submit">Seguir comprando</button></td>
-<td><button type="reset">Comprar</button></td>
-</form>
-    </tr>
-</tfoot>
-</table>
+                    <tfoot>
+                        <tr>
+                            <td class="top">Total:</td>
+                            <td class="top">$...</td>
+                        </tr>
+                    </tfoot>
+                </table>
 
-
+                <div class="metodo-flex">
+                    <form method="get" action="/">
+                        <button type="submit">Seguir comprando</button>
+                        <button type="reset">Comprar</button>
+                    
+                    </form>
+                </div>
     </main>
 
-    <footer></footer>
+    <footer>
+        <div class="newsletter">
+            <i class="fas fa-wine-bottle">¿Querés recibir ofertas en tu mail?</i>
+            <form method="POST" action="/" class="novedades">
+                <div class="formulario">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" placeholder="Nombre" class="name">
+                </div>
+
+                <div class="formulario">
+                    <label for="mail"></label>
+                    <input type="email" name="mail" id="mail" placeholder="E-mail" class="mail">
+                </div>
+                <div class="formulario">
+                    <button type="submit" class="boton">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="fondo">
+            <div class="redes">
+                <p>CONTACTANOS</p>
+                <ul>
+                    <li><i class="fab fa-facebook-square"></i> /buenavid</li>
+                    <li><i class="fab fa-twitter"> </i> @buenavid</li>
+                    <li><i class="fab fa-instagram"> </i> /buena_vid</li>
+                </ul>
+            </div>
+            <div class="pagos">
+                <p>FORMAS DE PAGO</p>
+                <ul>
+                    <li><i class="fab fa-cc-visa"></i> Visa</li>
+                    <li><i class="fab fa-cc-mastercard"></i> Mastercard</li>
+                    <li><i class="fab fa-cc-amex"></i> American Express</li>
+                    <li><i class="fas fa-money-bill"></i> Efectivo</li>
+                    <li><i class="fab fa-bitcoin"></i> Bitcoin</li>
+                </ul>
+            </div>
+        </div>
+        <p class="fin">© BuenaVid 2022 - Prohibida la venta de alcohol a menores de 18 años.</p>
+    </footer>
 </body>
 
 </html>
