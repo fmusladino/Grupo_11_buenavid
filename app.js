@@ -24,6 +24,10 @@ app.get('/carrito',(req,res)=>{
     res.sendFile(path.resolve('views/productCar.html'))
 })
 
-app.get('/login-registro',(req,res)=>{
-    res.sendFile(path.resolve('views/register-login.html'))
+app.get('/registro',(req,res)=>{
+    res.sendFile(path.resolve('views/register.html'))
+})
+
+app.get('/login',(req,res)=>{
+    res.sendFile(path.resolve('views/login.html'))
 })
