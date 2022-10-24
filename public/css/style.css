@@ -8,7 +8,9 @@ body{
     background-color: #ebebeb;
     width: 90%;
 }
-
+.banner{
+    width:100%;
+}
 
 .nav-contenedor{
     width: 90%;
@@ -210,5 +212,8 @@ body{
     .fa-wine-bottle{
         margin-top: 10px;
         margin-left: 15px;
+    }
+    .banner{
+        width:100%
     }
 }
