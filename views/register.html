@@ -9,23 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <title>Buena Vid</title>
 </head>
 <body>
-   <header>
+   <header class="header-principal">
+    <form class="form" action="" method="get">
+        <input class="buscador" type="search" id="search" name="search"
+            placeholder="Buscar productos">
+        <button class="btn-form"><i class="fa fa-search"></i></button>
+    </form>
     <logo class="logoPrincipal"> 
-        <img src="/img/Logo Buenavid 2.jpg" alt="Logo de BuenaVid">
+        <img src="/img/Logo Buenavid 2.jpg" alt="Logo de BuenaVid" class="foto">
     </logo>
+    <div class="banner">
+        <img src="images/high-altitude.jpeg" class="img-banner">
+    </div>
+    </header>
     <buscador class="buscadorHeader"> </buscador>
     <login class="formLogin"> </login>
     <carrito class="carrito"> </carrito>
     <contacto Class="contacto"> </contacto>
+
    </header>
    <main class="main-formularios">
     
     <div class="cuadro-formularios">
         <h2>Registrate</h2>
-        <form action="/" method="POST">
+        <form action="/" method="post">
             <p>
               <label>Nombre/s</label>
               <input type="text" name="nombre" required>
@@ -66,7 +77,8 @@
             <p>
               <label>Contraseña</label>
               <input type="password" name="password" required minlength="6">
-              <i class="fa-regular fa-circle-info">Debe contener mínimo 6 caracteres</i>
+              <i class="fas fa-info-circle"> Requiere mínimo 6 caracteres</i>
+
             </p>
 
             <p>
@@ -78,6 +90,7 @@
                 <button type="submit">Registrarme</button>
             </p>
           </form>
+        <a href="/login">Ya estoy registrado</a>
     </div>
 
    </main>
