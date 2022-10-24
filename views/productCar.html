@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,400;1,700&display=swap"
+        rel="stylesheet">
     <title>Carrito</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/carrito.css">
 </head>
+
 <body>
     <header></header>
-<main>
-   <section>
-    <div class="centrar-icono-h3">
-    <h3>Mi compra <i class="fas fa-shopping-basket"></i></h3>
+    <main>
+        <section>
+            <div class="centrar-icono-h3">
+                <h3>Mi compra <i class="fas fa-shopping-basket"></i></h3>
+                <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Unidades</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="/Images/vino1.webp"></td>
+                        <td>$...</td>
+                        <td><select name="unidades" id="unidades" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
+                    <td>$...</td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="/Images/vino2.webp"></td>
+                        <td>$...</td>
+                        <td><select name="unidades" id="unidades" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </td>
+                    <td>$...</td>
+                    </tr>
+                </tbody>
+
+<tfoot>
+    <tr>
+        <form class="metodo-flex" method="get" action="/">
+<td><button type="submit">Seguir comprando</button></td>
+<td><button type="reset">Comprar</button></td>
+</form>
+    </tr>
+</tfoot>
+</table>
 
 
+    </main>
 
-</main>
-
-<footer></footer>
+    <footer></footer>
 </body>
+
 </html>
