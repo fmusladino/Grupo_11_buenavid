@@ -5,7 +5,7 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #ebebeb;
+    background-color: #f5edf0;
     width: 90%;
 }
 .banner{
@@ -202,9 +202,7 @@ ul li{
 .novedades{
     text-align: center;
 }
-body{
-    width:100%;
-}
+
 .fa-wine-bottle{
     text-align: center;
 }

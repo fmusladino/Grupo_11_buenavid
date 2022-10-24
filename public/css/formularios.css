@@ -1,0 +1,91 @@
+/*
+    CSS FORMULARIOS (REGISTER Y LOGIN)
+*/
+
+.main-formularios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.cuadro-formularios {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-style: solid;
+    border-color: #6f1a07;
+    width: 70%;
+    padding: 10px;
+    margin: 30px;
+}
+
+div.cuadro-formularios h2 {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+}
+
+div.cuadro-formularios form {
+    align-items: center;
+}
+
+div.cuadro-formularios form p {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: column;
+    padding: 3px;
+    margin: 20px;
+}
+
+div.cuadro-formularios form p input {
+    border-radius: 10px;
+    background-color: #f5edf0;
+    border-style: solid;
+    border-color: #6f1a07;
+    margin: 5px;
+    padding: 10px;
+    height: 35px;
+}
+
+div.cuadro-formularios form p label {
+    text-align: left;
+    margin: 5px;
+    font-size: 18px;
+}
+
+div.cuadro-formularios form p i {
+    color: rgb(168, 168, 168);
+}
+
+div.cuadro-formularios form div.checkbox-preferencias {
+    margin: 5px;
+    font-size: 18px;
+}
+
+div.cuadro-formularios form div.checkbox-preferencias p {
+    text-align: left;
+}
+
+div.cuadro-formularios form p button {
+    background-color: #6f1a07;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 15px;
+    box-shadow: none;
+    color: white;
+    cursor: pointer;
+}
+
+div.cuadro-formularios a {
+    color: #6f1a07;
+    margin: 10px;
+}
+
+/*
+    FIN FORMULARIOS
+*/
+
+@media (min-width: 768px) {
+
+}
