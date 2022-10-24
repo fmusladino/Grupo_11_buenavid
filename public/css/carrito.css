@@ -61,7 +61,7 @@ padding: 5px;
  padding-top: 20px;
 }
 
-.metodo-flex{
+.box-botones{
   display: flex;
   justify-content: space-between;
   justify-content: center;
