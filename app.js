@@ -15,6 +15,9 @@ console.log('Servidor en el puerto ' + app_port);
 app.get('/', (req,res) => {
     res.sendFile(path.resolve('views/index.html'))
 })
+app.post('/', (req,res) => {
+    res.sendFile(path.resolve('views/index.html'))
+})
 
 app.get('/producto',(req,res) => {
     res.sendFile(path.resolve('views/productDetail.html'))
@@ -25,6 +28,10 @@ app.get('/carrito',(req,res)=>{
 })
 
 app.get('/registro',(req,res)=>{
+    res.sendFile(path.resolve('views/register.html'))
+})
+
+app.post('/registro',(req,res)=>{
     res.sendFile(path.resolve('views/register.html'))
 })
 
