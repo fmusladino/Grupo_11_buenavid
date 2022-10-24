@@ -11,7 +11,19 @@ body{
 .banner{
     width:100%;
 }
-
+.navbar{
+    display: flex;
+    flex-direction: row;
+}
+.nav-izq{
+    background-color: grey;
+    width: 20%;
+}
+.navbar, .create-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
 .nav-contenedor{
     width: 90%;
     background-color: rgba(255, 255, 255, 0.164);
