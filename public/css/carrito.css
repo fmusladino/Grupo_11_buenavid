@@ -1,6 +1,7 @@
 h3{
   color: #1E0233;
   text-align: center;
+  margin-top: 20px;
 }
 footer{
   margin-top: 30px;
@@ -15,12 +16,13 @@ table {
     text-align: center;
 border: 1px solid transparent;
 border-radius: 10px;
-margin-left: 20px;
-margin-right:10px;
-margin-left: 10px;
+width: 90%;
+margin: auto;
   }
   
-
+tr{
+  border-bottom: 1px solid rgb(210, 220, 250);
+}
   th{
     background-color: #895575;
     height: 35px;
