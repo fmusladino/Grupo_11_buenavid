@@ -64,7 +64,7 @@ padding: 5px;
 .box-botones{
   display: flex;
   justify-content: space-between;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 10px;
 }
  
