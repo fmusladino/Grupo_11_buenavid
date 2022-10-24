@@ -59,7 +59,7 @@ padding: 5px;
  
 
 .boton-start{
-  width: 15vw;
+  width: 20vw;
   height: 5vh;
   border: 1px solid;
   border-radius: 5px;
@@ -68,7 +68,7 @@ padding: 5px;
   cursor: pointer;
 }
 .boton-end{
-  width: 15vw;
+  width: 20vw;
   height: 5vh;
   border: 1px solid;
   border-radius: 5px;
@@ -77,7 +77,12 @@ padding: 5px;
   cursor: pointer;
 }
 
-
+.no-celular{
+  display: none;
+}
+td i{
+cursor: pointer;
+}
 
 
 @media (min-width: 768px){
@@ -101,5 +106,18 @@ padding: 5px;
     .border-imagen:hover{
       box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
-  
+  .no-celular{
+    display: revert;
+  }
+
+
+  .boton-start{
+    width: 15vw;
+    height: 5vh;
+  }
+  .boton-end{
+    width: 15vw;
+    height: 5vh;
+  }
+
 }
