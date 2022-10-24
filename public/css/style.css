@@ -8,7 +8,9 @@ body{
     background-color: #ebebeb;
     width: 90%;
 }
-
+.banner{
+    width:100%;
+}
 
 .nav-contenedor{
     width: 90%;
@@ -59,6 +61,25 @@ main .img-banner{
     height: 50%;
     height: 200px;
 
+}
+.form{
+    position: absolute;
+    z-index: 0;
+    margin-left: 800px;
+    margin-top: 100px;
+}
+.form .buscador{
+    text-align: right;
+    z-index: 1;
+    position: relative;
+    opacity: 0.8;
+    margin: auto;
+    text-align: left;
+}
+.buscador, .btn-form{
+    padding: 8px;
+    border-radius: 5px;
+    
 }
 .foto{
     opacity: 0.7;
@@ -291,17 +312,7 @@ div.cuadro-formularios form p button {
         margin-top: 10px;
         margin-left: 15px;
     }
-
-    /*FORMULARIOS*/
-
-    div.cuadro-formularios {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        border-style: solid;
-        border-color: #6f1a07;
-        width: 70%;
-        padding: 10px;
-        margin: 30px;
+    .banner{
+        width:100%
     }
 }
