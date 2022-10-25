@@ -15,6 +15,29 @@ body{
     display: flex;
     flex-direction: row;
 }
+
+.nav-contenedor{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #a49e8d;
+
+}
+.input-nav{
+    border-radius: 5px;
+    width: 50%;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+
+
 .nav-izq{
     background-color: grey;
     width: 20%;
@@ -24,15 +47,7 @@ body{
     flex-direction: column;
     margin-top: 20px;
 }
-.nav-contenedor{
-    width: 90%;
-    background-color: rgba(255, 255, 255, 0.164);
-    margin: 0 auto ;
-    border-bottom: 1px solid black;
-    padding-bottom: 10px;
-    
-    
-}
+
 .main-cuerpo{
     width: 90%;
     background-color: rgba(255, 255, 255, 0.164);
@@ -53,15 +68,7 @@ main .img-banner{
     padding: 20px 0;
     
 }
-.input-nav{
-    border: none;
-    border-bottom: solid 1px black;
-    width: 150px;
-    padding-bottom: 5px;
-    margin-top: 10px;
-    outline: none;
-    font-size: 12px;
-}
+
 
 .img-banner{
     width: 100%;
@@ -335,7 +342,7 @@ main .tituloPromos{
     padding: 5px;
     margin-top: 10px;
 }
-main promociones .articuloPromo{
+main .promociones .articuloPromo{
     border:  #6f1a07 2px solid;
     margin: 4px;
     padding: 4px;
@@ -366,7 +373,12 @@ main recomendados .articuloRecomendado{
     fin main
 */
 
-
+@media (min-width: 481px){
+    .logo img{
+        margin-top: 20px;
+        width: 20%;
+    }   
+}
 
 @media (min-width: 768px){
     .newsletter, .novedades{
@@ -385,5 +397,71 @@ main recomendados .articuloRecomendado{
         z-index: 0;
         margin-left: 500px;
         margin-top: 100px;
-}
+    }
+    .nav-contenedor{
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #a49e8d;
+
+    }
+    .logo img{
+        margin-top: 20px;
+        width: 70%;
+        
+    }
+    .form-nav{
+        padding: 50px ;
+            
+    }
+   
+    .input-nav{
+        border-radius: 5px;
+        width: 400px;
+        padding-bottom: 5px;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .menu_nav .menu_ul {
+        display: flex;
+        flex-direction: row;
+        padding: 50px;
+        
+    }
+    .nav-menu{
+        width: 100%;
+        height: 70px;
+        padding: 0px 20px;
+        background-color: #504136;
+    }
+    nav{
+        height: 100%;
+    }
+    nav  ul{
+        height: 100%;
+        display: flex;
+    }
+    nav  ul  li{
+        height: 100%;
+        list-style: none;
+       text-decoration: none;
+        
+    }
+    .navm  ul  li a{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        color:#E7D3CC;
+        padding: 14px;
+        font-size: 14px;
+        text-decoration: none;
+       
+    }
+
+
 }
