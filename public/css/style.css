@@ -1,5 +1,4 @@
 *{
-<<<<<<< HEAD
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -15,9 +14,10 @@ body{
 .nav-contenedor{
     width: 90%;
     background-color: rgba(255, 255, 255, 0.164);
-    margin:auto;
+    margin: 0 auto ;
     border-bottom: 1px solid black;
     padding-bottom: 10px;
+    
     
 }
 .main-cuerpo{
@@ -28,17 +28,11 @@ body{
 }
 
 
-.nav-hamburguesa{
-    width: 30px;
-    height: 50px;
-    background-image: url(/Images/icons8-menú-30.svg);
-    background-repeat: no-repeat;
-    cursor: pointer;
-    background-position: center;
-    margin-left: 5px;
+.logo img{
+    margin-top: 20px;
+    width: 20%;
     
 }
-
 .form-nav{
     border: none;
     padding: 20px 0;
@@ -82,75 +76,34 @@ padding: 2px ;
     
     }
 .foto1 img {
-    width: 20%;
+    width: 10%;
     margin-bottom: 20px;
 }
 .foto2 img{
-    width: 20%;  
+    width: 10%;  
     margin-bottom: 20px; 
 }
 .foto3 img{
-    width: 20%;
+    width: 10%;
     margin-bottom: 20px;
 }
 .foto4 img{
-    width: 20%;
+    width: 10%;
     margin-bottom: 20px;
 }
+.agregarcarro{
+    width: 90%;
+
+}
 .btn{
-    border: none;
-    border-radius: 5px;
-    background-color: red;
-=======
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-}
-ul{
-    list-style: none;
-    padding: 5px;
-}
-li{
-    padding: 5px;
-    margin: 1px;
-}
-.fin{
-    padding: 20px
-}
-.newsletter{
-    display: flex;
-    padding-left: 50px;
-    background-color: #895575;
+    width: 5%;
     color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    
-}
-.redes, .pagos{
-    padding: 10px;
-}
-.fondo{
-    display: flex;
-    justify-content: space-around;
-}
-.fa-wine-bottle{
-    text-align: center;
-}
-.name, .mail{
-    padding: 5px;
-    border-radius: 6px;
-}
-.novedades{
-    display: flex;
-    margin: auto;
+    font-size: 14px;
+    background: #895575 ;
+    padding: 10px 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
     border: none;
-    padding: 5px;
-}
-.boton{
-    background-color: #E7D3CC;
-    color: #342D50;
-    border-radius: 5px;
-    padding: 5px
->>>>>>> e2bd9c928e1b3571bc7c1fe2dc15308e8eca5447
+   
 }
