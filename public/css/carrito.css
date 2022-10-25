@@ -1,6 +1,7 @@
 h3{
   color: #1E0233;
   text-align: center;
+  margin-top: 20px;
 }
 footer{
   margin-top: 30px;
@@ -15,12 +16,13 @@ table {
     text-align: center;
 border: 1px solid transparent;
 border-radius: 10px;
-margin-left: 20px;
-margin-right:10px;
-margin-left: 10px;
+width: 90%;
+margin: auto;
   }
   
-
+tr{
+  border-bottom: 1px solid rgb(210, 220, 250);
+}
   th{
     background-color: #895575;
     height: 35px;
@@ -59,16 +61,16 @@ padding: 5px;
  padding-top: 20px;
 }
 
-.metodo-flex{
+.box-botones{
   display: flex;
   justify-content: space-between;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 10px;
 }
  
 
 .boton-start{
-  width: 15vw;
+  width: 20vw;
   height: 5vh;
   border: 1px solid;
   border-radius: 5px;
@@ -77,7 +79,7 @@ padding: 5px;
   cursor: pointer;
 }
 .boton-end{
-  width: 15vw;
+  width: 20vw;
   height: 5vh;
   border: 1px solid;
   border-radius: 5px;
@@ -86,7 +88,12 @@ padding: 5px;
   cursor: pointer;
 }
 
-
+.no-celular{
+  display: none;
+}
+td i{
+cursor: pointer;
+}
 
 
 @media (min-width: 768px){
@@ -110,5 +117,18 @@ padding: 5px;
     .border-imagen:hover{
       box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
-  
+  .no-celular{
+    display: revert;
+  }
+
+
+  .boton-start{
+    width: 15vw;
+    height: 5vh;
+  }
+  .boton-end{
+    width: 15vw;
+    height: 5vh;
+  }
+
 }
