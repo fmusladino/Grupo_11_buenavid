@@ -1,0 +1,128 @@
+h3{
+  color: #1E0233;
+  text-align: center;
+  margin-top: 20px;
+}
+footer{
+  margin-top: 30px;
+}
+
+table {
+    background: white;
+    width: 50vw;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-collapse: collapse;
+    text-align: center;
+border: 1px solid transparent;
+border-radius: 10px;
+width: 90%;
+margin: auto;
+  }
+  
+tr{
+  border-bottom: 1px solid rgb(210, 220, 250);
+}
+  th{
+    background-color: #895575;
+    height: 35px;
+    border-bottom: 1px solid rgb(210, 220, 250);
+    color: rgb(255, 255, 255);
+  }
+  
+
+.imagen-tamano{
+    width: 40vw;
+}
+
+.border-imagen:hover{
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+
+
+.margin-bottom{
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.margin-top{
+margin-top: 10px;
+padding: 5px;
+}
+
+.top{
+ padding-top: 20px;
+}
+
+.box-botones{
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+ 
+
+.boton-start{
+  width: 20vw;
+  height: 5vh;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #6f1a07;
+  color: white;
+  cursor: pointer;
+}
+.boton-end{
+  width: 20vw;
+  height: 5vh;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #6f1a07;
+  color: white;
+  cursor: pointer;
+}
+
+.no-celular{
+  display: none;
+}
+td i{
+cursor: pointer;
+}
+
+
+@media (min-width: 768px){
+  h3{
+    font-size: 27px;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-align: unset;
+  }
+    table{
+      width: 100vw;
+      margin-right: 30px;
+    }
+  
+  .imagen-tamano{
+        width: 10vw;
+    }
+    th{
+      font-size: unset;
+    }
+    .border-imagen:hover{
+      box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+  .no-celular{
+    display: revert;
+  }
+
+
+  .boton-start{
+    width: 15vw;
+    height: 5vh;
+  }
+  .boton-end{
+    width: 15vw;
+    height: 5vh;
+  }
+
+}

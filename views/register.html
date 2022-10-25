@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <title>Buena Vid</title>
+</head>
+<body>
+   <header class="header-principal">
+    <form class="form" action="" method="get">
+        <input class="buscador" type="search" id="search" name="search"
+            placeholder="Buscar productos">
+        <button class="btn-form"><i class="fa fa-search"></i></button>
+    </form>
+    <logo class="logoPrincipal"> 
+        <img src="/img/Logo Buenavid 2.jpg" alt="Logo de BuenaVid" class="foto">
+    </logo>
+    <div class="banner">
+        <img src="images/high-altitude.jpeg" class="img-banner">
+    </div>
+    </header>
+    <buscador class="buscadorHeader"> </buscador>
+    <login class="formLogin"> </login>
+    <carrito class="carrito"> </carrito>
+    <contacto Class="contacto"> </contacto>
+
+   </header>
+   <main class="main-formularios">
+    
+    <div class="cuadro-formularios">
+        <h2>Registrate</h2>
+        <form action="/" method="post">
+            <p>
+              <label>Nombre/s</label>
+              <input type="text" name="nombre" required>
+            </p>
+
+            <p>
+                <label>Apellido/s</label>
+                <input type="text" name="apellido" required>
+            </p>
+
+            <p>
+                <label>Fecha de nacimiento</label>
+                <input type="date" name="nacimiento" required>
+            </p>
+
+            <p>
+                <label>Correo Electrónico</label>
+                <input type="email" name="mail" required>
+            </p>
+
+            <p>
+                <label>Teléfono de contacto</label>
+                <input type="tel" name="telefono" required>
+            </p>
+
+            <div class="checkbox-preferencias">
+                <p>¿Cuáles son tus preferencias?</p>
+                    <input type="checkbox" name="tintos" value="Tintos">
+                    <label for="tintos">Tintos</label>
+                    <input type="checkbox" name="blancos" value="Blancos">
+                    <label for="blancos">Blancos</label>
+                    <input type="checkbox" name="rosados" value="Rosados">
+                    <label for="rosados">Rosados</label>
+                    <input type="checkbox" name="espumosos" value="Espumosos">
+                    <label for="espumosos">Espumosos</label>
+            </div>
+      
+            <p>
+              <label>Contraseña</label>
+              <input type="password" name="password" required minlength="6">
+              <i class="fas fa-info-circle"> Requiere mínimo 6 caracteres</i>
+
+            </p>
+
+            <p>
+                <label>Repetir Contraseña</label>
+                <input type="password" name="password" required minlength="6">
+            </p>
+      
+            <p>
+                <button type="submit">Registrarme</button>
+            </p>
+          </form>
+        <a href="/login">Ya estoy registrado</a>
+    </div>
+
+   </main>
+    
+    <footer>
+        <div class="newsletter">
+            <i class="fas fa-wine-bottle">¿Querés recibir ofertas en tu mail?</i>
+            <form method="POST" action="/" class="novedades">
+                <div class="formulario">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" placeholder="Nombre" class="name">
+                </div>
+            
+                <div class="formulario">
+                    <label for="mail"></label>
+                    <input type="email" name="mail" id="mail" placeholder="E-mail" class="mail">
+                </div>
+                <div class="formulario">
+                    <button type="submit" class="boton">Enviar</button>
+                </div>
+         
+            </form> 
+        </div>
+        <div class="fondo">
+        <div class ="redes">
+            <p>CONTACTANOS</p>
+            <ul>
+                <li><i class="fab fa-facebook-square"> </i>/buenavid</li>
+                <li><i class="fab fa-twitter"> </i>@buenavid</li>
+                <li><i class="fab fa-instagram"> </i>/buena_vid</li>
+            </ul>
+        </div>
+        <div class="pagos">
+            <p>FORMAS DE PAGO</p>
+            <ul>
+                <li><i class="fab fa-cc-visa"></i> </i>Visa</li>
+                <li><i class="fab fa-cc-mastercard"></i>Mastercard</li>
+                <li><i class="fab fa-cc-amex"></i>American Express</li>
+                <li><i class="fas fa-money-bill"></i>Efectivo</li>
+                <li><i class="fab fa-bitcoin"></i>Bitcoin</li>
+            </ul>
+        </div>
+    </div>
+    <p class="fin">© BuenaVid 2022 - Prohibida la venta de alcohol a menores de 18 años e hinchas de Boca</p>
+    </footer>
+
+</body>
+</html>
