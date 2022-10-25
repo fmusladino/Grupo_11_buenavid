@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,64 +37,68 @@
     </header>
     
    <main>
-
-        <h2 class="tituloPromos"> OFERTAS DEL MES</h2>
-
-        <p> Nota: esta seccion debería terminar siendo un corrousel con todas las ofertas</p>
     
-        <promociones class="cajaPromos">
+        <promociones class="carrousel">
+
+            <h2 class="tituloCarrousel"> OFERTAS DEL MES</h2>
             
-            <div class="articuloPromo">
-                <div class="categoriaPromo"> Categoría Promo 1</div>
-                <div class="fotoArt">  <img src="####" alt="foto promo 1"> </div>
-                <div class="descripcionArt"> Descripción Promo 1</div>
-                <div class="precioArt"> $ 10.000</div>
-                <div class="precioArtPromo"> $ 8.000</div>
-            </div>      
-            <div class="articuloPromo">
-                <div class="categoriaPromo"> Categoría Promo 2</div>
-                <div class="fotoArt">  <img src="####" alt="foto promo 2"> </div>
-                <div class="descripcionArt"> Descripción Promo 2</div>
-                <div class="precioArt"> $ 11.000</div>
-                <div class="precioArtPromo"> $ 9.000</div>
-            </div>       
-            <div class="articuloPromo">
-                <div class="categoriaPromo"> Categoría Promo 3</div>
-                <div class="fotoArt">  <img src="####" alt="foto promo 3"> </div>
-                <div class="descripcionArt"> Descripción Promo 3</div>
-                <div class="precioArt"> $ 12.000</div>
-                <div class="precioArtPromo"> $ 10.000</div>
-            </div>       
+                    <div class="slide">
+                        <div class="slide-inner">
+                            <input class="slide-open" type="radio" id="slide-1" 
+                                  name="slide" aria-hidden="true" hidden="" checked="checked">
+                            <div class="slide-item">
+                                <img src="./images/vinos-blancos/chacabuco-sauvignon-blanc.jpg"> Vino Blanco
+                                <p class="slide-item-texto"> Vino Blanco Chacabuco Sauvignon blanc</p>
+                                <p class="slide-item-texto"> Precio de lista $ 10.000  // OFERTA $ 7.000</p>
+                            </div>
+                            <input class="slide-open" type="radio" id="slide-2" 
+                                  name="slide" aria-hidden="true" hidden="">
+                            <div class="slide-item">
+                                <img src="./images/vinos-rosados/chakana-nuna-rose.jpeg">
+                                <p class="slide-item-texto"> Vino Rosado Chakana Nuna Rose</p>
+                                <p class="slide-item-texto"> Precio de lista $ 8.000  // OFERTA $ 5.500</p>
+                            </div>
+                            <input class="slide-open" type="radio" id="slide-3" 
+                                  name="slide" aria-hidden="true" hidden="">
+                            <div class="slide-item">
+                                <img src="./images/vinos-tintos/achaval-ferrer-malbec-2016.jpg">
+                                <p class="slide-item-texto"> Vino Tinto Malbec Achaval Ferrer 2016</p>
+                                <p class="slide-item-texto"> Precio de lista $ 15.000  // OFERTA $ 9.000</p>
+                            </div>
+                            <label for="slide-3" class="slide-control prev control-1">‹</label>
+                            <label for="slide-2" class="slide-control next control-1">›</label>
+                            <label for="slide-1" class="slide-control prev control-2">‹</label>
+                            <label for="slide-3" class="slide-control next control-2">›</label>
+                            <label for="slide-2" class="slide-control prev control-3">‹</label>
+                            <label for="slide-1" class="slide-control next control-3">›</label>
+                            <ol class="slide-indicador">
+                                <li>
+                                    <label for="slide-1" class="slide-circulo">• Blanco</label>
+                                </li>
+                                <li>
+                                    <label for="slide-2" class="slide-circulo">• Rosado</label>
+                                </li>
+                                <li>
+                                    <label for="slide-3" class="slide-circulo">• Tinto</label>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                
            
         </promociones>
 
-        <h2 class="tituloRecomendados"> Los recomendados de BuenaVid </h2>
+        <div class="cajaRecomendados"> 
 
-        <p> Nota: esta seccion debería terminar siendo un corrousel con todas las recomendaciones</p>
+            <h2 class="tituloRecomendados"> Los recomendados de BuenaVid </h2>
 
-        <recomendados class="cajaRecomendados">
+            <div class="recomendado"> Recomendado 1</div>
 
-            <div class="articuloRecomendado">
-                <div class="categoriaReco"> Categoría Artículo 1 </div>
-                <div class="fotoArReco"> <img src="" alt="foto artículo 1"> </div>
-                <div class="descripcionArtReco"> Descripción Artículo 1</div>
-                <div class="precioArtReco"> $ 10,000 </div>
-            </div>     
-            <div class="articuloRecomendado">
-                <div class="categoriaReco"> Categoría Artículo 2 </div>
-                <div class="fotoArReco"> <img src="" alt="foto artículo 2"> </div>
-                <div class="descripcionArtReco"> Descripción Artículo 2</div>
-                <div class="precioArtReco"> $ 11,000 </div>
-            </div>   
-            <div class="articuloRecomendado">
-                <div class="categoriaReco"> Categoría Artículo 3 </div>
-                <div class="fotoArReco"> <img src="" alt="foto artículo 3"> </div>
-                <div class="descripcionArtReco"> Descripción Artículo 3</div>
-                <div class="precioArtReco"> $ 12,000 </div>
-            </div>      
+            <div class="recomendado"> Recomendado 2</div>
             
+            <div class="recomendado"> Recomendado 3</div>
 
-        </recomendados>
+        </div>
 
    </main>
     
