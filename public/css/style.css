@@ -315,10 +315,6 @@ div.cuadro-formularios form p button {
     Inicio main
 */
 
-main .cajaPromos{
-    display: flex;
-}
-
 main .tituloPromos{
     color:#6f1a07;
     text-align: center;
@@ -326,16 +322,68 @@ main .tituloPromos{
     padding: 5px;
     margin-top: 10px;
 }
+main .cajaPromos{
+    display: flex;
+}
 main promociones .articuloPromo{
     border:  #6f1a07 2px solid;
     margin: 4px;
     padding: 4px;
-    border-radius: 2px;
+    border-radius: 20px;
+    min-width: 85vw;
+    height: 60vh;
+    display: block;
 }
+
+main promociones .categoriaArt{
+    color: #031927;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+
+}/* "main promociones .categoriaArt" es igual a "main recomendados .categoriaArt" */
+
+.fotoArt{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
+}/* "main promociones .fotoArt" es igual a ç2main recomendados .fotoArt" */
+
+
+.descripcionArt{
+    color: #031927;
+    font-size: 20px;
+    text-align: center;
+
+
+}/* "main promociones .descripcionArt" es igual a ç2main recomendados .descripcionArt" */
+
+.precioArt{
+    color: #031927;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+
+}/* "main promociones .precioArt" es igual a ç2main recomendados .precioArt" */
+
+main promociones .precioArtPromo{
+    color:#6f1a07;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bolder;
+}
+
 
 main .cajaRecomendados{
     display: flex;
 }
+
+
+
+
 
 main .tituloRecomendados{
     color:#6f1a07;
@@ -351,7 +399,10 @@ main recomendados .articuloRecomendado{
     margin: 4px;
     padding: 4px;
     border-radius: 2px;
+    min-width: 85vw;
+    height: 60vh;
 }
+
 
 /*
     fin main
