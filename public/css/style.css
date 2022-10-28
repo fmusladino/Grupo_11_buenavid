@@ -513,6 +513,77 @@ main recomendados .articuloRecomendado{
         text-decoration: none;
        
     }
+    .navm  ul  li :hover{
+        text-decoration:underline;
+       
+    }
+    .main-cuerpo{
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+    
+    .products{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    
+    }
+
+    article{
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border: none;
+    border-radius: 10px;
+    
+    }
+
+    article:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+    .description{
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    .flex-container{
+        display: flex;
+        padding: 5px;
+    }
+
+    .btn-carr a{
+        color: white;
+    }
+    .btn-carr{
+        border: none;
+        width: 50%;
+        color: white;
+        font-size: 10px;
+        background: #504136;
+        padding: 10px 20px;
+        margin-left: 50px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+       
+    }
+        .price{
+        width: 30%;
+        text-align: center;
+    }
+    .discount{
+        width: 70%;
+        text-align: center;
+    }
 
 
 }
