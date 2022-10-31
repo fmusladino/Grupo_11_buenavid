@@ -9,7 +9,7 @@ router.get('/', mainController.controller.index);
 
 router.get('/login', mainController.controller.login);
 
-router.get('/carrito', mainController.controller.productCard);
+router.get('/carrito', mainController.controller.productCar);
 
 router.get('/producto', mainController.controller.productDetail);
 

@@ -7,8 +7,8 @@ const controller = {
     login: (req,res) => {
         return res.sendFile (path.resolve('./views/login.html'))
     },
-    productCard: (req,res) => {
-        return res.sendFile (path.resolve('./views/productCard.html'))
+    productCar: (req,res) => {
+        return res.sendFile (path.resolve('./views/productCar.html'))
     },
     productDetail: (req,res) => {
         return res.sendFile (path.resolve('./views/productDetail.html'))
