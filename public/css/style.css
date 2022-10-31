@@ -336,7 +336,7 @@ main .tituloPromos{
     text-align: center;
     font-size: 25px;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 60px;
 }
 main .cajaPromos{
     display: flex;
@@ -351,7 +351,7 @@ main .promociones .articuloPromo{
     display: block;
 }
 
-main promociones .categoriaArt{
+.categoriaArt{
     color: #031927;
     font-size: 20px;
     text-align: center;
@@ -363,8 +363,16 @@ main promociones .categoriaArt{
     align-items: center;
     align-content: center;
     text-align: center;
+    
 
-}/* "main promociones .fotoArt" es igual a ç2main recomendados .fotoArt" */
+}/* "main promociones .fotoArt" es igual a main recomendados .fotoArt" */
+
+.fotoArt2{
+    width: 25vw;
+    height: 70vh;
+    border: #031927 solid 1px;
+
+}/* "main promociones .fotoArt2" es igual a main recomendados .fotoArt2" */
 
 
 .descripcionArt{
@@ -412,11 +420,12 @@ main .tituloRecomendados{
 
 main recomendados .articuloRecomendado{
     border:#d88373 2px solid;
-    margin: 4px;
+    margin: 4px 4px 60px 4px;
     padding: 4px;
     border-radius: 2px;
     min-width: 85vw;
     height: 60vh;
+    display: block;
 }
 
 
