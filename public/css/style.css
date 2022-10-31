@@ -259,17 +259,20 @@ ul li{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 40%;
+    border: none;
+    margin: auto;
 }
+
 
 div.cuadro-formularios {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-style: solid;
-    border-color: #6f1a07;
-    width: 70%;
+    border-color:1 px solid #6f1a07;
     padding: 10px;
     margin: 30px;
+    border-radius: 5px;
 }
 
 div.cuadro-formularios h2 {
@@ -426,7 +429,7 @@ main recomendados .articuloRecomendado{
 
 @media (min-width: 481px){
     .logo img{
-        margin-top: 20px;
+        margin-top: 200px;
         width: 20%;
     }   
 }
@@ -461,7 +464,7 @@ main recomendados .articuloRecomendado{
 
     }
     .logo img{
-        margin-top: 20px;
+        margin-top: 5px;
         width: 70%;
         
     }
@@ -500,7 +503,8 @@ main recomendados .articuloRecomendado{
     nav  ul  li{
         height: 100%;
         list-style: none;
-       text-decoration: none;
+        text-decoration: none;
+        
         
     }
     .navm  ul  li a{
@@ -509,8 +513,9 @@ main recomendados .articuloRecomendado{
         display: flex;
         color:#E7D3CC;
         padding: 14px;
-        font-size: 14px;
+        font-size: 16px;
         text-decoration: none;
+        
        
     }
     .navm  ul  li :hover{
@@ -526,6 +531,9 @@ main recomendados .articuloRecomendado{
         justify-content: space-between;
         
     }
+    footer{
+        margin-top:10px: ;
+    }
 
     
     .products{
@@ -537,7 +545,7 @@ main recomendados .articuloRecomendado{
 
     
     }
-
+    
     article{
     border: 1px solid black;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
