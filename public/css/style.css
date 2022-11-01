@@ -1,3 +1,4 @@
+cajaPromos
 *{
     padding: 0;
     margin: 0;
@@ -343,15 +344,16 @@ main .tituloPromos{
 }
 main .cajaPromos{
     display: flex;
+    margin: auto;
+    width: 90%;
 }
-main .promociones .articuloPromo{
+.articuloPromo{
     border:  #6f1a07 2px solid;
-    margin: 4px;
     padding: 4px;
-    border-radius: 20px;
-    min-width: 85vw;
-    height: 60vh;
-    display: block;
+    border-radius: 5px;
+    height: 90%;
+    display: row;
+    justify-content: space-between;
 }
 
 .categoriaArt{
@@ -412,7 +414,7 @@ main .cajaRecomendados{
 
 
 
-main .tituloRecomendados{
+.tituloRecomendados{
     color:#6f1a07;
     text-align: center;
     font-size: 20px;
@@ -421,14 +423,14 @@ main .tituloRecomendados{
 
 }
 
-main recomendados .articuloRecomendado{
+.articuloRecomendado{
     border:#d88373 2px solid;
-    margin: 4px 4px 60px 4px;
+    margin: auto;
     padding: 4px;
     border-radius: 2px;
-    min-width: 85vw;
-    height: 60vh;
-    display: block;
+    height: 90%;
+    display: row;
+    justify-content: space-between;
 }
 
 

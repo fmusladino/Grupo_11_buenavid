@@ -5,9 +5,8 @@ const path = require('path');
 const mainRouter = require('./routers/mainRouter')
 
 
-app.use(express.static('public'));
-
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 app.use('/', mainRouter);
 
