@@ -337,16 +337,15 @@ div.cuadro-formularios form p button {
 }
 .cajaPromos{
     display: flex;
-    margin: auto;
-    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
 }
-.articuloPromo{
+
+main promociones .articuloPromo{
     border:  #6f1a07 2px solid;
     padding: 4px;
-    border-radius: 5px;
-    height: 90%;
-    display: row;
-    justify-content: space-between;
+    border-radius: 20px;
+    display: block;
 }
 
 .categoriaArt{
@@ -358,14 +357,6 @@ div.cuadro-formularios form p button {
 }/* "main promociones .categoriaArt" es igual a "main recomendados .categoriaArt" */
 
 .fotoArt{
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    
-
-}/* "main promociones .fotoArt" es igual a main recomendados .fotoArt" */
-
-.fotoArt2{
     width: 25vw;
     height: 70vh;
     border: #031927 solid 1px;
@@ -401,6 +392,8 @@ div.cuadro-formularios form p button {
 
 .cajaRecomendados{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
@@ -418,9 +411,7 @@ div.cuadro-formularios form p button {
     margin: auto;
     padding: 4px;
     border-radius: 2px;
-    height: 90%;
-    display: row;
-    justify-content: space-between;
+    display: block;
 }
 
 
