@@ -344,7 +344,7 @@ main .tituloPromos{
 main .cajaPromos{
     display: flex;
 }
-main .promociones .articuloPromo{
+main promociones .articuloPromo{
     border:  #6f1a07 2px solid;
     margin: 4px;
     padding: 4px;
@@ -361,14 +361,6 @@ main .promociones .articuloPromo{
     font-weight: 600;
 
 }/* "main promociones .categoriaArt" es igual a "main recomendados .categoriaArt" */
-
-.fotoArt{
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    
-
-}/* "main promociones .fotoArt" es igual a main recomendados .fotoArt" */
 
 .fotoArt2{
     width: 25vw;
