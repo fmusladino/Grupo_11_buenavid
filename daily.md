@@ -28,6 +28,15 @@ Charla sobre las tareas que debemos tomar cada uno.
 Cargado de estas tareas en el tablero Trello
 Lectura Sprint 3
 
+Miércoles 02/11/22 durante la clase nos reunimos.
+- a la espera de la charla con las profes,
+- Charla de lo pendiente
+- Mostre avances en index
+- Se vió lo armado de Controllers y Ruteo
+- Falta subir lo hecho en ejs, para lo que deberemos cada uno instalar el EJS en 
+nuestros repositorios.
+
+
 Lunes 07/11/22 entrega del Sprint 3
 
 

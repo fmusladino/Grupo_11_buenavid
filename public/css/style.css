@@ -343,14 +343,15 @@ main .tituloPromos{
 }
 main .cajaPromos{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
 main promociones .articuloPromo{
     border:  #6f1a07 2px solid;
     margin: 4px;
     padding: 4px;
     border-radius: 20px;
-    min-width: 85vw;
-    height: 60vh;
     display: block;
 }
 
@@ -362,7 +363,7 @@ main promociones .articuloPromo{
 
 }/* "main promociones .categoriaArt" es igual a "main recomendados .categoriaArt" */
 
-.fotoArt2{
+.fotoArt{
     width: 25vw;
     height: 70vh;
     border: #031927 solid 1px;
@@ -398,6 +399,8 @@ main promociones .precioArtPromo{
 
 main .cajaRecomendados{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
@@ -418,8 +421,6 @@ main recomendados .articuloRecomendado{
     margin: 4px 4px 60px 4px;
     padding: 4px;
     border-radius: 2px;
-    min-width: 85vw;
-    height: 60vh;
     display: block;
 }
 
