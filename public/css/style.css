@@ -1,4 +1,3 @@
-cajaPromos
 *{
     padding: 0;
     margin: 0;
@@ -101,12 +100,7 @@ main .img-banner{
     opacity: 0.7;
     height: 50%;
 }
-.banner{
-position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-}
+
 
 
 .img-menu{
@@ -258,21 +252,20 @@ ul li{
 */
 .main-formularios {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     width: 40%;
-    border: none;
+    border: 1px solid #6f1a07;
     margin: auto;
 }
 
 
-div.cuadro-formularios {
+.cuadro-formularios {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-color:1 px solid #6f1a07;
-    padding: 10px;
-    margin: 30px;
+    border-color: 1px solid #6f1a07;
+    padding: 20px 20px;
+    margin-top: 30px;
     border-radius: 5px;
 }
 
@@ -335,14 +328,14 @@ div.cuadro-formularios form p button {
     Inicio main
 */
 
-main .tituloPromos{
+.tituloPromos{
     color:#6f1a07;
     text-align: center;
     font-size: 25px;
     padding: 5px;
     margin-top: 60px;
 }
-main .cajaPromos{
+.cajaPromos{
     display: flex;
     margin: auto;
     width: 90%;
@@ -398,7 +391,7 @@ main .cajaPromos{
 
 }/* "main promociones .precioArt" es igual a ç2main recomendados .precioArt" */
 
-main promociones .precioArtPromo{
+.precioArtPromo{
     color:#6f1a07;
     font-size: 40px;
     text-align: center;
@@ -406,12 +399,9 @@ main promociones .precioArtPromo{
 }
 
 
-main .cajaRecomendados{
+.cajaRecomendados{
     display: flex;
 }
-
-
-
 
 
 .tituloRecomendados{
@@ -453,9 +443,7 @@ main .cajaRecomendados{
         margin-top: 10px;
         margin-left: 15px;
     }
-    .banner{
-        width:100%
-    }
+    
     .form{
         display: flex;
         position: absolute;
@@ -465,18 +453,16 @@ main .cajaRecomendados{
     }
     .nav-contenedor{
         width: 100%;
-        margin: auto;
+        margin:  auto ;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding-left: 30px;
-        padding-right: 30px;
         background-color: #a49e8d;
-
+        
     }
     .logo img{
-        margin-top: 5px;
-        width: 70%;
+        margin-top: 10px;
+        width: 50%;
         
     }
     .form-nav{
@@ -488,7 +474,7 @@ main .cajaRecomendados{
         border-radius: 5px;
         width: 400px;
         padding-bottom: 5px;
-        margin-top: 10px;
+        margin-top: 5px;
         padding: 10px;
         font-size: 12px;
     }
@@ -505,9 +491,11 @@ main .cajaRecomendados{
     }
     .nav-menu{
         width: 100%;
+        margin: auto;
         height: 70px;
         padding: 0px 20px;
         background-color: #504136;
+        margin-top: -16px;
     }
     nav{
         height: 100%;
@@ -531,9 +519,9 @@ main .cajaRecomendados{
         padding: 14px;
         font-size: 16px;
         text-decoration: none;
-        
        
     }
+
     .navm  ul  li :hover{
         text-decoration:underline;
        
@@ -600,7 +588,7 @@ main .cajaRecomendados{
         margin-bottom: 10px;
        
     }
-        .price{
+    .price{
         width: 30%;
         text-align: center;
     }
@@ -608,6 +596,13 @@ main .cajaRecomendados{
         width: 70%;
         text-align: center;
     }
+    main .cuadro-formularios{
+        border-color:#504136; 
+        width: 500px
+    }
 
-
+    main .main-formularios{
+        width: 500px;
+        border-color: #4267B2;
+    }   
 }
