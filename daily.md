@@ -35,6 +35,7 @@ Miércoles 02/11/22 durante la clase nos reunimos.
 - Se vió lo armado de Controllers y Ruteo
 - Falta subir lo hecho en ejs, para lo que deberemos cada uno instalar el EJS en 
 nuestros repositorios.
+- Recomendación para próximo Sprint 4: hacer ruta por ruta, probar antes de pasar de una ruta a otra. Para facilitar encontrar los posibles errores.
 
 
 Lunes 07/11/22 entrega del Sprint 3
