@@ -5,7 +5,6 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #f5edf0;
     width: 100%;
 }
 .banner{
@@ -204,7 +203,7 @@ ul li{
 .newsletter{
     display: flex;
     padding-left: auto;
-    background-color: #895575;
+    background-color: #a49e8d;
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -290,7 +289,7 @@ div.cuadro-formularios form p {
 
 div.cuadro-formularios form p input {
     border-radius: 10px;
-    background-color: #f5edf0;
+    
     margin: 5px;
     padding: 10px;
     height: 35px;
@@ -316,12 +315,24 @@ div.cuadro-formularios form div.checkbox-preferencias p {
 }
 
 div.cuadro-formularios form p button {
-    background-color: #895575;
-    border-radius: 20px;
+    background-color: #504136;
+    width: 50%;
+    border-radius: 5px;
     font-size: 20px;
-    padding: 15px;
+    padding: 10px;
     box-shadow: none;
     color: white;
+    margin-left: 80px;
+}
+div .cuadro-formularios.btnlog{
+    background-color: #504136;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 20px;
+    box-shadow: none;
+    color: white;
+    margin-left: 10px;
+    
 }
 
 /*
@@ -551,7 +562,8 @@ main promociones .articuloPromo{
 
     article:hover{
         cursor: pointer;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        box-shadow: 10px 10px 20px rgb(100, 100, 100);
+        transition: all 
 }
     .description{
         padding-top: 5px;
