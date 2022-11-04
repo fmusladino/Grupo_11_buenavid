@@ -13,6 +13,6 @@ router.get('/carrito', mainController.controller.productCar);
 
 router.get('/producto', mainController.controller.productDetail);
 
-router.get('/register', mainController.controller.register);
+router.get('/registro', mainController.controller.register);
 
 module.exports = router;
