@@ -15,7 +15,15 @@ const controller = {
     },
     register: (req,res) => {
         return res.render (path.resolve('./views/register.ejs'))
-    }
+    },
+
+    carga: (req,res) => {
+        return res.render (path.resolve('./views/formCarga.ejs'))
+    },
+
+    edicion: (req,res) => {
+        return res.render (path.resolve('./views/formEdicion.ejs'))
+    },
 
 }
 

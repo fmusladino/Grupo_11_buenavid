@@ -25,4 +25,12 @@ router.get('/registro', mainController.controller.register);
 
 router.post('/registro', mainController.controller.register);
 
+router.get('/carga', mainController.controller.carga)
+
+router.post('/carga', mainController.controller.carga)
+
+router.get('/edicion',mainController.controller.edicion)
+
+router.post('/edicion',mainController.controller.edicion)
+
 module.exports = router;
