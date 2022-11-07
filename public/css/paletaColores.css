@@ -17,7 +17,7 @@ rosado{
 }
 
 Paleta colores {
-    /*1*/ color: #6f1a07; /*bordó*/
+    /*1*/ color: #512d38; /*bordó*/
 
     /*2*/ color: #d88373; /*rosado pastel*/
 
@@ -25,5 +25,7 @@ Paleta colores {
 
     /*4*/ color: #f9eccc; /*amarillo clarito*/
 
-    /*5*/ color: #f5edf0; /*blanco rosado*/
+    /*5*/ color: #fff8fb; /*blanco rosado* del background/
+
+    /*6*/ color: #f5edf0; /*blanco rosado*/
 }
