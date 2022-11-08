@@ -346,6 +346,22 @@ main promociones .articuloPromo{
     fin main
 */
 
+/*
+    SOLO PARA LA VISTA NOT-FOUND
+*/
+.not-found{
+    text-align: center;
+    padding: 60px;
+}
+.firma-not-found{
+    text-align: right;
+    padding: 10px;
+    margin-right: 30px;
+}
+/*
+    FIN PARA LA VISTA NOT-FOUND
+*/
+
 @media (min-width: 481px){
     .logo img{
         margin-top: 200px;
