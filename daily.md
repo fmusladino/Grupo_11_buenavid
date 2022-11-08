@@ -38,7 +38,14 @@ nuestros repositorios.
 - Recomendación para próximo Sprint 4: hacer ruta por ruta, probar antes de pasar de una ruta a otra. Para facilitar encontrar los posibles errores.
 
 
-Lunes 07/11/22 entrega del Sprint 3
+Lunes 07/11/22 - ENTREGA DEL SPRINT 3
+
+
+Miércoles 09/11/22 reunión virtual 18 horas
+- charla sobre lo realizado esta semana,
+- lo que nos falta para cerrar el Sprint 3 que deberíamos haber tenido listo para el lunes pasado
 
 
 
+
+Miércoles 23/11/22 - ENTREGA DEL SPRINT 4

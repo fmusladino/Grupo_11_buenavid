@@ -1,12 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>edicion</title>
-</head>
+<%- include ('partials/headFormularios') %>
+<%- include ('partials/header') %> 
+
+
+
 <body>
-    <h2>Aca editas el producto</h2>
+
+    <main class="main-formularios">
+    
+        <div class="cuadro-formularios">
+
+            <h2>Por favor, modificar aquí los datos del producto</h2>
+            <h2> con Id número: XXXX </h2>
+
+            <form action="/" method="post">
+                <p>
+                    <label>Categoría</label>
+                    <select type="text" name="category">
+                        <option value="Tinto"> Vinos Tintos </option>
+                        <option value="Blanco"> Vinos Blancos </option>
+                        <option value="Dulce"> Vinos Dulces </option>
+                        <option value="Rosado"> Vinos Rosados </option>
+                        <option value="Espumantes"> Espumantes </option>
+                        <option value="otros"> Otros </option>
+                    </select>
+                </p>
+
+                <p>
+                    <label>Descripción</label>
+                    <input type="text" name="description" required>
+                </p>
+
+                <p>
+                    <label>Bodega / Productor / Fabricante</label>
+                    <input type="text" name="bodega" required>
+                </p>
+
+                <p>
+                    <label>Precio</label>
+                    <input type="number" name="price" required>
+                </p>
+
+                <p>
+                    <label>¿Está este producto en Oferta/Promoción?</label>
+                    <select name="on-sale">
+                        <option value="false" selected> Este producto NO esta en promoción ni oferta </option>
+                        <option value="true" > Este producto SI está en promoción u oferta</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
+                    <input type="number" name="discount" placeholder="0 o el numero sin el %" required>
+                </p>
+
+                <p>
+                    <label>Agregue la foto del artículo en formato .jpg o .png</label>
+                    <input type="file" name="photo" accept=".jpg .png" required>
+                </p>
+                    
+                <p>
+                    <button type="reset">Resetear formulario</button>
+                </p>
+      
+                <p>
+                    <button type="submit">GUARDAR PRODUCTO</button>
+                </p>
+
+            </form>
+           
+        </div>
+
+    </main>
+
+
+
 </body>
 </html>
