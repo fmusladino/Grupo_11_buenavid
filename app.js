@@ -12,7 +12,11 @@ app.use('/', mainRouter);
 
 const app_port = process.env.PORT || 3000;
 
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 
 const publicPath = path.resolve('public');
