@@ -43,9 +43,9 @@ Lunes 07/11/22 - ENTREGA DEL SPRINT 3
 
 Miércoles 09/11/22 reunión virtual 18 horas
 - charla sobre lo realizado esta semana,
-- lo que nos falta para cerrar el Sprint 3 que deberíamos haber tenido listo para el lunes pasado
-
-
+- lo que nos falta para cerrar el Sprint 3 que deberíamos haber tenido listo para el lunes pasado. Solo falto el retro y los CV de algúnos integrantes en el readme.
+- lectura del Sprint 4. Quedamos en plasmaar las tareas que salen del sprint en el Trello. 
+- Asignación de tareas a personas.
 
 
 Miércoles 23/11/22 - ENTREGA DEL SPRINT 4
