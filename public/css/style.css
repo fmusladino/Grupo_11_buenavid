@@ -16,16 +16,7 @@ body{
     flex-direction: row;
 }
 
-.nav-contenedor{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: #512d38;
-}
+
 .input-nav{
     border-radius: 5px;
     width: 50%;
@@ -58,15 +49,7 @@ main .img-banner{
     width: 100%;
 }
 
-.logo img{
-    margin-top: 20px;
-    width: 20%;
-    
-}
-.form-nav{
-    border: none;
-    padding: 20px 0;
-}
+
 
 
 .img-banner{
@@ -95,12 +78,6 @@ main .img-banner{
     border-radius: 5px;
     
 }
-.foto{
-    opacity: 0.7;
-    height: 50%;
-}
-
-
 
 .img-menu{
     width: 20px;

@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header.nav-contenedor{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #512d38;
+}
+div.logo img{
+    margin-top: 20px;
+    width: 20%;
+}
+form.form-nav{
+    border: none;
+    padding: 20px 0;
+}
+img.img-menu{
+    width: 20px;
+    height: 20px;
+}
+ul.menu_ul a{ 
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-size: 14px;
+}
+ul.menu_ul li{
+list-style: none;
+padding: 2px ;
+}
+ul.menu_ul li img{
+    width: 15px;
+    padding-right: 5px;
+}
+@media (min-width: 481px){
+    div.logo img{
+        margin-top: 200px;
+        width: 20%;
+    }   
+}
+@media (min-width: 768px){
+    header.nav-contenedor{
+        width: 100%;
+        margin:  auto ;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #512d38;
+        
+    }
+    div.logo img{
+        margin-top: 10px;
+        width: 50%;   
+    }
+    form.form-nav{
+        padding: 50px ;
+    }
+    input.input-nav{
+        border-radius: 5px;
+        width: 400px;
+        padding-bottom: 5px;
+        margin-top: 5px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    nav.menu_nav .menu_ul {
+        display: flex;
+        flex-direction: row;
+        padding: 50px;
+    }
+    .menu_nav .menu_ul  :hover{
+        text-decoration: underline;
+    }
+    div.nav-menu{
+        width: 100%;
+        margin: auto;
+        height: 70px;
+        padding: 0px 20px;
+        background-color: #512d38;
+        margin-top: -16px;
+    }
+    nav{
+        height: 100%;
+    }
+    nav  ul{
+        height: 100%;
+        display: flex;
+    }
+    nav  ul  li{
+        height: 100%;
+        list-style: none;
+        text-decoration: none;
+    }
+    .navm  ul  li a{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        color: white;
+        padding: 14px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .navm  ul  li :hover{
+        text-decoration:underline;
+    }
+}
