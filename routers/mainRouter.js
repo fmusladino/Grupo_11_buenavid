@@ -33,4 +33,6 @@ router.get('/edicion',mainController.controller.edicion)
 
 router.post('/edicion',mainController.controller.edicion)
 
+router.get('/detalle',mainController.controller.detalle)
+
 module.exports = router;

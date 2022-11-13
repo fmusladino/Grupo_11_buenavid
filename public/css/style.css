@@ -6,6 +6,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     width: 100%;
+    background-color: #dee4e8;
 }
 .banner{
     width:100%;
@@ -177,11 +178,12 @@ padding: 2px ;
     border-radius: 10px;
     cursor: pointer;
     border: none;
-   
-    border: none;
     border-radius: 5px;
     background-color: red;
     box-sizing: border-box;
+
+
+
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
@@ -253,8 +255,12 @@ ul li{
     display: flex;
     justify-content: center;
     width: 40%;
-    border: 1px solid #6f1a07;
+    border: 1px solid rgba(0,0,0,.1);
     margin: auto;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 
@@ -262,7 +268,7 @@ ul li{
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-color: 1px solid #6f1a07;
+    
     padding: 20px 20px;
     margin-top: 30px;
     border-radius: 5px;
@@ -316,13 +322,13 @@ div.cuadro-formularios form div.checkbox-preferencias p {
 
 div.cuadro-formularios form p button {
     background-color: #504136;
-    width: 50%;
+    width: 80%;
     border-radius: 5px;
     font-size: 20px;
     padding: 10px;
     box-shadow: none;
     color: white;
-    margin-left: 80px;
+    margin-left: 20px;
 }
 div .cuadro-formularios.btnlog{
     background-color: #504136;
@@ -331,7 +337,7 @@ div .cuadro-formularios.btnlog{
     padding: 20px;
     box-shadow: none;
     color: white;
-    margin-left: 10px;
+    
     
 }
 
@@ -601,11 +607,110 @@ main promociones .articuloPromo{
     }
     main .cuadro-formularios{
         border-color:#504136; 
-        width: 500px
+        width: 500px;
+        
     }
 
     main .main-formularios{
         width: 500px;
         border-color: #4267B2;
-    }   
+    }
+    
+    
+    .contenedor-gral{
+        width: 90%;
+        margin: auto;
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 10px;
+        padding: 20px 20px;
+        background-color: white;
+    }
+    .contenedor-detalle{
+        
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        
+           
+    }
+
+    .contenedor-info{
+        width: 50%;
+    }
+    .contenedor-fotos{
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 10px;
+        padding: 10px 10px;
+
+    }
+    .info-producto{
+        padding-top: 20px;
+    }
+
+    .contenedor-texto{
+        border: 1px solid rgba(0,0,0,.1);
+        padding: 10px 10px 40PX;
+        width: 25%;
+    }
+
+    .titulo{
+        padding-top: 5px;
+        text-align: center;      
+        font-size: bold; 
+    }
+    .precio{
+        padding-top: 5px;
+        text-align: center;      
+        font-size: 30px; 
+    }
+    
+    .dto{
+        padding-top: 5px;
+        text-align: center;
+    }
+    .cuotas{
+        padding-top: 5px;
+        text-align: center;
+    }
+    .btn-com-com{
+        border: none;
+        width: 90%;
+        color: white;
+        font-size: 20px;
+        background: #504136;
+        padding: 20px 20px;
+        margin-left: 30px;
+        border-radius: 5px;
+        margin-bottom: 10px;  
+          
+    }
+    .btn-com-car a{
+        color: white;
+        text-decoration:  none;
+    }
+
+    .btn-com-com a{
+        color: white;
+        text-decoration:  none;
+    }
+
+    .btn-com-car{
+        border: none;
+        width: 90%;
+        color: white;
+        font-size: 20px;
+        background: #ebb4a2;
+        padding: 20px 20px;
+        margin-left: 30px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;       
+    }
+    .tabla-prod{
+        border-spacing: 0;
+        color: rgba(0,0,0,.9);
+        
+}    
+
+
 }
