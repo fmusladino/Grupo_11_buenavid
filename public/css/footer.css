@@ -45,8 +45,8 @@
     flex-direction: column;
 }
 .boton{
-    background-color: #031927;
-    color: white;
+    background-color: #fff8fb;
+    color: black;
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
