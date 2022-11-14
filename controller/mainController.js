@@ -1,4 +1,7 @@
 const path = require ('path');
+const fs = require ('fs');
+const products = JSON.parse (fs.readFileSync("./data/productos.json"));
+
 
 const controller = {
     index: (req,res) => {
@@ -11,7 +14,8 @@ const controller = {
         return res.render (path.resolve('./views/productCar.ejs'))
     },
     productDetail: (req,res) => {
-        return res.render (path.resolve('./views/productDetail.ejs'))
+        const productToEdit = products[0]
+        return res.render ('productDetail', {product:productToEdit})
     },
     register: (req,res) => {
         return res.render (path.resolve('./views/register.ejs'))

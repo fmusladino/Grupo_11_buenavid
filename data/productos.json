@@ -1,0 +1,11 @@
+[  {
+    "id": 1,
+    "name": "White Bones",
+    "description": "vino con soda",
+    "categorias": "vino blanco",
+    "precio": 10000,
+    "origen": "Mendoza",
+    "año": 2020,
+    "descuento": 20
+    }
+]
