@@ -1,11 +1,13 @@
 [  {
     "id": 1,
-    "name": "White Bones",
-    "description": "vino con soda",
-    "categorias": "vino blanco",
-    "precio": 10000,
-    "origen": "Mendoza",
-    "año": 2020,
-    "descuento": 20
+    "category": "Vino Blanco",
+    "description": "aasdasdassda",
+    "Winery": "Catena Zapata",
+    "price": 10000,
+    "origin": "Mendoza",
+    "year": 2020,
+    "discount": 3,
+    "image": "img.png",
+    "recomended": true
     }
 ]
