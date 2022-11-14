@@ -24,9 +24,7 @@ const controller = {
     edicion: (req,res) => {
         return res.render (path.resolve('./views/formEdicion.ejs'))
     },
-    detalle: (req,res) => {
-        return res.render (path.resolve('./views/detalle.ejs'))
-    },
+  
 
 }
 
