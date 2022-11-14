@@ -7,6 +7,7 @@ body{
     font-family: 'Roboto', sans-serif;
     width: 100%;
     background-color: #dee4e8;
+   
 }
 .banner{
     width:100%;
@@ -16,17 +17,7 @@ body{
     flex-direction: row;
 }
 
-.nav-contenedor{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: #a49e8d;
 
-}
 .input-nav{
     border-radius: 5px;
     width: 50%;
@@ -34,6 +25,7 @@ body{
     margin-top: 10px;
     padding: 10px;
     font-size: 12px;
+    background-color: #f5edf0;
 }
 
 
@@ -58,16 +50,7 @@ main .img-banner{
     width: 100%;
 }
 
-.logo img{
-    margin-top: 20px;
-    width: 20%;
-    
-}
-.form-nav{
-    border: none;
-    padding: 20px 0;
-    
-}
+
 
 
 .img-banner{
@@ -96,12 +79,6 @@ main .img-banner{
     border-radius: 5px;
     
 }
-.foto{
-    opacity: 0.7;
-    height: 50%;
-}
-
-
 
 .img-menu{
     width: 20px;
@@ -110,7 +87,7 @@ main .img-banner{
 .menu_ul a{ 
     text-decoration: none;
     list-style: none;
-    color: black;
+    color: white;
     font-size: 14px;
 }
 .menu_ul li{
@@ -123,7 +100,7 @@ padding: 2px ;
     width: 15px;
     padding-right: 5px;
     
-    }
+}
 .foto1 img {
     width: 10%;
     margin-bottom: 20px;
@@ -200,12 +177,14 @@ ul li{
     margin-left: 5px;
 }
 .fin{
-    padding: 20px
+    padding: 20px;
+    background-color: #512d38;
+    color: white;
 }
 .newsletter{
     display: flex;
     padding-left: auto;
-    background-color: #a49e8d;
+    background-color: #512d38;
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -221,6 +200,7 @@ ul li{
     display: flex;
     justify-content: space-around;
     width:100%;
+    background-color: #fff8fb;
     
 }
 .novedades{
@@ -233,6 +213,7 @@ ul li{
 .name, .mail{
     padding: 5px;
     border-radius: 6px;
+    background-color: #f5edf0;
 }
 .novedades{
     display: flex;
@@ -339,6 +320,11 @@ div .cuadro-formularios.btnlog{
     color: white;
     
     
+    background-color: #031927;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 /*
@@ -346,7 +332,7 @@ div .cuadro-formularios.btnlog{
 */
 
 .tituloPromos{
-    color:#6f1a07;
+    color:#512d38;
     text-align: center;
     font-size: 25px;
     padding: 5px;
@@ -359,7 +345,7 @@ div .cuadro-formularios.btnlog{
 }
 
 main promociones .articuloPromo{
-    border:  #6f1a07 2px solid;
+    border:  #512d38 2px solid;
     padding: 4px;
     border-radius: 20px;
     display: block;
@@ -400,7 +386,7 @@ main promociones .articuloPromo{
 }/* "main promociones .precioArt" es igual a ç2main recomendados .precioArt" */
 
 .precioArtPromo{
-    color:#6f1a07;
+    color:#512d38;
     font-size: 40px;
     text-align: center;
     font-weight: bolder;
@@ -415,7 +401,7 @@ main promociones .articuloPromo{
 
 
 .tituloRecomendados{
-    color:#6f1a07;
+    color:#512d38;
     text-align: center;
     font-size: 20px;
     padding: 5px;
@@ -434,6 +420,22 @@ main promociones .articuloPromo{
 
 /*
     fin main
+*/
+
+/*
+    SOLO PARA LA VISTA NOT-FOUND
+*/
+.not-found{
+    text-align: center;
+    padding: 60px;
+}
+.firma-not-found{
+    text-align: right;
+    padding: 10px;
+    margin-right: 30px;
+}
+/*
+    FIN PARA LA VISTA NOT-FOUND
 */
 
 @media (min-width: 481px){
@@ -465,7 +467,8 @@ main promociones .articuloPromo{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        background-color: #a49e8d;
+        background-color: #512d38;
+        
         
     }
     .logo img{
@@ -502,8 +505,9 @@ main promociones .articuloPromo{
         margin: auto;
         height: 70px;
         padding: 0px 20px;
-        background-color: #504136;
+        background-color: #512d38;
         margin-top: -16px;
+        
     }
     nav{
         height: 100%;
@@ -523,7 +527,7 @@ main promociones .articuloPromo{
         height: 100%;
         width: 100%;
         display: flex;
-        color:#E7D3CC;
+        color: white;
         padding: 14px;
         font-size: 16px;
         text-decoration: none;
@@ -589,7 +593,7 @@ main promociones .articuloPromo{
         width: 50%;
         color: white;
         font-size: 10px;
-        background: #504136;
+        background: #512d38;
         padding: 10px 20px;
         margin-left: 50px;
         border-radius: 5px;
@@ -711,6 +715,46 @@ main promociones .articuloPromo{
         color: rgba(0,0,0,.9);
         
 }    
+.prodes{
+    font-size: 25px;
+}
+.ofer{
+    font-size: 25px;
+}
+.contenedor-bajo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn-crear{
+    display: flex;
+  
+    margin-top: 10px;
+    width: 25%;
+
+}
+
+.btn-mod{
+    border: none;
+    width: 40%;
+    color: white;
+    font-size: 10px;
+    background: #512d38;
+    padding: 15px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: auto;
+           
+}
+.btn-mod a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
 
 
 }

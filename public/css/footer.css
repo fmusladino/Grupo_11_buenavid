@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.newsletter{
+    display: flex;
+    padding-left: auto;
+    background-color: #512d38;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    width:100%;
+    text-align: center;
+}
+.redes, .pagos{
+    padding: 10px;
+}
+.fondo{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    background-color: white;
+}
+.novedades{
+    text-align: center;
+}
+.fa-wine-bottle{
+    text-align: center;
+}
+.name, .mail{
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #f5edf0;
+}
+.novedades{
+    display: flex;
+    margin: auto;
+    border: none;
+    padding: 5px;
+    flex-direction: column;
+}
+.boton{
+    background-color: #031927;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+@media (min-width: 768px){
+    .newsletter, .novedades{
+        flex-direction: row;
+    }
+    .fa-wine-bottle {
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    footer{
+        margin-top:10px;
+    }
+}

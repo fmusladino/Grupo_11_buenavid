@@ -13,7 +13,7 @@ div.cuadro-formularios {
     align-items: center;
     flex-direction: column;
     border-style: solid;
-    border-color: #6f1a07;
+    border-color: #512d38;
     width: 70%;
     padding: 10px;
     margin: 30px;
@@ -42,7 +42,7 @@ div.cuadro-formularios form p input {
     border-radius: 10px;
     background-color: #f5edf0;
     border-style: solid;
-    border-color: #6f1a07;
+    border-color: #512d38;
     margin: 5px;
     padding: 10px;
     height: 35px;
@@ -68,17 +68,18 @@ div.cuadro-formularios form div.checkbox-preferencias p {
 }
 
 div.cuadro-formularios form p button {
-    background-color: #6f1a07;
+    background-color: #512d38;
     border-radius: 20px;
     font-size: 20px;
     padding: 15px;
     box-shadow: none;
     color: white;
     cursor: pointer;
+    border: 1px solid;
 }
 
 div.cuadro-formularios a {
-    color: #6f1a07;
+    color: #512d38;
     margin: 10px;
 }
 
