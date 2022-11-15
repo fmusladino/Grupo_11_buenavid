@@ -480,6 +480,11 @@ main promociones .articuloPromo{
         
     }
 
+    .fa {
+        color: #f0f0f0;
+        padding: 10px
+
+    };
     .contenedor-fotos img{
         width: 100%;
     }
@@ -499,7 +504,8 @@ main promociones .articuloPromo{
     .menu_nav .menu_ul {
         display: flex;
         flex-direction: row;
-        padding: 50px;
+        padding: 150px;
+
         
     }
 
