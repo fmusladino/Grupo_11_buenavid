@@ -89,6 +89,7 @@ main .img-banner{
     list-style: none;
     color: white;
     font-size: 14px;
+   
 }
 .menu_ul li{
 list-style: none;
@@ -505,12 +506,15 @@ main promociones .articuloPromo{
         display: flex;
         flex-direction: row;
         padding: 150px;
+        letter-spacing: 1px;
 
         
     }
 
     .menu_nav .menu_ul  :hover{
         text-decoration: underline;
+        transform: translateY(-10%);
+
         
     }
     .nav-menu{
@@ -544,12 +548,13 @@ main promociones .articuloPromo{
         padding: 14px;
         font-size: 16px;
         text-decoration: none;
+        letter-spacing: 1px;
        
     }
 
     .navm  ul  li :hover{
         text-decoration:underline;
-       
+        transform: translateY(-10%);
     }
     .main-cuerpo{
         width: 90%;
