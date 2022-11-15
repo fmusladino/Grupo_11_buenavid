@@ -475,8 +475,13 @@ main promociones .articuloPromo{
     }
     .logo img{
         margin-top: 10px;
+        margin-left: 10px;
         width: 50%;
         
+    }
+
+    .contenedor-fotos img{
+        width: 100%;
     }
     .form-nav{
         padding: 50px ;
@@ -624,21 +629,33 @@ main promociones .articuloPromo{
     
     
     .contenedor-gral{
-        width: 90%;
+        width: 80%;
         margin: auto;
+        margin-top: 20px;
         border: 1px solid rgba(0,0,0,.1);
         border-radius: 10px;
         padding: 20px 20px;
         background-color: white;
     }
-    .contenedor-detalle{
+    .btnvolver{
+       
+        margin-left: 11%;
+        border: none;
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+        background-color: #dee4e8;
         
+    }
+    .contenedor-detalle{
         margin: auto;
         display: flex;
         justify-content: space-between;
         
            
     }
+   
 
     .contenedor-info{
         width: 50%;
@@ -647,6 +664,8 @@ main promociones .articuloPromo{
         border: 1px solid rgba(0,0,0,.1);
         border-radius: 10px;
         padding: 10px 10px;
+        width: 40%;
+        margin: auto;
 
     }
     .info-producto{
@@ -734,6 +753,9 @@ main promociones .articuloPromo{
     margin-top: 10px;
     width: 25%;
 
+}
+.contenedor-vovler{
+    background: #dee4e8;
 }
 
 .btn-mod{
