@@ -12,7 +12,7 @@ div.cuadro-formularios {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-style: solid;
+    border-style: rgba(0,0,0,1) 1px solid ;
     border-color: #512d38;
     width: 70%;
     padding: 10px;
@@ -41,8 +41,8 @@ div.cuadro-formularios form p {
 div.cuadro-formularios form p input {
     border-radius: 10px;
     background-color: #f5edf0;
-    border-style: solid;
-    border-color: #512d38;
+    border-bottom: 1px solid  rgba(0,0,0,1) ;
+    border-color: red;
     margin: 5px;
     padding: 10px;
     height: 35px;
@@ -52,10 +52,12 @@ div.cuadro-formularios form p label {
     text-align: left;
     margin: 5px;
     font-size: 18px;
+    
 }
 
 div.cuadro-formularios form p i {
     color: rgb(168, 168, 168);
+   
 }
 
 div.cuadro-formularios form div.checkbox-preferencias {

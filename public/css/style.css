@@ -240,8 +240,8 @@ ul li{
     margin: auto;
     border-radius: 5px;
     background-color: white;
-    margin-top: 40px;
-    margin-bottom: 40px;
+   
+    margin-bottom: 100px;
 }
 
 
@@ -251,7 +251,7 @@ ul li{
     flex-direction: column;
     
     padding: 20px 20px;
-    margin-top: 30px;
+    margin-top: 10px;
     border-radius: 5px;
 }
 
@@ -263,6 +263,7 @@ div.cuadro-formularios h2 {
 
 div.cuadro-formularios form {
     align-items: center;
+    
 }
 
 div.cuadro-formularios form p {
@@ -276,10 +277,11 @@ div.cuadro-formularios form p {
 
 div.cuadro-formularios form p input {
     border-radius: 10px;
-    
+    border: 1px solid rgba(0,0,0,.1);
     margin: 5px;
     padding: 10px;
     height: 35px;
+    width: 100%;
 }
 
 div.cuadro-formularios form p label {
