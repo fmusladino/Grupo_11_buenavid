@@ -1,0 +1,10 @@
+[{
+    "id": 1,
+    "first_name": "Lautaro",
+    "last_name": "Taurino",
+    "email": "lt@gmail.com",
+    "user": "Lauti",
+    "password": "****",
+    "image": "img.png",
+    "payment_methods": ["Visa credito/debito","Mercado pago","Paypal","Pago Facil"]
+}]
