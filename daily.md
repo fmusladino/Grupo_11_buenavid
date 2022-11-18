@@ -48,4 +48,10 @@ Miércoles 09/11/22 reunión virtual 18 horas
 - Asignación de tareas a personas.
 
 
+Miércoles 16/11/22 - REUNION GRUPO 18:30 HORAS
+- Charla de lo realizado durante la semana,
+- definición de los campos del artículo y del usuario del proyecto,
+- Dejar en Trello las tareas a desarrollar para cumplir con el sprint 4. Luego cada integrante debe ponerle nombre a la que llevará a cabo
+- Agregar en Trello si surgen tareas nuevas.
+
 Miércoles 23/11/22 - ENTREGA DEL SPRINT 4
