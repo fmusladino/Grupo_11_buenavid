@@ -7,20 +7,30 @@ const {check} = require('express-validator');
 const validateRegister = [
 
     check('description')
-        .notEmpty().withMessage('Debes completar con la descripción').bail
+        .notEmpty().withMessage('Debes completar con la descripción').bail,
+    check('description')    
         .isLength({min: 10}).withMessage('la descripción debe tener como mínimo 10 caractéres'),
+
     check('winery')
-        .notEmpty().withMessage('Debes completar la bodega').bail
+        .notEmpty().withMessage('Debes completar la bodega').bail,
+    check('winery')    
         .isLength({min: 3}).withMessage('la bodega debe tener como mínimo 3 caractéres'),
+
     check('origin')
-        .notEmpty().withMessage('Debes completar el origen regional').bail
+        .notEmpty().withMessage('Debes completar el origen regional').bail,
+    check('origin')    
         .isLength({min: 5}).withMessage('El origen regional debe tener como mínimo 5 caractéres'),
+
     check('year')
-        .notEmpty().withMessage('Debes completar el año').bail
+        .notEmpty().withMessage('Debes completar el año').bail,
+    check('year')    
         .isLength({min: 4}).withMessage('El año debe tener como mínim 4 caractéres'),
+
     check('price')
-        .notEmpty().withMessage('Debes completar el precio').bail
+        .notEmpty().withMessage('Debes completar el precio').bail,
+    check('price')
         .isLength({min: 3}).withMessage('El precio debe tener como mínimo 3 caractéres (numércios, además del "."'),
+
     check('discount')
         .notEmpty().withMessage('Debes completar el descuento - con 0 si no hubiera descuento').bail
         
