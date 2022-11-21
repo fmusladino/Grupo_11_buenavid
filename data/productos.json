@@ -1,4 +1,5 @@
-[  {
+[
+  {
     "id": 1,
     "category": "Vino Blanco",
     "description": "aasdasdassda",
@@ -9,5 +10,28 @@
     "discount": 3,
     "image": "img.png",
     "recomended": true
-    }
+  },
+  {
+    "category": "Tinto",
+    "description": "Un vino tinto",
+    "winery": "Norton",
+    "origin": "Mendoza",
+    "year": "2022",
+    "price": 1000,
+    "discount": 0,
+    "id": 2,
+    "image": "1669033815667-lagarde-malbec-2014.jpeg"
+  },
+  {
+    "category": "Rosado",
+    "description": "Un vino rosado",
+    "winery": "Bodega B",
+    "origin": "Salta",
+    "year": "2020",
+    "price": 3000,
+    "discount": 0,
+    "recomended": "false",
+    "id": 3,
+    "image": "1669034553380-la-flor-rose.png"
+  }
 ]

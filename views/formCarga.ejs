@@ -35,18 +35,19 @@
                 </p>
 
                 <p>
-                    <label>Precio</label>
-                    <input type="number" name="price" required>
+                    <label>Origen</label>
+                    <input type="text" name="origin" required>
                 </p>
 
                 <p>
-                    <label>¿Está este producto en Oferta/Promoción?</label>
-                    <select name="on-sale">
-                        <option value="false" selected> Este producto NO esta en promoción ni oferta </option>
-                        <option value="true" > Este producto SI está en promoción u oferta</option>
-                    </select>
+                    <label>Año</label>
+                    <input type="number" name="year" required>
                 </p>
 
+                <p>
+                    <label>Precio</label>
+                    <input type="number" name="price" required>
+                </p>           
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
                     <input type="number" name="discount" placeholder="0 o el numero sin el %" required>
@@ -54,7 +55,15 @@
 
                 <p>
                     <label>Agregue la foto del artículo en formato .jpg o .png</label>
-                    <input type="file" name="photo" accept=".jpg .png" required>
+                    <input type="file" name="photo"  required>
+                </p>
+
+                <p>
+                    <label>Es un producto recomendado</label>
+                    <select type="boolean" name="recomended">
+                        <option value="true"> SI </option>
+                        <option value="false"> NO </option>
+                    </select>
                 </p>
                     
                 <p>

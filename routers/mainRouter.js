@@ -5,21 +5,22 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
         destination:    function (req, file, cb) {
-            cb(null, './public/iamges/productos')
+            cb(null, './public/images/productos')
         },
         filename: function (req, file, cb) {
             cb(null, Date.now() + '-' + file.originalname);
         }
 });
 
-const uploadFile = multer({storeage});
+const uploadFile = multer({storage});
 
 
 const mainController = require('../controller/mainController');
 
 router.get('/', mainController.controller.index);
 
-router.post('/', uploadFile.single('photo'), mainController.controller.index);
+// NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
+//router.post('/', uploadFile.single('photo'), mainController.controller.index);
 
 router.get('/login', mainController.controller.login);
 
@@ -31,15 +32,20 @@ router.post('/carrito', mainController.controller.productCar);
 
 router.get('/producto', mainController.controller.productDetail);
 
-router.post('/producto', uploadFile.single('photo'), mainController.controller.productDetail);
+// NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
+//router.post('/producto', uploadFile.single('photo'), mainController.controller.productDetail);
 
 router.get('/registro', mainController.controller.register);
 
 router.post('/registro', mainController.controller.register);
 
-router.get('/carga', mainController.controller.carga)
 
-router.post('/carga', uploadFile.single('photo'), mainController.controller.carga)
+
+router.get('/carga', mainController.controller.crear)
+
+router.post('/', uploadFile.single('photo'), mainController.controller.carga)
+
+
 
 router.get('/edicion',mainController.controller.edicion)
 
