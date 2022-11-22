@@ -1,6 +1,8 @@
 const path = require ('path');
 const fs = require ('fs');
 
+const {validationResult} = require('express-validator');
+
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -31,7 +33,11 @@ const controller = {
     },
 
     carga: (req,res) => {
-       
+        
+        const errors = validationResult(req);
+
+        return res.send(errors);
+
         
         const nuevoProducto = req.body;
 

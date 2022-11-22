@@ -4,7 +4,7 @@ const router = express.Router();
 const multer = require('multer');
 const {check} = require('express-validator');
 
-const validateRegister = [
+const validaciones = [
 
     check('description')
         .notEmpty().withMessage('Debes completar con la descripción').bail()  
@@ -69,9 +69,9 @@ router.post('/registro', mainController.controller.register);
 
 
 
-router.get('/carga', mainController.controller.crear)
+router.get('/carga', mainController.controller.crear);
 
-router.post('/', uploadFile.single('photo'), mainController.controller.carga)
+router.post('/', uploadFile.single('photo'), validaciones, mainController.controller.carga);
 
 
 
