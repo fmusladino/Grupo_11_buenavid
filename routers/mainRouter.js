@@ -20,7 +20,7 @@ const validateRegister = [
 
     check('year')
         .notEmpty().withMessage('Debes completar el año').bail()
-        .isLength({min: 4}).withMessage('El año debe tener como mínim 4 caractéres'),
+        .isLength({min: 4}).withMessage('El año debe tener como mínimo 4 caractéres'),
 
     check('price')
         .notEmpty().withMessage('Debes completar el precio').bail()

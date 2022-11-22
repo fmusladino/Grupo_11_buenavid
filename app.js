@@ -3,12 +3,15 @@ const app = express();
 const path = require('path');
 
 const mainRouter = require('./routers/mainRouter')
+const productoRouter= require('./router/productoRouter')
 
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.use('/', mainRouter);
+app.use('/producto', productoRouter);
+
 
 const app_port = process.env.PORT || 3000;
 
