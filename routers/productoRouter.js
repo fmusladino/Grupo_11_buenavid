@@ -2,6 +2,7 @@ const express = require ('express');
 const { controller }  = require('../controller/productoController');
 const router = express.Router();
 const {check} = require('express-validator');
+const multer = require('multer');
 
 const productoController  = require('../controller/productoController');
 

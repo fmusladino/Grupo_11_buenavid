@@ -36,7 +36,7 @@ const controller = {
         
         const errors = validationResult(req);
 
-        return res.send(errors);
+        //return res.send(errors);
 
         
         const nuevoProducto = req.body;
