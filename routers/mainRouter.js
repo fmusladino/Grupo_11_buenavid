@@ -58,10 +58,7 @@ router.get('/carrito', mainController.controller.productCar);
 
 router.post('/carrito', mainController.controller.productCar);
 
-router.get('/producto', mainController.controller.productDetail);
 
-// NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
-//router.post('/producto', uploadFile.single('photo'), mainController.controller.productDetail);
 
 router.get('/registro', mainController.controller.register);
 
