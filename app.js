@@ -15,7 +15,11 @@ app.use('/producto', productoRouter);
 
 const app_port = process.env.PORT || 3000;
 
+
+//esta línea nos permite capturar la info que se envía desde un formulario con req.body
 app.use(express.urlencoded({extended: false}));
+
+
 app.use(express.json());
 
 
