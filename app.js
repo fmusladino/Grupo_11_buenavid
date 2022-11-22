@@ -9,7 +9,10 @@ const productoRouter= require('./routers/productoRouter')
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+
+// Nos lleva a la pagina Home
 app.use('/', mainRouter);
+// Nos lleva a la pagina Producto
 app.use('/producto', productoRouter);
 
 

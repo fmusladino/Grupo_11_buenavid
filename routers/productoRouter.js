@@ -6,8 +6,18 @@ const multer = require('multer');
 
 const productoController  = require('../controller/productoController');
 
+const storage = multer.diskStorage({
+    destination:    function (req, file, cb) {
+        cb(null, './public/images/productos')
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
 
-router.get('/producto', productoController.controller.productDetail);
+const uploadFile = multer({storage});
+
+router.get('/', productoController.controller.productDetail);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/producto', uploadFile.single('photo'), mainController.controller.productDetail);
