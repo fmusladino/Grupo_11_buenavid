@@ -7,17 +7,15 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-//const products = JSON.parse (fs.readFileSync("./data/productos.json"));
 
-
-const mainController = {
-    index: (req,res) => {
-        return res.render ('index')
+const usuarioController={
+    login: (req,res) => {
+        return res.render ('login')
     },
-    productCar: (req,res) => {
-        return res.render ('productCar')
+    register: (req,res) => {
+        return res.render ('register')
     }
-   
 }
 
-module.exports = mainController
+
+module.exports = usuarioController
