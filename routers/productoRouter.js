@@ -4,6 +4,7 @@ const router = express.Router();
 const {check} = require('express-validator');
 const multer = require('multer');
 
+
 const productoController  = require('../controller/productoController');
 
 const storage = multer.diskStorage({
@@ -20,4 +21,6 @@ const uploadFile = multer({storage});
 router.get('/', productoController.controller.productDetail);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
-//router.post('/producto', uploadFile.single('photo'), mainController.controller.productDetail);
+//router.post('/', uploadFile.single('photo'), mainController.controller.productDetail);
+
+module.exports=router
