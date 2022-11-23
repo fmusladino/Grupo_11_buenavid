@@ -12,8 +12,14 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productoController={
 
     productDetail: (req,res) => {
-        const productToEdit = products[0]
-        return res.render ('productDetail', {product:productToEdit})
+        const productoID=req.params.productsId
+       const productoSiSuIdExsiste= products.find((product)=>product.id== productoID)
+       if (productoSiSuIdExsiste == undefined) {
+        return res.render("not-found");
+      }
+      return res.render("productDetail", {
+          productoSiSuIdExsiste: productoSiSuIdExsiste,
+      });
     },
 
     mostrarFormularioCargaProducto: (req, res) => {

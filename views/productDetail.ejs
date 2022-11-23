@@ -12,19 +12,19 @@
                 <div class="contenedor-gral">
                     <div class="contenedor-detalle">
                         <div class="contenedor-fotos">
-                            <img src="Images/flminto.jfif" alt="">
+                            <img src="Images/<%= productoSiSuIdExsiste.image %> " alt="">
                         </div>
 
                         <div class="contenedor-texto">
                             <div class="titulo">
-                                <h2><%= product.name %> </h2>
+                                <h2><%= productoSiSuIdExsiste.name %> </h2>
                             </div>
                             <br>
-                            <div class="precio"><span> $ <%= product.price %></span> </div>
+                            <div class="precio"><span> $ <%= productoSiSuIdExsiste.price %></span> </div>
                             <br>
-                            <% if (product.discount) { %>
+                            <% if (productoSiSuIdExsiste.discount) { %>
                                 <div class="dto">
-                                    <h4> <%= product.discount  %>  % OFF</h4>
+                                    <h4> <%= productoSiSuIdExsiste.discount  %>  % OFF</h4>
                                 </div>
                             <% } %>
                             <div class="cuotas">

@@ -50,7 +50,7 @@ const uploadFile = multer({storage});
 
 //Rutas
 
-router.get('/', productoController.productDetail);
+router.get('/:productsId/', productoController.productDetail);
 
 router.get('/carga', productoController.mostrarFormularioCargaProducto);
 
