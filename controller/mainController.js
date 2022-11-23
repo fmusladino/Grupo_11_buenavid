@@ -17,10 +17,11 @@ const mainController = {
         
         const productosRecomendados = products.filter(product => product.recomended=="true");
 
-        
+        const productosEnPromocion = products.filter(product=> product.discount >= 10)
 
         const viewData={
-            productosRecomendados
+            productosRecomendados,
+            productosEnPromocion
         }
 
        return res.render ('index',viewData )
