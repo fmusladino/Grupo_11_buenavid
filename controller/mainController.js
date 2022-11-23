@@ -12,7 +12,18 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const mainController = {
     index: (req,res) => {
-        return res.render ('index')
+
+
+        
+        const productosRecomendados = products.filter(product => product.recomended=="true");
+
+        
+
+        const viewData={
+            productosRecomendados
+        }
+
+       return res.render ('index',viewData )
     },
     productCar: (req,res) => {
         return res.render ('productCar')

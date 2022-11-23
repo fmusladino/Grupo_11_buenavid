@@ -139,7 +139,7 @@
     "year": "2021",
     "price": 2550,
     "discount": 0,
-    "recomended": "true",
+    "recomended": "false",
     "id": 12,
     "image": "1669164396098-dv-catena-malbec-2021.jpg"
   },
@@ -151,7 +151,7 @@
     "year": "2018",
     "price": 4180,
     "discount": 10,
-    "recomended": "true",
+    "recomended": "false",
     "id": 13,
     "image": "1669164459422-familia-schroeder-pinot-noir-2018.jpeg"
   },
@@ -163,7 +163,7 @@
     "year": "2020",
     "price": 10620,
     "discount": 20,
-    "recomended": "true",
+    "recomended": "false",
     "id": 14,
     "image": "1669164509544-fin-del-mundo-pinot-noir-2020.jpg"
   },
@@ -247,7 +247,7 @@
     "year": "2020",
     "price": 7950,
     "discount": 10,
-    "recomended": "true",
+    "recomended": "false",
     "id": 21,
     "image": "1669164913148-la-flor-rose.png"
   },
@@ -271,7 +271,7 @@
     "year": "2021",
     "price": 2260,
     "discount": 0,
-    "recomended": "true",
+    "recomended": "false",
     "id": 23,
     "image": "1669165030774-quieto-rose-cabernet-franc-2021.png"
   },
@@ -283,7 +283,7 @@
     "year": "2020",
     "price": 8800,
     "discount": 0,
-    "recomended": "true",
+    "recomended": "false",
     "id": 24,
     "image": "1669165082644-baron-b-brut-nature.jpeg"
   },
