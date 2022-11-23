@@ -1,5 +1,5 @@
 <%- include ('partials/head') %>
-<%- include ('partials/header') %> 
+    <%- include ('partials/header') %>
 
 
     <main class="main-cuerpo">
@@ -8,7 +8,9 @@
         <div class="products">
             <% productosRecomendados.forEach(productosRecomendados => { %>
                 <article>
+                    <div class="contenedor-fts">
                     <img src="Images/<%= productosRecomendados.image %> " alt="pinot" class="product_img">
+                </div>
                     <div class="main-article">
                         <h4 class="description"><%= productosRecomendados.winery %> </h4>
                         <h5 class="description"> <%= productosRecomendados.description %> </h5>
@@ -30,7 +32,9 @@
         <div class="products">
             <% productosRecomendados.forEach(productosRecomendados => { %>
                 <article>
+                    <div class="contenedor-fts">
                     <img src="Images/<%= productosRecomendados.image %> " alt="pinot" class="product_img">
+                    </div>
                     <div class="main-article">
                         <h4 class="description"><%= productosRecomendados.winery %> </h4>
                         <h5 class="description"> <%= productosRecomendados.description %> </h5>
@@ -45,14 +49,13 @@
             <% }) %>
     </section>
         </div>
+        </main>
+        <br>
+        <br>
+        <br>
+        <br>
 
-    </main>
-<br>
-<br>
-<br>
-<br>
+        <%- include ('partials/footer') %>
+            </body>
 
-<%- include ('partials/footer') %> 
-</body>
-</html>
-    
+            </html>
