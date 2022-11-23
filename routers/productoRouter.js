@@ -52,13 +52,13 @@ const uploadFile = multer({storage});
 
 router.get('/', productoController.productDetail);
 
-router.get('/carga', productoController.crear);
+router.get('/carga', productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', uploadFile.single('photo'), validaciones, productoController.carga);
+router.post('/carga', uploadFile.single('photo'), validaciones, productoController.almacenaProducto);
 
-router.get('/edicion',productoController.edicion)
+router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
-router.post('/edicion',uploadFile.single('photo'), productoController.edicion)
+router.post('/edicion',uploadFile.single('photo'), productoController.almacenaProductoEditado);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/', uploadFile.single('photo'), mainController.controller.productDetail);

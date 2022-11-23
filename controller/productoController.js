@@ -10,15 +10,20 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const productoController={
+
     productDetail: (req,res) => {
         const productToEdit = products[0]
         return res.render ('productDetail', {product:productToEdit})
     },
-    crear: (req, res) => {
+
+    mostrarFormularioCargaProducto: (req, res) => {
         return res.render ('formCarga')
     },
+    //crear: (req, res) => {
+    //    return res.render ('formCarga')
+    //},
 
-    carga: (req,res) => {
+    almacenaProducto: (req,res) => {
         
         const errors = validationResult(req);
 
@@ -49,13 +54,24 @@ const productoController={
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 
         
-		return res.send(nuevoProducto);
+		return res.render('formCarga');
         
         
     },
-    edicion: (req,res) => {
-        return res.render ('formEdicion')
+    
+    mostrarFormularioEdicionProducto: (req,res) => {
+        const productId = req.params.id;       
+        const productoAMostrar = products.find((product) => product.id == productId);
+        if (productoAMostrar == undefined) {return res.send('El producto con Id: '+ productId +' buscado no existe')};
+        //en la vista hay que referirse a "product" como el objeto que contiene los campos a mostrar
+        const viewData = {product: productoAMostrar};
+        return res.render('formEdicion', viewData);
+    },
+
+    almacenaProductoEditado: (req,res) => {
     }
+    
+    
 
 }
 

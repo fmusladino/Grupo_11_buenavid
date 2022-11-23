@@ -1,8 +1,6 @@
 <%- include ('partials/head') %>
 <%- include ('partials/header') %> 
 
-
-
 <body>
 
     <main class="main-formularios">
@@ -10,8 +8,10 @@
         <div class="cuadro-formularios">
 
             <h2>Por favor, modificar aquí los datos del producto</h2>
-            <h2> con Id número: XXXX </h2>
+            <h2> con Id número:  <%= product.id%>  </h2>
 
+            Nota: Aca me falta averiguar cómo la catogoria elegida del producto a editar <br>
+            
             <form action="/" method="post" enctype="multipart/form-data">
                 <p>
                     <label>Categoría</label>
@@ -27,36 +27,39 @@
 
                 <p>
                     <label>Descripción</label>
-                    <input type="text" name="description" required>
+                    <input type="text" name="description" value="<%= product.description %>">
                 </p>
 
                 <p>
                     <label>Bodega / Productor / Fabricante</label>
-                    <input type="text" name="bodega" required>
+                    <input type="text" name="winery" value="<%= product.winery %>">
                 </p>
                 
                 <p>
                     <label>Origen</label>
-                    <input type="text" name="origin" required>
+                    <input type="text" name="origin" value="<%= product.origin %>">
                 </p>
                 <p>
                     <label>Año</label>
-                    <input type="number" name="year" required>
+                    <input type="number" name="year" value="<%= product.year %>">
                 </p>
                 <p>
                     <label>Precio</label>
-                    <input type="number" name="price" required>
+                    <input type="number" name="price" value="<%= product.price %>">
                 </p>
                
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" placeholder="0 o el numero sin el %" required>
+                    <input type="number" name="discount" placeholder="0 o el numero sin el %" value="<%= product.discount %>">
                 </p>
 
                 <p>
-                    <label>Agregue la foto del artículo en formato .jpg o .png</label>
-                    <input type="file" name="photo" accept=".jpg .png" required>
+                    Nota: Aca me falta averiguar cómo poner la imagen ya guardada <br>
+                    <label>Agregue la foto del artículo en formato .jpg .jpeg .png</label>
+                    <input type="file" name="photo" accept=".jpg .png .jpeg">
                 </p>
+               
+                Nota: Aca me falta averiguar cómo preseleccionar como recomendado o no según lo guardado <br>
                 <p>
                     <label>Es un producto recomendado</label>
                     <select type="boolean" name="recomended">
@@ -81,4 +84,6 @@
 
 
 </body>
+
+
 </html>
