@@ -2,16 +2,19 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
+const publicPath = path.resolve('public');
+app.use(express.static(publicPath));
+
 const mainRouter = require('./routers/mainRouter')
 const productoRouter= require('./routers/productoRouter')
 const usuarioRouter=require('./routers/usuarioRouter')
 
 
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
-const publicPath = path.resolve('public');
-app.use(express.static(publicPath));
+
 
 
 
@@ -34,9 +37,7 @@ app.listen(app_port, ()=> {
 console.log('Servidor en el puerto ' + app_port);
 })
 
-//app.use((req, res, next)=>{
-    //res.status(404).render('not-found');
-//});
+
 
 
 // Nos lleva a la pagina Home y Carrito
@@ -46,3 +47,6 @@ app.use('/producto', productoRouter);
 //Nos lleva a la pagina de Login y Registro
 app.use('/usuario',usuarioRouter)
 
+app.use((req, res, next)=>{
+    res.status(404).render('not-found');
+});

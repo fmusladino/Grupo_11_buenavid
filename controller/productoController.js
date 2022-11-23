@@ -61,7 +61,7 @@ const productoController={
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
 
         
-		return res.render('formCarga');
+		return res.redirect('/');
         
         
     },

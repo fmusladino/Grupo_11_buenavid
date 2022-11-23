@@ -1,8 +1,8 @@
 const express = require ('express');
-const { controller }  = require('../controller/productoController');
 const router = express.Router();
 const {check} = require('express-validator');
 const multer = require('multer');
+
 
 const validaciones = [
 
@@ -41,7 +41,7 @@ const storage = multer.diskStorage({
         cb(null, './public/images/productos')
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname);
+        cb(null, Date.now() + '.png');
     }
 });
 
