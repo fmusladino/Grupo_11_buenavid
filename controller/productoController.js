@@ -38,6 +38,7 @@ const productoController={
         
         const nuevoProducto = req.body;
 
+
         
 
          //asignanción del id al nuevo producto, una mas que el último id
@@ -75,6 +76,10 @@ const productoController={
     },
 
     almacenaProductoEditado: (req,res) => {
+    },
+
+    eliminarProducto:(req,res)=>{
+
     }
     
     
