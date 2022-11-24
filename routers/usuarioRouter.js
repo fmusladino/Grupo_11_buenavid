@@ -24,6 +24,7 @@ const usuarioController = require('../controller/usuarioController');
 
 router.get('/registro', usuarioController.register);
 
+
 router.get('/login', usuarioController.login);
 
 module.exports = router;

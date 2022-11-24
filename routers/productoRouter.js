@@ -60,7 +60,7 @@ router.post('/carga', uploadFile.single('photo'), validaciones, productoControll
 
 router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
-router.post('/edicion',uploadFile.single('photo'), productoController.almacenaProductoEditado);
+router.put('/edicion/:id',uploadFile.single('photo'), productoController.almacenaProductoEditado);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/', uploadFile.single('photo'), mainController.controller.productDetail);

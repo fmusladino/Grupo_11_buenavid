@@ -2,6 +2,7 @@
     "id": 1,
     "first_name": "Lautaro",
     "last_name": "Taurino",
+    "birthday": "10/08/1976",
     "email": "lt@gmail.com",
     "user": "Lauti",
     "password": "****",

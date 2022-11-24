@@ -13,7 +13,7 @@ const productoController={
 
     productDetail: (req,res) => {
         const productoID=req.params.productsId
-       const productoSiSuIdExsiste= products.find((product)=>product.id== productoID)
+       const productoSiSuIdExsiste= products.find((product)=>product.id== productoID);
        if (productoSiSuIdExsiste == undefined) {
         return res.render("not-found");
       }
@@ -69,13 +69,28 @@ const productoController={
     mostrarFormularioEdicionProducto: (req,res) => {
         const productId = req.params.id;       
         const productoAMostrar = products.find((product) => product.id == productId);
-        if (productoAMostrar == undefined) {return res.send('El producto con Id: '+ productId +' buscado no existe')};
+        if (productoAMostrar == undefined) {return res.render('not-found')};
         //en la vista hay que referirse a "product" como el objeto que contiene los campos a mostrar
         const viewData = {product: productoAMostrar};
         return res.render('formEdicion', viewData);
     },
 
     almacenaProductoEditado: (req,res) => {
+      const productoIndex=  products.findIndex(
+            (product) => {
+              return product.id == req.params.id
+            }
+          )
+          if (productoIndex == -1) {
+            return res.send('El producto que busca no exsiste')
+          }
+          products[productoIndex] = {
+            ...products[productoIndex],
+            ...req.body
+          }
+          fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+      
+          return res.send(products[productoIndex])
     },
 
     eliminarProducto:(req,res)=>{

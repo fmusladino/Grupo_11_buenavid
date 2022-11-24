@@ -10,18 +10,27 @@
             <h2>Por favor, modificar aquí los datos del producto</h2>
             <h2> con Id número:  <%= product.id%>  </h2>
 
-            Nota: Aca me falta averiguar cómo la catogoria elegida del producto a editar <br>
+             <br>
             
-            <form action="/" method="post" enctype="multipart/form-data">
+            <form action="/producto/edicion/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <p>
                     <label>Categoría</label>
                     <select type="text" name="category">
-                        <option value="Tinto"> Vinos Tintos </option>
-                        <option value="Blanco"> Vinos Blancos </option>
-                        <option value="Dulce"> Vinos Dulces </option>
-                        <option value="Rosado"> Vinos Rosados </option>
-                        <option value="Espumantes"> Espumantes </option>
-                        <option value="otros"> Otros </option>
+                        <option <% if (product.category=='Tinto') { %>
+                            selected
+                        <% } %> value="Tinto"> Vinos Tintos </option>
+                        <option <% if (product.category=='Blanco') { %>
+                            selected
+                        <% } %> value="Blanco"> Vinos Blancos </option>
+                        <option <% if (product.category=='Rosado') { %>
+                            selected
+                        <% } %> value="Rosado"> Vinos Rosados </option>
+                        <option <% if (product.category=='Espumantes') { %>
+                            selected
+                        <% } %> value="Espumantes"> Espumantes </option>
+                        <option <% if (product.category=='otros') { %>
+                            selected
+                        <% } %>value="otros"> Otros </option>
                     </select>
                 </p>
 
@@ -59,12 +68,17 @@
                     <input type="file" name="photo" accept=".jpg .png .jpeg">
                 </p>
                
-                Nota: Aca me falta averiguar cómo preseleccionar como recomendado o no según lo guardado <br>
+                <br>
                 <p>
                     <label>Es un producto recomendado</label>
                     <select type="boolean" name="recomended">
-                        <option value="true"> SI </option>
-                        <option value="false"> NO </option>
+                        <option
+                        <% if (product.recomended =='true') { %>
+                         selected
+                        <% } %> value="true "> SI </option>
+                        <option <% if (product.recomended =='false') { %>
+                            selected
+                           <% } %> value="false"> NO </option>
                     </select>
                 </p>
                 <p>

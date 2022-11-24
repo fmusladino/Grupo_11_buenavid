@@ -5,8 +5,8 @@
     "winery": "Falasco",
     "origin": "Mendoza",
     "year": "2020",
-    "price": 1010,
-    "discount": 0,
+    "price": "1000",
+    "discount": "0",
     "recomended": "false",
     "id": 1,
     "image": "1669163181170-chacabuco-sauvignon-blanc.jpg"

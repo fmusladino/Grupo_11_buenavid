@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const methodOverride = require('method-override');
 
 
 app.set('view engine', 'ejs');
@@ -25,9 +26,8 @@ const app_port = process.env.PORT || 3000;
 
 //esta línea nos permite capturar la info que se envía desde un formulario con req.body
 app.use(express.urlencoded({extended: false}));
-
-
 app.use(express.json());
+app.use(methodOverride('_method'));
 
 
 
