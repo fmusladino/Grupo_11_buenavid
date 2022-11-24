@@ -80,6 +80,39 @@ const productoController={
 
     eliminarProducto:(req,res)=>{
 
+    },
+
+    productosRosados:(req,res)=>{
+        const productosRosados= products.filter(product=>product.category=='Rosado')
+
+        const mostarEnconsola={
+            productosRosados
+        }
+        res.render('vinosRosados',mostarEnconsola)
+    },
+    productosBlancos:(req,res)=>{
+        const productosBlancos= products.filter(product=>product.category=='Blanco')
+
+        const mostarEnconsola={
+            productosBlancos
+        }
+        res.render('vinosBlancos',mostarEnconsola)
+    },
+    productosTintos:(req,res)=>{
+        const productosTintos= products.filter(product=>product.category=='Tinto')
+
+        const mostarEnconsola={
+            productosTintos
+        }
+        res.render('vinosTintos',mostarEnconsola)
+    },
+    productosEspumantes:(req,res)=>{
+        const productosEspumantes= products.filter(product=>product.category=='Espumantes')
+
+        const mostarEnconsola={
+            productosEspumantes
+        }
+        res.render('vinosEspumantes',mostarEnconsola)
     }
     
     

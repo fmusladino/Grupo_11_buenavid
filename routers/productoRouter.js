@@ -50,6 +50,8 @@ const uploadFile = multer({storage});
 
 //Rutas
 
+
+
 router.get('/detalle/:productsId/', productoController.productDetail);
 
 router.get('/carga', productoController.mostrarFormularioCargaProducto);
@@ -60,9 +62,20 @@ router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
 router.post('/edicion',uploadFile.single('photo'), productoController.almacenaProductoEditado);
 
-
-
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/', uploadFile.single('photo'), mainController.controller.productDetail);
+
+
+//Rutas para vinos especificos 
+
+router.get('/rosados',productoController.productosRosados)
+
+router.get('/blancos',productoController.productosBlancos)
+
+router.get('/tintos',productoController.productosTintos)
+
+router.get('/espumantes',productoController.productosEspumantes)
+
+
 
 module.exports=router

@@ -139,7 +139,7 @@
     "year": "2021",
     "price": 2550,
     "discount": 0,
-    "recomended": "false",
+    "recomended": "true",
     "id": 12,
     "image": "1669164396098-dv-catena-malbec-2021.jpg"
   },
@@ -187,7 +187,7 @@
     "year": "2014",
     "price": 11900,
     "discount": 0,
-    "recomended": "false",
+    "recomended": "true",
     "id": 16,
     "image": "1669164604903-lagarde-malbec-2014.jpeg"
   },
@@ -318,7 +318,7 @@
     "origin": "Mendoza",
     "year": "2020",
     "price": 3500,
-    "discount": 0,
+    "discount": 5,
     "recomended": "false",
     "id": 27,
     "image": "1669165287161-jasmine-monet-extra-brut.jpg"
