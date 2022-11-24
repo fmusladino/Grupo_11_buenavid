@@ -1,35 +1,8 @@
 const express = require ('express');
 const router = express.Router();
-const {check} = require('express-validator');
+const { body } = require('express-validator');
 const multer = require('multer');
 
-
-const validaciones = [
-
-    check('description')
-        .notEmpty().withMessage('Debes completar con la descripción').bail()  
-        .isLength({min: 10}).withMessage('la descripción debe tener como mínimo 10 caractéres'),
-
-    check('winery')
-        .notEmpty().withMessage('Debes completar la bodega').bail()
-        .isLength({min: 3}).withMessage('la bodega debe tener como mínimo 3 caractéres'),
-
-    check('origin')
-        .notEmpty().withMessage('Debes completar el origen regional').bail()  
-        .isLength({min: 5}).withMessage('El origen regional debe tener como mínimo 5 caractéres'),
-
-    check('year')
-        .notEmpty().withMessage('Debes completar el año').bail()
-        .isLength({min: 4}).withMessage('El año debe tener como mínimo 4 caractéres'),
-
-    check('price')
-        .notEmpty().withMessage('Debes completar el precio').bail()
-        .isLength({min: 3}).withMessage('El precio debe tener como mínimo 3 caractéres (numércios, además del "."'),
-
-    check('discount')
-        .notEmpty().withMessage('Debes completar el descuento - con 0 si no hubiera descuento').bail()
-        
-];
 
 
 //Require de Controller 
@@ -47,6 +20,9 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({storage});
 
+//Validaciones 
+const validacionesParaCarga= require('../middlewares/validaciones/validatorCarga')
+
 
 //Rutas
 
@@ -56,7 +32,7 @@ router.get('/detalle/:productsId/', productoController.productDetail);
 
 router.get('/carga', productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', uploadFile.single('photo'), validaciones, productoController.almacenaProducto);
+router.post('/carga', uploadFile.single('photo'), validacionesParaCarga, productoController.almacenaProducto);
 
 router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 

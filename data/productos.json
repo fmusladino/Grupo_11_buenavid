@@ -233,8 +233,8 @@
     "winery": "Chakana",
     "origin": "Mendoza",
     "year": "2020",
-    "price": 1950,
-    "discount": 0,
+    "price": "12000",
+    "discount": "0",
     "recomended": "false",
     "id": 20,
     "image": "1669164861992-chakana-nuna-rose.jpeg"
@@ -322,5 +322,17 @@
     "recomended": "false",
     "id": 27,
     "image": "1669165287161-jasmine-monet-extra-brut.jpg"
+  },
+  {
+    "category": "Tinto",
+    "description": "vino tinto",
+    "winery": "Prueba 5",
+    "origin": "mendoza",
+    "year": "2000",
+    "price": 20000,
+    "discount": 212,
+    "recomended": "true",
+    "id": 28,
+    "image": "1669302306241.png"
   }
 ]

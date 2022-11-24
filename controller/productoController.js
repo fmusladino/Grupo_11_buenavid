@@ -25,21 +25,20 @@ const productoController={
     mostrarFormularioCargaProducto: (req, res) => {
         return res.render ('formCarga')
     },
-    //crear: (req, res) => {
-    //    return res.render ('formCarga')
-    //},
+    
 
     almacenaProducto: (req,res) => {
         
         const errors = validationResult(req);
 
-        //return res.send(errors);
+       if(!errors.isEmpty()){
+        return res.render('formCarga',{
+            errors: errors.array()
+        })
+       }
 
         
         const nuevoProducto = req.body;
-
-
-        
 
          //asignanción del id al nuevo producto, una mas que el último id
         const largoBD = products.length;
@@ -52,18 +51,12 @@ const productoController={
         // agrego el campo con el nombre de la foto del producto que se guardó en public/images/products
         nuevoProducto.image = req.file.filename;
 
-        
-
         products.push(nuevoProducto);
 
-    
-        
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-
-        
+ 
 		return res.redirect('/');
-        
-        
+              
     },
     
     mostrarFormularioEdicionProducto: (req,res) => {
