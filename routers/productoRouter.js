@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({storage});
 
 //Validaciones 
-const validacionesParaCarga= require('../middlewares/validaciones/validatorCarga')
+const validacionesParaCarga= require('../validators/validatorCarga')
 
 
 //Rutas
