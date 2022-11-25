@@ -35,14 +35,12 @@ const productoController={
 
         const resultValidation = validationResult(req);
 
-      if(resultValidation.errors.length > 0){
-       return res.render('formCarga',{
+        if(resultValidation.errors.length > 0){
+        return res.render('formCarga',{
            errors: resultValidation.mapped(),
           valores: req.body
-       })
-       }
-
-        
+        })
+        }
         const nuevoProducto = req.body;
 
          //asignanción del id al nuevo producto, una mas que el último id
