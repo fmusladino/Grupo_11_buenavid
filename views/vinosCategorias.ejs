@@ -6,21 +6,21 @@
         <section>
         <h3 class="prodes">Vinos Blancos</h3><br>    
         <div class="products">
-            <% productosBlancos.forEach(productosBlancos => { %>
+            <% productosCategoria.forEach(productosCategoria => { %>
                 <article>
                     <div class="contenedor-fts">
-                    <img src="/images/productos/<%= productosBlancos.image%> " alt="pinot" class="product_img">
+                    <img src="/images/productos/<%= productosCategoria.image%> " alt="pinot" class="product_img">
                 </div>
                     <div class="main-article">
-                        <h4 class="description"><%= productosBlancos.winery %> </h4>
-                        <h5 class="description"> <%= productosBlancos.description %> </h5>
+                        <h4 class="description"><%= productosCategoria.winery %> </h4>
+                        <h5 class="description"> <%= productosCategoria.description %> </h5>
                         <div class="flex-container">
-                            <p class="price">$ <%= productosBlancos.price %> </p>
-                            <p class="discount"><%= productosBlancos.discount %>% off</p>
+                            <p class="price">$ <%= productosCategoria.price %> </p>
+                            <p class="discount"><%= productosCategoria.discount %>% off</p>
                         </div>
                         
                     </div>
-                    <button class="btn-carr"><a href="/producto/detalle/<%= productosBlancos.id %>"> Tienda </a></button>
+                    <button class="btn-carr"><a href="/producto/detalle/<%= productosCategoria.id %>"> Tienda </a></button>
                 </article>
             <% }) %>
         </div>

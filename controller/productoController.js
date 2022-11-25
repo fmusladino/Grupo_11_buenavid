@@ -95,43 +95,43 @@ const productoController={
     },
 
     productosRosados:(req,res)=>{
-        const productosRosados= products.filter(product=>product.category=='Rosado')
+        const productosCategoria= products.filter(product=>product.category=='Rosado')
 
         const mostarEnconsola={
-            productosRosados
+            productosCategoria
         }
-        res.render('vinosRosados',mostarEnconsola)
+        res.render('vinosCategorias',mostarEnconsola)
     },
     productosBlancos:(req,res)=>{
-        const productosBlancos= products.filter(product=>product.category=='Blanco')
+        const productosCategoria= products.filter(product=>product.category=='Blanco')
 
         const mostarEnconsola={
-            productosBlancos
+            productosCategoria
         }
-        res.render('vinosBlancos',mostarEnconsola)
+        res.render('vinosCategorias',mostarEnconsola)
     },
     productosTintos:(req,res)=>{
-        const productosTintos= products.filter(product=>product.category=='Tinto')
+        const productosCategoria= products.filter(product=>product.category=='Tinto')
 
         const mostarEnconsola={
-            productosTintos
+            productosCategoria
         }
-        res.render('vinosTintos',mostarEnconsola)
+        res.render('vinosCategorias',mostarEnconsola)
     },
     productosEspumantes:(req,res)=>{
-        const productosEspumantes= products.filter(product=>product.category=='Espumantes')
+        const productosCategoria= products.filter(product=>product.category=='Espumantes')
 
         const mostarEnconsola={
-            productosEspumantes
+            productosCategoria
         }
-        res.render('vinosEspumantes',mostarEnconsola)
+        res.render('vinosCategorias',mostarEnconsola)
     },
     productosEnPromo:(req,res)=>{
-        const productosEspumantes= products.filter(product=>product.discount>0)
+        const productosCategoria= products.filter(product=>product.discount>0)
         const mostarEnconsola={
-            productosEspumantes
+            productosCategoria
         }
-        res.render('vinosEspumantes',mostarEnconsola)
+        res.render('vinosCategorias',mostarEnconsola)
     }
     
     
