@@ -125,6 +125,13 @@ const productoController={
             productosEspumantes
         }
         res.render('vinosEspumantes',mostarEnconsola)
+    },
+    productosEnPromo:(req,res)=>{
+        const productosEspumantes= products.filter(product=>product.discount>0)
+        const mostarEnconsola={
+            productosEspumantes
+        }
+        res.render('vinosEspumantes',mostarEnconsola)
     }
     
     

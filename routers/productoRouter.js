@@ -49,6 +49,8 @@ router.get('/tintos',productoController.productosTintos)
 
 router.get('/espumantes',productoController.productosEspumantes)
 
+router.get('/promociones',productoController.productosEnPromo)
+
 
 
 module.exports=router
