@@ -334,5 +334,17 @@
     "recomended": "true",
     "id": 28,
     "image": "1669302306241.png"
+  },
+  {
+    "category": "Tinto",
+    "description": "Ja",
+    "winery": " Prueba Final",
+    "origin": " Prueba Final",
+    "year": "2000",
+    "price": "120000",
+    "discount": "12",
+    "recomended": "true",
+    "id": 29,
+    "image": "1669345454029.png"
   }
 ]

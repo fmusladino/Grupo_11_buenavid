@@ -1,7 +1,17 @@
 //NO TOCAR EN UN FUTURO TENDRA USO
 
-const pruebaMiddlewares=(req,res,next)=>{
-console.log('Hola desde Middlewares')
-next();
+const {validationResult} = require('express-validator');
+
+
+const funcionParaValidarFormulariosDeCargaYEdicion= (req,res,next)=>{
+    const resultValidation = validationResult(req);
+
+    if(resultValidation.errors.length > 0){
+     return res.render('formCarga',{
+         errors: resultValidation.mapped(),
+         valores: req.body
+     })
+    }
+    next()
 }
-module.exports=pruebaMiddlewares
+module.exports=funcionParaValidarFormulariosDeCargaYEdicion

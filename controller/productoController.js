@@ -9,6 +9,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 
+
+
+//Logica
 const productoController={
 
     productDetail: (req,res) => {
@@ -29,13 +32,14 @@ const productoController={
 
     almacenaProducto: (req,res) => {
         
+
         const resultValidation = validationResult(req);
 
-       if(resultValidation.errors.length > 0){
-        return res.render('formCarga',{
-            errors: resultValidation.mapped(),
-            valores: req.body
-        })
+      if(resultValidation.errors.length > 0){
+       return res.render('formCarga',{
+           errors: resultValidation.mapped(),
+          valores: req.body
+       })
        }
 
         

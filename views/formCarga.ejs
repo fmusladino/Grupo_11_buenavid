@@ -85,7 +85,12 @@
 
                 <p>
                     <label>Agregue la foto del artículo en formato .jpg o .png</label>
-                    <input type="file" name="photo">
+                    <input type="file" name="photo" >
+                    <% if (locals.errors && errors.photo) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.photo.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
 
                 <p>
