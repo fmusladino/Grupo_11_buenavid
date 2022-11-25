@@ -23,42 +23,44 @@
                         <option value="otros"> Otros </option>
                     </select>
                 </p>
-                 <% if (locals.errors) { %>
-                  <h1>Hay errores
-                  </h1>
-                 <% } %> 
+                 <% if( typeof validaciones != 'undefined') { %>
+                  <% validaciones.forEach((validacion)=>{ %>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong> <%= validacion.msg %> </strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>  
+<% }) %>
+  <% } %>
+
                 <p>
                     <label>Descripción</label>
-                    <input type="text" name="description">
-                  <% if (locals.errors && errors.description) { %>
-                    <div>
-                <h1>  <%= errors.description.msg %> </h1>
-                </div>
-                  <% } %>
+                    <input type="text" name="description" id="description" value="<% if( typeof valores != 'undefined') { %>  <%= valores.description %><% } %> ">       
                 </p>
 
                 <p>
                     <label>Bodega / Productor / Fabricante</label>
-                    <input type="text" name="winery">
+                    <input type="text" name="winery" id="winery" value="<% if( typeof valores != 'undefined') { %>  <%= valores.winery %><% } %> ">
                 </p>
-
+            
                 <p>
                     <label>Origen</label>
-                    <input type="text" name="origin">
+                    <input type="text" name="origin" id="origin" value="<% if( typeof valores != 'undefined') { %>  <%= valores.origin %><% } %> ">>
                 </p>
 
                 <p>
                     <label>Año</label>
-                    <input type="number" name="year">
+                    <input type="number" name="year" id="year" value="<% if( typeof valores != 'undefined') { %>  <%= valores.year %><% } %> ">>
                 </p>
 
                 <p>
                     <label>Precio</label>
-                    <input type="number" name="price">
+                    <input type="number" name="price" id="price" value="<% if( typeof valores != 'undefined') { %>  <%= valores.price %><% } %> ">>
                 </p>           
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" placeholder="0 o el numero sin el %">
+                    <input type="number" name="discount" id="discount" placeholder="0 o el numero sin el %"     value="<% if( typeof valores != 'undefined') { %>  <%= valores.discount %><% } %> ">>
                 </p>
 
                 <p>

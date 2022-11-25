@@ -24,7 +24,7 @@ const validacionesParaCarga = [
 
     body('discount')
         .notEmpty().withMessage('Debes completar el descuento - con 0 si no hubiera descuento').bail()
-        
+
 ];
 
 

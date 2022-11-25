@@ -17,7 +17,6 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + '.png');
     }
 });
-
 const uploadFile = multer({storage});
 
 //Validaciones 

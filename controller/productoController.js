@@ -32,8 +32,12 @@ const productoController={
         const errors = validationResult(req);
 
        if(!errors.isEmpty()){
+       // console.log(errors.array())
+        const valores= req.body
+        const validaciones= errors.array()
         return res.render('formCarga',{
-            errors: errors.array()
+            validaciones: validaciones,
+            valores: valores
         })
        }
 
