@@ -75,7 +75,7 @@
                 </p>           
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" id="discount" placeholder="0 o el numero sin el %" value="<%= locals.valores ? valores.discount : null %>">
+                    <input type="number" name="discount" id="discount" placeholder="el numero entre 0 y 80 sin el %" value="<%= locals.valores ? valores.discount : null %>">
                     <% if (locals.errors && errors.discount) { %>
                         <div class="errores-de-formularios">
                         <%= errors.discount.msg %> 
