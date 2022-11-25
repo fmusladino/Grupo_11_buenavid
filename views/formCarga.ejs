@@ -23,44 +23,64 @@
                         <option value="otros"> Otros </option>
                     </select>
                 </p>
-                 <% if( typeof validaciones != 'undefined') { %>
-                  <% validaciones.forEach((validacion)=>{ %>
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong> <%= validacion.msg %> </strong> 
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>  
-<% }) %>
-  <% } %>
 
                 <p>
                     <label>Descripción</label>
-                    <input type="text" name="description" id="description" value="<% if( typeof valores != 'undefined') { %>  <%= valores.description %><% } %> ">       
+                    <input type="text" name="description" id="description">  
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.description.msg %> 
+                    </div>
+                       <% } %>     
                 </p>
 
                 <p>
                     <label>Bodega / Productor / Fabricante</label>
-                    <input type="text" name="winery" id="winery" value="<% if( typeof valores != 'undefined') { %>  <%= valores.winery %><% } %> ">
+                    <input type="text" name="winery" id="winey">
+                    <% if (locals.errors && errors.winery) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.winery.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
             
                 <p>
                     <label>Origen</label>
-                    <input type="text" name="origin" id="origin" value="<% if( typeof valores != 'undefined') { %>  <%= valores.origin %><% } %> ">>
+                    <input type="text" name="origin" id="origin" >
+                    <% if (locals.errors && errors.origin) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.origin.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
 
                 <p>
                     <label>Año</label>
-                    <input type="number" name="year" id="year" value="<% if( typeof valores != 'undefined') { %>  <%= valores.year %><% } %> ">>
+                    <input type="number" name="year" id="year" >
+                    <% if (locals.errors && errors.year) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.year.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
 
                 <p>
                     <label>Precio</label>
-                    <input type="number" name="price" id="price" value="<% if( typeof valores != 'undefined') { %>  <%= valores.price %><% } %> ">>
+                    <input type="number" name="price" id="price">
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.price.msg %> 
+                    </div>
+                       <% } %>  
                 </p>           
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" id="discount" placeholder="0 o el numero sin el %"     value="<% if( typeof valores != 'undefined') { %>  <%= valores.discount %><% } %> ">>
+                    <input type="number" name="discount" id="discount" placeholder="0 o el numero sin el %" >
+                    <% if (locals.errors && errors.discount) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.discount.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
 
                 <p>

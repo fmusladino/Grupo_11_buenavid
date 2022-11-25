@@ -29,15 +29,11 @@ const productoController={
 
     almacenaProducto: (req,res) => {
         
-        const errors = validationResult(req);
+        const resultValidation = validationResult(req);
 
-       if(!errors.isEmpty()){
-       // console.log(errors.array())
-        const valores= req.body
-        const validaciones= errors.array()
+       if(resultValidation.errors.length > 0){
         return res.render('formCarga',{
-            validaciones: validaciones,
-            valores: valores
+            errors: resultValidation.mapped()
         })
        }
 
