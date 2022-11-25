@@ -33,7 +33,8 @@ const productoController={
 
        if(resultValidation.errors.length > 0){
         return res.render('formCarga',{
-            errors: resultValidation.mapped()
+            errors: resultValidation.mapped(),
+            valores: req.body
         })
        }
 
