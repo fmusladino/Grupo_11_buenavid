@@ -41,8 +41,8 @@
     "winery": "Mendel",
     "origin": "Mendoza",
     "year": "2019",
-    "price": 2100,
-    "discount": 10,
+    "price": "4000",
+    "discount": "10",
     "recomended": "true",
     "id": 4,
     "image": "1669163637649-lunta-torrontes-2019.png"

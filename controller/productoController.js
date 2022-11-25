@@ -88,7 +88,8 @@ const productoController={
           }
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
       
-          return res.send(products[productoIndex])
+          //return res.send(products[productoIndex])
+          return res.redirect('/');
     },
 
     eliminarProducto:(req,res)=>{
