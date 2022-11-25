@@ -25,7 +25,18 @@ const validacionesParaCarga = [
         .isLength({min: 3}).withMessage('El precio debe tener como mínimo 3 caractéres (numércios, además del "."'),
 
     body('discount')
-        .notEmpty().withMessage('Debes completar el descuento - con 0 si no hubiera descuento').bail(),
+        .notEmpty().withMessage('Debes completar el descuento - con 0 si no hubiera descuento').bail()
+        .isNumeric().bail()
+        .custom((value, { req }) => {
+            if(value < 0 || value >80){
+                throw new Error('El descuento debe ser de 80% para abajo!')
+            }else{
+                return true
+            }
+           
+             })
+                
+             ,
 
         body('photo').custom((value, { req }) => {
 let file= req.file

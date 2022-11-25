@@ -26,7 +26,7 @@
 
                 <p>
                     <label>Descripción</label>
-                    <input type="text" name="description" id="description" value="<%= locals.valores ? valores.description : null %> ">  
+                    <input type="text" name="description" id="description" value="<%= locals.valores ? valores.description : null %>">  
                     <% if (locals.errors && errors.description) { %>
                         <div class="errores-de-formularios">
                         <%= errors.description.msg %> 
@@ -36,7 +36,7 @@
 
                 <p>
                     <label>Bodega / Productor / Fabricante</label>
-                    <input type="text" name="winery" id="winey" value="<%= locals.valores ? valores.winery : null %> ">
+                    <input type="text" name="winery" id="winey" value="<%= locals.valores ? valores.winery : null %>">
                     <% if (locals.errors && errors.winery) { %>
                         <div class="errores-de-formularios">
                         <%= errors.winery.msg %> 
@@ -46,7 +46,7 @@
             
                 <p>
                     <label>Origen</label>
-                    <input type="text" name="origin" id="origin" value="<%= locals.valores ? valores.origin : null %> ">
+                    <input type="text" name="origin" id="origin" value="<%= locals.valores ? valores.origin : null %>">
                     <% if (locals.errors && errors.origin) { %>
                         <div class="errores-de-formularios">
                         <%= errors.origin.msg %> 
@@ -56,7 +56,7 @@
 
                 <p>
                     <label>Año</label>
-                    <input type="number" name="year" id="year" value="<%= locals.valores ? valores.year : null %> ">
+                    <input type="number" name="year" id="year" value="<%= locals.valores ? valores.year : null %>">
                     <% if (locals.errors && errors.year) { %>
                         <div class="errores-de-formularios">
                         <%= errors.year.msg %> 
@@ -66,7 +66,7 @@
 
                 <p>
                     <label>Precio</label>
-                    <input type="number" name="price" id="price" value="<%= locals.valores ? valores.price : null %> ">
+                    <input type="number" name="price" id="price" value="<%= locals.valores ? valores.price : null %>">
                     <% if (locals.errors && errors.price) { %>
                         <div class="errores-de-formularios">
                         <%= errors.price.msg %> 
@@ -75,7 +75,7 @@
                 </p>           
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" id="discount" placeholder="0 o el numero sin el %" value="<%= locals.valores ? valores.discount : null %> ">
+                    <input type="number" name="discount" id="discount" placeholder="0 o el numero sin el %" value="<%= locals.valores ? valores.discount : null %>">
                     <% if (locals.errors && errors.discount) { %>
                         <div class="errores-de-formularios">
                         <%= errors.discount.msg %> 
