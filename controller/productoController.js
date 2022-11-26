@@ -95,7 +95,7 @@ const productoController={
     },
 
     productosRosados:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Rosado')
+        const productosCategoria= products.filter(product=>product.category=='Vino Rosado')
 
         const mostarEnconsola={
             productosCategoria
@@ -103,7 +103,7 @@ const productoController={
         res.render('vinosCategorias',mostarEnconsola)
     },
     productosBlancos:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Blanco')
+        const productosCategoria= products.filter(product=>product.category=='Vino Blanco')
 
         const mostarEnconsola={
             productosCategoria
@@ -111,7 +111,7 @@ const productoController={
         res.render('vinosCategorias',mostarEnconsola)
     },
     productosTintos:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Tinto')
+        const productosCategoria= products.filter(product=>product.category=='Vino Tinto')
 
         const mostarEnconsola={
             productosCategoria
@@ -119,7 +119,7 @@ const productoController={
         res.render('vinosCategorias',mostarEnconsola)
     },
     productosEspumantes:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Espumantes')
+        const productosCategoria= products.filter(product=>product.category=='Vino Espumantes')
 
         const mostarEnconsola={
             productosCategoria

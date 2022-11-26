@@ -15,3 +15,4 @@ const funcionParaValidarFormulariosDeCargaYEdicion= (req,res,next)=>{
     next()
 }
 module.exports=funcionParaValidarFormulariosDeCargaYEdicion
+

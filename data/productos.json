@@ -1,6 +1,6 @@
 [
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Chacabuco Sauvignon Blanc",
     "winery": "Falasco",
     "origin": "Mendoza",
@@ -12,7 +12,7 @@
     "image": "1669163181170-chacabuco-sauvignon-blanc.jpg"
   },
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Finca La Celia Pinot Grigio",
     "winery": "Finca La Celia",
     "origin": "Mendoza",
@@ -24,7 +24,7 @@
     "image": "1669163337454-finca-la-celia-pinot-grigio-2019.jpg"
   },
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Luigi Bosca Chardonnay",
     "winery": "Luigi Bosca",
     "origin": "Mendoza",
@@ -36,7 +36,7 @@
     "image": "1669163415810-luigi-bosca-chardonnay-2019.jpeg"
   },
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Lunta Torrontes",
     "winery": "Mendel",
     "origin": "Mendoza",
@@ -48,7 +48,7 @@
     "image": "1669163637649-lunta-torrontes-2019.png"
   },
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Proyecto Hermanas Souvignon Blanc",
     "winery": "Lagarde",
     "origin": "Mendoza",
@@ -60,7 +60,7 @@
     "image": "1669163718993-proyecto-hermanas-sauvignon-blanc-2021.jpeg"
   },
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Santa Julia Chenin Dulce",
     "winery": "Familia Zuccardi",
     "origin": "Mendoza",
@@ -72,7 +72,7 @@
     "image": "1669163790515-santa-julia-chenin-dulce.jpeg"
   },
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Sylvestra Sauvignon Blanc",
     "winery": "Bressia",
     "origin": "Salta",
@@ -84,7 +84,7 @@
     "image": "1669163849535-sylvestra-sauvignon-blanc-2021.jpg"
   },
   {
-    "category": "Blanco",
+    "category": "Vino Blanco",
     "description": "Zuccardi Q Chardonnay",
     "winery": "Familia Zuccardi",
     "origin": "Mendoza",
@@ -96,7 +96,7 @@
     "image": "1669163923590-zuccardi-q-chardonnay-2019.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Achaval Ferrer Malbec",
     "winery": "Achaval Ferrer",
     "origin": "Mendoza",
@@ -108,7 +108,7 @@
     "image": "1669164156470-achaval-ferrer-malbec-2016.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Altos del Plata Cabernet Sauvignon",
     "winery": "Terrazas de los Andes",
     "origin": "Mendoza",
@@ -120,7 +120,7 @@
     "image": "1669164248201-altos-del-plata-cabernet-sauvignon-2020.jpeg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Colonia Las Liebres Bonarda Orgánico",
     "winery": "Altos las Hormigas",
     "origin": "Mendoza",
@@ -132,7 +132,7 @@
     "image": "1669164320993-colonia-las-liebres-bonarda-organico-2020.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "DV Catena Malbec",
     "winery": "Catena Zapata",
     "origin": "Mendoza",
@@ -144,7 +144,7 @@
     "image": "1669164396098-dv-catena-malbec-2021.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Familia Schroeder Pinot Noir",
     "winery": "Familia Schroeder",
     "origin": "Neuquén",
@@ -156,7 +156,7 @@
     "image": "1669164459422-familia-schroeder-pinot-noir-2018.jpeg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Fin del Mundo Pinot Noir",
     "winery": "Del Fin del Mundo",
     "origin": "Mendoza",
@@ -168,7 +168,7 @@
     "image": "1669164509544-fin-del-mundo-pinot-noir-2020.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "La Flor Malbec",
     "winery": "Pulenta Estate",
     "origin": "Mendoza",
@@ -180,7 +180,7 @@
     "image": "1669164555048-la-flor-malbce-2020.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Lagarde Malbec",
     "winery": "Lagarde",
     "origin": "Mendoza",
@@ -192,7 +192,7 @@
     "image": "1669164604903-lagarde-malbec-2014.jpeg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Pulenta Estate Gran Cabernet",
     "winery": "Pulenta Estate",
     "origin": "Mendoza",
@@ -204,7 +204,7 @@
     "image": "1669164663693-pulenta-estate-gran-cabernet-franc-2018.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "Tomero Cabernet Sauvignon",
     "winery": "Vistalba",
     "origin": "Mendoza",
@@ -216,7 +216,7 @@
     "image": "1669164721579-tomero-cabernet-sauvignon-2021.jpg"
   },
   {
-    "category": "Rosado",
+    "category": "Vino Rosado",
     "description": "Antonieta Rose Pinot Noir",
     "winery": "Familia Falasco",
     "origin": "Mendoza",
@@ -228,7 +228,7 @@
     "image": "1669164794235-antonieta-rose-pinot-noir.jpeg"
   },
   {
-    "category": "Rosado",
+    "category": "Vino Rosado",
     "description": "Chakana Nune Rose",
     "winery": "Chakana",
     "origin": "Mendoza",
@@ -240,7 +240,7 @@
     "image": "1669164861992-chakana-nuna-rose.jpeg"
   },
   {
-    "category": "Rosado",
+    "category": "Vino Rosado",
     "description": "La Flor Rose",
     "winery": "Pulenta Estate",
     "origin": "Mendoza",
@@ -252,7 +252,7 @@
     "image": "1669164913148-la-flor-rose.png"
   },
   {
-    "category": "Rosado",
+    "category": "Vino Rosado",
     "description": "Punto Final Rose Malbec Orgánico",
     "winery": "Renacer",
     "origin": "Mendoza",
@@ -264,7 +264,7 @@
     "image": "1669164970973-punto-final-rose-malbec.png"
   },
   {
-    "category": "Rosado",
+    "category": "Vino Rosado",
     "description": "Quieto Rose Cabernet Franc",
     "winery": "Montequiero",
     "origin": "Mendoza",
@@ -276,7 +276,7 @@
     "image": "1669165030774-quieto-rose-cabernet-franc-2021.png"
   },
   {
-    "category": "Espumantes",
+    "category": "Vino Espumantes",
     "description": "Baron B Brut Nature",
     "winery": "Baron B",
     "origin": "Mendoza",
@@ -288,7 +288,7 @@
     "image": "1669165082644-baron-b-brut-nature.jpeg"
   },
   {
-    "category": "Espumantes",
+    "category": "Vino Espumantes",
     "description": "Casa Boher Extra Brut Chardonnay Pinot",
     "winery": "Rosell Boher",
     "origin": "Mendoza",
@@ -300,7 +300,7 @@
     "image": "1669165144416-casa-boher-extra-brut-chardonnay-pinot-noir.jpeg"
   },
   {
-    "category": "Espumantes",
+    "category": "Vino Espumantes",
     "description": "Fin del Mundo Extra Brut Blanc de Noir",
     "winery": "Del Fin del Mundo",
     "origin": "Neuquén",
@@ -312,7 +312,7 @@
     "image": "1669165217002-fin-del-mundo-extra-brut-blanc-de-noir.jpg"
   },
   {
-    "category": "Espumantes",
+    "category": "Vino Espumantes",
     "description": "Jasmine Monet Extra Brut Organic",
     "winery": "Jasmine Monet",
     "origin": "Mendoza",
@@ -324,7 +324,7 @@
     "image": "1669165287161-jasmine-monet-extra-brut.jpg"
   },
   {
-    "category": "Tinto",
+    "category": "Vino Tinto",
     "description": "vino tinto de prueba",
     "winery": "Toro Viejo",
     "origin": "Gonzalez Catán",
@@ -336,15 +336,27 @@
     "image": "1669415110349.png"
   },
   {
-    "category": "Dulce",
-    "description": "Pruebaaaa EDICION",
-    "winery": "Pruebaaaa EDICION",
+    "category": "Vino Espumantes",
+    "description": "Pruebaaaa Milagros",
+    "winery": "Pruebaaaa Milagros",
     "origin": "Pruebaaaa EDICION",
     "year": "2000",
-    "price": 2010,
-    "discount": 10,
+    "price": "2010",
+    "discount": "10",
     "recomended": "true",
     "id": 29,
     "image": "1669477018273.png"
+  },
+  {
+    "category": "Vino Rosado",
+    "description": "Bruno Producto",
+    "winery": "Bruno Producto",
+    "origin": "Lucas",
+    "year": "2000",
+    "price": "2010",
+    "discount": "5",
+    "recomended": "true",
+    "id": 30,
+    "image": "1669482971379.png"
   }
 ]
