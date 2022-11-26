@@ -334,5 +334,17 @@
     "recomended": "true",
     "id": 28,
     "image": "1669415110349.png"
+  },
+  {
+    "category": "Dulce",
+    "description": "Pruebaaaa EDICION",
+    "winery": "Pruebaaaa EDICION",
+    "origin": "Pruebaaaa EDICION",
+    "year": "2000",
+    "price": 2010,
+    "discount": 10,
+    "recomended": "true",
+    "id": 29,
+    "image": "1669477018273.png"
   }
 ]

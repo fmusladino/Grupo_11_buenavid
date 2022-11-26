@@ -29,14 +29,14 @@ router.get('/detalle/:productsId/', productoController.productDetail);
 
 router.get('/carga', productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', uploadFile.single('photo'), validacionesParaCargaYEdicion, productoController.almacenaProducto);
+router.post('/carga', uploadFile.single('image'), validacionesParaCargaYEdicion, productoController.almacenaProducto);
 
 router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
-router.put('/edicion/:id',uploadFile.single('photo'),validacionesParaCargaYEdicion, productoController.almacenaProductoEditado);
+router.put('/edicion/:id',uploadFile.single('image'),validacionesParaCargaYEdicion, productoController.almacenaProductoEditado);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
-//router.post('/', uploadFile.single('photo'), mainController.controller.productDetail);
+//router.post('/', uploadFile.single('image'), mainController.controller.productDetail);
 
 
 //Rutas para vinos especificos 
