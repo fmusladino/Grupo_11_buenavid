@@ -1,0 +1,36 @@
+<%- include ('partials/head') %>
+    <%- include ('partials/header') %>
+
+
+    <main class="main-cuerpo">
+        <section>
+               <h3 class="prodes">Vino por Categoria</h3><br>    
+                <div class="products">
+                
+            <% productosCategoria.forEach(productosCategoria => { %>
+                <article>
+                    <div class="contenedor-fts">
+                    <img src="/images/productos/<%= productosCategoria.image%> " alt="pinot" class="product_img">
+                </div>
+                    <div class="main-article">
+                        <h4 class="description"><%= productosCategoria.winery %> </h4>
+                        <h5 class="description"> <%= productosCategoria.description %> </h5>
+                        <div class="flex-container">
+                            <p class="price">$ <%= productosCategoria.price %> </p>
+                            <p class="discount"><%= productosCategoria.discount %>% off</p>
+                        </div>
+                        
+                    </div>
+                    <button class="btn-carr"><a href="/producto/detalle/<%= productosCategoria.id %>"> Tienda </a></button>
+                </article>
+            <% }) %>
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%- include ('partials/footer') %>
+        </body>
+
+        </html>

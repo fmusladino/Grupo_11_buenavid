@@ -12,23 +12,24 @@
                 <div class="contenedor-gral">
                     <div class="contenedor-detalle">
                         <div class="contenedor-fotos">
-                            <img src="Images/flminto.jfif" alt="">
+                            
+                        <img src="/Images/productos/<%= productoSiSuIdExsiste.image %> " alt="">
                         </div>
 
                         <div class="contenedor-texto">
                             <div class="titulo">
-                                <h2><%= product.name %> </h2>
+                                <h2><%= productoSiSuIdExsiste.name %> </h2>
                             </div>
                             <br>
-                            <div class="precio"><span> $ <%= product.price %></span> </div>
+                            <div class="precio"><span> $ <%= productoSiSuIdExsiste.price %></span> </div>
                             <br>
-                            <% if (product.discount) { %>
+                            <% if (productoSiSuIdExsiste.discount) { %>
                                 <div class="dto">
-                                    <h4> <%= product.discount  %>  % OFF</h4>
+                                    <h4> <%= productoSiSuIdExsiste.discount  %>  % OFF</h4>
                                 </div>
                             <% } %>
                             <div class="cuotas">
-                                <h4>3 cuotas de $ 9000</h4>
+                                <h4>3 cuotas sin interes</h4>
                             </div>
                             <br>
                             <div class="btn-comprar">
@@ -49,8 +50,8 @@
                             <br>
                         </div>
                         <div class="btn-crear">
-                            <button class="btn-mod"><a href="/edicion"> Crear Producto</a></button>
-                            <button class="btn-mod"><a href="/carga"> Editar Producto</a></button>
+                            <button class="btn-mod"><a href="/producto/carga"> Crear Producto</a></button>
+                            <button class="btn-mod"><a href="/producto/edicion/<%= productoSiSuIdExsiste.id %> "> Editar Producto</a></button>
                         </div>
                     </div>
                 </div>

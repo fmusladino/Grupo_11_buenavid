@@ -330,6 +330,10 @@ div .cuadro-formularios.btnlog{
     cursor: pointer;
 }
 
+.errores-de-formularios{
+    color: red;
+}
+
 /*
     Inicio main
 */
@@ -394,6 +398,17 @@ main promociones .articuloPromo{
     text-align: center;
     font-weight: bolder;
 }
+.contenedor-fts{
+    overflow: hidden;
+    height: 280px;
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenedor-fts img{
+    width: 100%;
+}
+
 
 
 .cajaRecomendados{
@@ -563,6 +578,7 @@ main promociones .articuloPromo{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+       
         
     }
     footer{
@@ -574,8 +590,9 @@ main promociones .articuloPromo{
         width: 90%;
         margin: auto;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 20px;
+        
 
     
     }
@@ -585,7 +602,8 @@ main promociones .articuloPromo{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     border: none;
     border-radius: 10px;
-    
+    margin: 20px;
+   
     }
 
     article:hover{

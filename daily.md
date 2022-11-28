@@ -55,3 +55,12 @@ Miércoles 16/11/22 - REUNION GRUPO 18:30 HORAS
 - Agregar en Trello si surgen tareas nuevas.
 
 Miércoles 23/11/22 - ENTREGA DEL SPRINT 4
+
+Lunes 28/11/22 - REUNIÓN GRUPO 18 HORAS
+- Charla general sobre lo realizado la ultima semana,
+- Ver qué nos falta para terminar el Sprint 4,
+- REALIZACIÓN DE LA RETROSPECTIVA DE ESTE ULTIMO SPRINT 4 - Quién lo redacta?
+- Lectura conjunta del enunciado del Sprint 5,
+- Cargar en Trello las tareas para cumplimentar el Sprint 5
+- Distribución de tareas del Sprint 5 - dejarlo explícito en la misma tarjeta de Trello
+- 
