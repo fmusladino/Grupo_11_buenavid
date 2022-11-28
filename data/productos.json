@@ -358,5 +358,17 @@
     "recomended": "true",
     "id": 30,
     "image": "1669482971379.png"
+  },
+  {
+    "category": "Vino Tinto",
+    "description": "vino tinto cualquiera",
+    "winery": "Resero",
+    "origin": "San Juan",
+    "year": "2022",
+    "price": 100,
+    "discount": 80,
+    "recomended": "true",
+    "id": 31,
+    "image": "1669666891002.png"
   }
 ]

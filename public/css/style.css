@@ -330,6 +330,10 @@ div .cuadro-formularios.btnlog{
     cursor: pointer;
 }
 
+.errores-de-formularios{
+    color: red;
+}
+
 /*
     Inicio main
 */
