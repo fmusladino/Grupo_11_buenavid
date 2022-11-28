@@ -20,7 +20,8 @@ const storage = multer.diskStorage({
 const uploadFile = multer({storage});
 
 //Validaciones 
-const validacionesParaCargaYEdicion= require('../validators/validatorCarga')
+const validacionesParaCarga= require('../validators/validatorCarga')
+const validacionesParaEdicion= require('../validators/validatorEdicion')
 
 
 //Rutas
@@ -29,11 +30,11 @@ router.get('/detalle/:productsId/', productoController.productDetail);
 
 router.get('/carga', productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', uploadFile.single('image'), validacionesParaCargaYEdicion, productoController.almacenaProducto);
+router.post('/carga', uploadFile.single('image'), validacionesParaCarga, productoController.almacenaProducto);
 
 router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
-router.put('/edicion/:id',uploadFile.single('image'),validacionesParaCargaYEdicion, productoController.almacenaProductoEditado);
+router.put('/edicion/:id',uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/', uploadFile.single('image'), mainController.controller.productDetail);

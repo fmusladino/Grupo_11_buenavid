@@ -37,35 +37,67 @@
                 <p>
                     <label>Descripción</label>
                     <input type="text" name="description" value="<%= product.description %>">
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.description.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
 
                 <p>
                     <label>Bodega / Productor / Fabricante</label>
                     <input type="text" name="winery" value="<%= product.winery %>">
+                    <% if (locals.errors && errors.winery) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.winery.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
                 
                 <p>
                     <label>Origen</label>
                     <input type="text" name="origin" value="<%= product.origin %>">
+                    <% if (locals.errors && errors.origin) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.origin.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
                 <p>
                     <label>Año</label>
                     <input type="number" name="year" value="<%= product.year %>">
+                    <% if (locals.errors && errors.year) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.year.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
                 <p>
                     <label>Precio</label>
                     <input type="number" name="price" value="<%= product.price %>">
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.price.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
                
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
                     <input type="number" name="discount" placeholder="0 o el numero sin el %" value="<%= product.discount %>">
+                    <% if (locals.errors && errors.discount) { %>
+                        <div class="errores-de-formularios">
+                        <%= errors.discount.msg %> 
+                    </div>
+                       <% } %>  
                 </p>
 
                 <p>
-                    Nota: Aca me falta averiguar cómo poner la imagen ya guardada <br>
-                    <label>Agregue la foto del artículo en formato .jpg .jpeg .png</label>
-                    <input type="file" name="image" accept=".jpg .png .jpeg">
+                    <br>
+                    <label>Desea cambiar la foto del articulo?</label>
+                    <img src="/images/productos/<%= product.image %>" width="50" height="50">
+                    <input type="hidden" name="image" value="<%=product.image%>">
+                    <input type="file" name="image" accept="image/.jpg .png .jpeg">
                 </p>
                
                 <br>

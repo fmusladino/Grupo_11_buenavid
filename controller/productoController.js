@@ -72,6 +72,28 @@ const productoController={
     },
 
     almacenaProductoEditado: (req,res) => {
+
+
+
+
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0){
+         return res.render('formEdicion',{
+             errors: resultValidation.mapped(),
+            product: {
+                price: req.body.price,
+                description: req.body.description,
+                winery: req.body.winery,
+                origin: req.body.origin,
+                year:req.body.year,
+                discount:req.body.discount,
+                id: req.params.id
+                
+            }
+         })
+         }
+
       const productoIndex=  products.findIndex(
             (product) => {
               return product.id == req.params.id
@@ -82,7 +104,8 @@ const productoController={
           }
           products[productoIndex] = {
             ...products[productoIndex],
-            ...req.body
+            ...req.body,
+            image: req.file ? req.file.filename : req.body.image
           }
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
       

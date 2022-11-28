@@ -1,8 +1,6 @@
-//Falta Terminar
-
 const { body } = require('express-validator');
 
-const validacionesParaCarga = [
+const validacionesParaEdicion = [
 
     body('description')
         .notEmpty().withMessage('Debes completar con la descripción').bail()  
@@ -36,17 +34,8 @@ const validacionesParaCarga = [
            
              })
                 
-             ,
-
-        body('image').custom((value, { req }) => {
-let file= req.file
-if(!file){
-    throw new Error('Tienes que subir una imagen')
-}
-return true;
-        })
 
 ];
 
 
-module.exports=validacionesParaCarga
+module.exports=validacionesParaEdicion

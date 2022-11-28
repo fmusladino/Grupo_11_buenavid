@@ -12,16 +12,16 @@
     "image": "1669163181170-chacabuco-sauvignon-blanc.jpg"
   },
   {
-    "category": "Vino Blanco",
+    "category": "Vino Tinto",
     "description": "Finca La Celia Pinot Grigio",
     "winery": "Finca La Celia",
     "origin": "Mendoza",
     "year": "2019",
-    "price": 1242,
-    "discount": 0,
-    "recomended": "false",
+    "price": "1242",
+    "discount": "0",
+    "recomended": "true",
     "id": 2,
-    "image": "1669163337454-finca-la-celia-pinot-grigio-2019.jpg"
+    "image": ""
   },
   {
     "category": "Vino Blanco",
@@ -336,8 +336,8 @@
     "image": "1669415110349.png"
   },
   {
-    "category": "Vino Espumantes",
-    "description": "Pruebaaaa Milagros",
+    "category": "Vino Blanco",
+    "description": "Pruebaaaa XDDD",
     "winery": "Pruebaaaa Milagros",
     "origin": "Pruebaaaa EDICION",
     "year": "2000",
@@ -350,7 +350,7 @@
   {
     "category": "Vino Rosado",
     "description": "Bruno Producto",
-    "winery": "Bruno Producto",
+    "winery": "Bruno",
     "origin": "Lucas",
     "year": "2000",
     "price": "2010",
