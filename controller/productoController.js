@@ -119,9 +119,7 @@ const productoController={
 
         if (productToDelete == undefined) { return res.send('El producto a borrar no existe')}
         else{
-            const productsNew =  products.filter((product) => {product.id != req.params.id});
-
-            products = productsNew;
+            products = products.filter((product) => {product.id != req.params.id});
 
             fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
         }; 
