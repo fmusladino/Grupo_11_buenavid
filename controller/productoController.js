@@ -115,6 +115,18 @@ const productoController={
 
     eliminarProducto:(req,res)=>{
 
+        const productToDelete = products.find((product)=> product.id == req.params.id);
+
+        if (productToDelete == undefined) { return res.send('El producto a borrar no existe')}
+        else{
+            const productsNew =  products.filter((product) => {product.id != req.params.id});
+
+            products = productsNew;
+
+            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        }; 
+
+        return res.redirect('/');
     },
 
     productosRosados:(req,res)=>{
