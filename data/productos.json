@@ -28,9 +28,9 @@
     "description": "Luigi Bosca Chardonnay",
     "winery": "Luigi Bosca",
     "origin": "Mendoza",
-    "year": "2019",
-    "price": 14750,
-    "discount": 10,
+    "year": "2018",
+    "price": 15600,
+    "discount": 20,
     "recomended": "true",
     "id": 3,
     "image": "1669163415810-luigi-bosca-chardonnay-2019.jpeg"
@@ -348,16 +348,16 @@
     "image": "1669477018273.png"
   },
   {
-    "category": "Vino Rosado",
+    "category": "Vino Tinto",
     "description": "Bruno Producto",
     "winery": "Bruno",
-    "origin": "Lucas",
+    "origin": "mendoza",
     "year": "2000",
-    "price": "5000",
+    "price": "120000",
     "discount": "10",
-    "recomended": "true",
+    "recomended": "false",
     "id": 30,
-    "image": "1669482971379.png"
+    "image": "1669766979711.png"
   },
   {
     "category": "Vino Tinto",

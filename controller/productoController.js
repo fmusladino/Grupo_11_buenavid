@@ -102,9 +102,14 @@ const productoController={
           if (productoIndex == -1) {
             return res.send('El producto que busca no exsiste')
           }
+
+          const productoCampos=req.body
+          productoCampos.price = parseFloat(productoCampos.price);
+        productoCampos.discount = parseFloat(productoCampos.discount);
+
           products[productoIndex] = {
             ...products[productoIndex],
-            ...req.body,
+            ...productoCampos,
             image: req.file ? req.file.filename : req.body.image
           }
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
