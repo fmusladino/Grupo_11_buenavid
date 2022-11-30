@@ -3,7 +3,8 @@
 const { body } = require('express-validator');
 
 const validacionesParaCarga = [
-
+body('category')
+.notEmpty().withMessage('Debes que selecionar una categoria'),
     body('description')
         .notEmpty().withMessage('Debes completar con la descripción').bail()  
         .isLength({min: 10}).withMessage('la descripción debe tener como mínimo 10 caractéres'),

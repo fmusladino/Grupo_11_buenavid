@@ -1,121 +1,139 @@
 <%- include ('partials/head') %>
-<%- include ('partials/header') %> 
+    <%- include ('partials/header') %>
 
 
 
-<body>
+        <body>
 
-    <main class="main-formularios">
-    
-        <div class="cuadro-formularios">
+            <main class="main-formularios">
 
-            <h2>Por favor, cargar aquí los datos del producto a incorporar</h2>
+                <div class="cuadro-formularios">
 
-            <form action="/producto/carga" method="post" enctype="multipart/form-data">
-                <p>
-                    <label>Categoría</label>
-                    <select type="text" name="category">
-                        <option value="Vino Tinto"> Vinos Tintos </option>
-                        <option value="Vino Blanco"> Vinos Blancos </option>
-                        <option value="Vino Dulce"> Vinos Dulces </option>
-                        <option value="Vino Rosado"> Vinos Rosados </option>
-                        <option value="Vino Espumantes"> Espumantes </option>
-                        <option value="otros"> Otros </option>
-                    </select>
-                </p>
+                    <h2>Por favor, cargar aquí los datos del producto a incorporar</h2>
 
-                <p>
-                    <label>Descripción</label>
-                    <input type="text" name="description" id="description" value="<%= locals.valores ? valores.description : null %>">  
-                    <% if (locals.errors && errors.description) { %>
-                        <div class="errores-de-formularios">
-                        <%= errors.description.msg %> 
-                    </div>
-                       <% } %>     
-                </p>
-
-                <p>
-                    <label>Bodega / Productor / Fabricante</label>
-                    <input type="text" name="winery" id="winey" value="<%= locals.valores ? valores.winery : null %>">
-                    <% if (locals.errors && errors.winery) { %>
-                        <div class="errores-de-formularios">
-                        <%= errors.winery.msg %> 
-                    </div>
-                       <% } %>  
-                </p>
-            
-                <p>
-                    <label>Origen</label>
-                    <input type="text" name="origin" id="origin" value="<%= locals.valores ? valores.origin : null %>">
-                    <% if (locals.errors && errors.origin) { %>
-                        <div class="errores-de-formularios">
-                        <%= errors.origin.msg %> 
-                    </div>
-                       <% } %>  
-                </p>
-
-                <p>
-                    <label>Año</label>
-                    <input type="number" name="year" id="year" value="<%= locals.valores ? valores.year : null %>">
-                    <% if (locals.errors && errors.year) { %>
-                        <div class="errores-de-formularios">
-                        <%= errors.year.msg %> 
-                    </div>
-                       <% } %>  
-                </p>
-
-                <p>
-                    <label>Precio</label>
-                    <input type="number" name="price" id="price" value="<%= locals.valores ? valores.price : null %>">
-                    <% if (locals.errors && errors.price) { %>
-                        <div class="errores-de-formularios">
-                        <%= errors.price.msg %> 
-                    </div>
-                       <% } %>  
-                </p>           
-                <p>
-                    <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" id="discount" placeholder="el numero entre 0 y 80 sin el %" value="<%= locals.valores ? valores.discount : null %>">
-                    <% if (locals.errors && errors.discount) { %>
-                        <div class="errores-de-formularios">
-                        <%= errors.discount.msg %> 
-                    </div>
-                       <% } %>  
-                </p>
-
-                <p>
-                    <label>Agregue la foto del artículo en formato .jpg o .png</label>
-                    <input type="file" name="image" >
-                    <% if (locals.errors && errors.image) { %>
-                        <div class="errores-de-formularios">
-                        <%= errors.image.msg %> 
-                    </div>
-                       <% } %>  
-                </p>
-
-                <p>
-                    <label>Es un producto recomendado</label>
-                    <select type="boolean" name="recomended">
-                        <option value="true"> SI </option>
-                        <option value="false"> NO </option>
-                    </select>
-                </p>
-                    
-                <p>
-                    <button type="reset">Resetear formulario</button>
-                </p>
-      
-                <p>
-                    <button type="submit">GUARDAR PRODUCTO</button>
-                </p>
-
-            </form>
-           
-        </div>
-
-    </main>
+                    <form action="/producto/carga" method="post" enctype="multipart/form-data">
 
 
 
-</body>
-</html>
+                        <p>
+                            <label>Categoría</label>
+                            <select type="text" name="category">
+                                <option value="">Selecciona una categoria</option>
+                                <% let categories=[ "Vino Tinto","Vino Blanco","Vino Dulce","Vino Espumantes"] %>
+                                    <% for( const oneCategory of categories) { %>
+                                        <option
+                                            value="<%= oneCategory %>"
+                                            <%= locals.valores && (oneCategory === valores.category) ? 'selected': null%>
+                                            > <%= oneCategory %> </option>
+                                        <% } %>
+                            </select>
+                            <% if (locals.errors && errors.category) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.category.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+
+                        <p>
+                            <label>Descripción</label>
+                            <input type="text" name="description" id="description"
+                                value="<%= locals.valores ? valores.description : null %>">
+                            <% if (locals.errors && errors.description) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.description.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+
+                        <p>
+                            <label>Bodega / Productor / Fabricante</label>
+                            <input type="text" name="winery" id="winey"
+                                value="<%= locals.valores ? valores.winery : null %>">
+                            <% if (locals.errors && errors.winery) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.winery.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+
+                        <p>
+                            <label>Origen</label>
+                            <input type="text" name="origin" id="origin"
+                                value="<%= locals.valores ? valores.origin : null %>">
+                            <% if (locals.errors && errors.origin) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.origin.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+
+                        <p>
+                            <label>Año</label>
+                            <input type="number" name="year" id="year"
+                                value="<%= locals.valores ? valores.year : null %>">
+                            <% if (locals.errors && errors.year) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.year.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+
+                        <p>
+                            <label>Precio</label>
+                            <input type="number" name="price" id="price"
+                                value="<%= locals.valores ? valores.price : null %>">
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.price.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+                        <p>
+                            <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
+                            <input type="number" name="discount" id="discount"
+                                placeholder="el numero entre 0 y 80 sin el %"
+                                value="<%= locals.valores ? valores.discount : null %>">
+                            <% if (locals.errors && errors.discount) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.discount.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+
+                        <p>
+                            <label>Agregue la foto del artículo en formato .jpg o .png</label>
+                            <input type="file" name="image">
+                            <% if (locals.errors && errors.image) { %>
+                                <div class="errores-de-formularios">
+                                    <%= errors.image.msg %>
+                                </div>
+                                <% } %>
+                        </p>
+
+                        <p>
+                            <label>Es un producto recomendado</label>
+                            <select type="boolean" name="recomended">
+                                <option value="true"> SI </option>
+                                <option value="false"> NO </option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <button type="reset">Resetear formulario</button>
+                        </p>
+
+                        <p>
+                            <button type="submit">GUARDAR PRODUCTO</button>
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </main>
+
+
+
+        </body>
+
+        </html>

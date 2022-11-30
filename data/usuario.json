@@ -2,10 +2,10 @@
     "id": 1,
     "first_name": "Lautaro",
     "last_name": "Taurino",
-    "age": "20",
+    "date": "20-01-1986",
     "email": "lt@gmail.com",
     "cellphone": 1159728790,
-    "preferences": "Tintos",
+    "preferences": "Vino Tinto",
     "password": "1234",
     "repeatPassword": "1234"
 }]
