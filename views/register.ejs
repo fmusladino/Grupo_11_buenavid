@@ -5,7 +5,7 @@
     
     <div class="cuadro-formularios">
         <h2>Registrate</h2>
-        <form action="/" method="post">
+        <form action="/usuario/registro" method="post" enctype="multipart/form-data">
             <p>
               <label>Nombre/s</label>
               <input type="text" name="first_name" id="first_name">
@@ -33,13 +33,13 @@
 
             <div class="checkbox-preferencias">
                 <p>¿Cuáles son tus preferencias?</p>
-                    <input type="checkbox" name="tintos" value="Tintos">
+                    <input type="checkbox" name="preferences" value="Tintos">
                     <label for="tintos">Tintos</label>
-                    <input type="checkbox" name="blancos" value="Blancos">
+                    <input type="checkbox" name="preferences" value="Blancos">
                     <label for="blancos">Blancos</label>
-                    <input type="checkbox" name="rosados" value="Rosados">
+                    <input type="checkbox" name="preferences" value="Rosados">
                     <label for="rosados">Rosados</label>
-                    <input type="checkbox" name="espumosos" value="Espumosos">
+                    <input type="checkbox" name="preferences" value="Espumosos">
                     <label for="espumosos">Espumosos</label>
             </div>
       
