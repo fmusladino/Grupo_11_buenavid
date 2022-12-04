@@ -109,7 +109,7 @@ const productoController={
 
           products[productoIndex] = {
             ...products[productoIndex],
-            ...productoCampos,
+            ...req.body,
             image: req.file ? req.file.filename : req.body.image
           }
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
@@ -120,14 +120,17 @@ const productoController={
 
     eliminarProducto:(req,res)=>{
 
-        const productToDelete = products.find((product)=> product.id == req.params.id);
+        //const productToDelete = products.find((product)=> product.id == req.params.id);
 
-        if (productToDelete == undefined) { return res.send('El producto a borrar no existe')}
-        else{
-            products = products.filter((product) => {product.id != req.params.id});
+        //if (productToDelete == undefined) { return res.send('El producto a borrar no existe')}
+        //else{
+                
+        products = products.filter((product) => {product.id != req.params.id});
 
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        }; 
+            
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+       
+        //}; 
 
         return res.redirect('/');
     },
