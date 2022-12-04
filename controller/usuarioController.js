@@ -3,17 +3,25 @@ const fs = require ('fs');
 
 const {validationResult} = require('express-validator');
 
-const productsFilePath = path.join(__dirname, '../data/productos.json');
+const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
 
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
 
 const usuarioController={
-    login: (req,res) => {
-        return res.render ('login')
+    mostrarFormularioLogin: (req,res) => {return res.render ('login')},
+    mostrarFormularioRegistroUsuario: (req,res) => {return res.render ('register')},
+    mostrarFormularioModificarUsuario: (req, res) => {
+        //lógica para mostrar formulario para modificar campos de un usuario pre-cargado
     },
-    register: (req,res) => {
-        return res.render ('register')
+    almacenarNuevoUsuario: (req,res) => {
+        //logica para almacenar nuevo usuario
+    },
+    almacenaUsuarioModificado: (req, res) => {
+        //lógica para almacenar modificacion de usuario
+    },
+    borrarUsuario: (req,res) => {
+        //lógica para borrar usuario
     }
 }
 
