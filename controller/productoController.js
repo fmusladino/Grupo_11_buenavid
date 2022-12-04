@@ -94,7 +94,7 @@ const productoController={
          })
          }
 
-      const productoIndex=  products.findIndex(
+        const productoIndex=  products.findIndex(
             (product) => {
               return product.id == req.params.id
             }
@@ -103,8 +103,8 @@ const productoController={
             return res.send('El producto que busca no exsiste')
           }
 
-          const productoCampos=req.body
-          productoCampos.price = parseFloat(productoCampos.price);
+        const productoCampos=req.body
+        productoCampos.price = parseFloat(productoCampos.price);
         productoCampos.discount = parseFloat(productoCampos.discount);
 
           products[productoIndex] = {
@@ -118,7 +118,7 @@ const productoController={
           return res.redirect('/');
     },
 
-    eliminarProducto:(req,res)=>{
+    eliminarProducto:(req,res)=>{;
                 
         const newProducts = products.filter((product) => product.id != req.params.id);
         
