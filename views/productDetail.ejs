@@ -51,8 +51,8 @@
                         </div>
                         <div class="btn-crear">
                             
-                            <form action="/producto/eliminar/<%= productoSiSuIdExsiste.id %>?_method=DELETE" method="POST">
-                                <button class="btn-mod" type="submit"> Eliminar Producto </button>
+                            <form class="btn-mod" action="/producto/eliminar/<%= productoSiSuIdExsiste.id %>?_method=DELETE" method="POST">
+                                <button type="submit"> Eliminar Producto </button>
                             </form>
 
                             <button class="btn-mod"><a href="/producto/edicion/<%= productoSiSuIdExsiste.id %> "> Editar Producto</a></button>
