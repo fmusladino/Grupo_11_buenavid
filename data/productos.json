@@ -312,18 +312,6 @@
     "image": "1669415110349.png"
   },
   {
-    "category": "Vino Blanco",
-    "description": "Pruebaaaa XDDD",
-    "winery": "Pruebaaaa Milagros",
-    "origin": "Pruebaaaa EDICION",
-    "year": "2000",
-    "price": 2010,
-    "discount": 10,
-    "recomended": "true",
-    "id": 29,
-    "image": "1669477018273.png"
-  },
-  {
     "category": "Vino Tinto",
     "description": "vino tinto cualquiera",
     "winery": "Resero",
