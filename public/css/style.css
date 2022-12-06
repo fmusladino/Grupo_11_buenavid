@@ -689,11 +689,10 @@ main promociones .articuloPromo{
     .contenedor-info{
         width: 50%;
     }
-    .contenedor-fotos{
+    .contenedor-fotos-detalle{
         border: 1px solid rgba(0,0,0,.1);
         border-radius: 10px;
         padding: 10px 10px;
-        width: 20%;
         margin: auto;
 
     }
