@@ -36,6 +36,8 @@ router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
 router.put('/edicion/:id',uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
 
+router.delete('/eliminar/:id', productoController.eliminarProducto);
+
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/', uploadFile.single('image'), mainController.controller.productDetail);
 

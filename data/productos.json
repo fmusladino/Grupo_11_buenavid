@@ -12,18 +12,6 @@
     "image": "1669163181170-chacabuco-sauvignon-blanc.jpg"
   },
   {
-    "category": "Vino Tinto",
-    "description": "Finca La Celia Pinot Grigio",
-    "winery": "Finca La Celia",
-    "origin": "Mendoza",
-    "year": "2019",
-    "price": 1242,
-    "discount": 0,
-    "recomended": "true",
-    "id": 2,
-    "image": ""
-  },
-  {
     "category": "Vino Blanco",
     "description": "Luigi Bosca Chardonnay",
     "winery": "Luigi Bosca",
@@ -142,18 +130,6 @@
     "recomended": "true",
     "id": 12,
     "image": "1669164396098-dv-catena-malbec-2021.jpg"
-  },
-  {
-    "category": "Vino Tinto",
-    "description": "Familia Schroeder Pinot Noir",
-    "winery": "Familia Schroeder",
-    "origin": "Neuquén",
-    "year": "2018",
-    "price": 4180,
-    "discount": 10,
-    "recomended": "false",
-    "id": 13,
-    "image": "1669164459422-familia-schroeder-pinot-noir-2018.jpeg"
   },
   {
     "category": "Vino Tinto",
@@ -334,89 +310,5 @@
     "recomended": "true",
     "id": 28,
     "image": "1669415110349.png"
-  },
-  {
-    "category": "Vino Blanco",
-    "description": "Pruebaaaa XDDD",
-    "winery": "Pruebaaaa Milagros",
-    "origin": "Pruebaaaa EDICION",
-    "year": "2000",
-    "price": 2010,
-    "discount": 10,
-    "recomended": "true",
-    "id": 29,
-    "image": "1669477018273.png"
-  },
-  {
-    "category": "Vino Tinto",
-    "description": "Bruno Producto",
-    "winery": "FLORES",
-    "origin": "mendoza",
-    "year": "2000",
-    "price": 120000,
-    "discount": 10,
-    "recomended": "true",
-    "id": 30,
-    "image": "1669767247105.png"
-  },
-  {
-    "category": "Vino Tinto",
-    "description": "vino tinto cualquiera",
-    "winery": "Resero",
-    "origin": "San Juan",
-    "year": "2022",
-    "price": 100,
-    "discount": 80,
-    "recomended": "true",
-    "id": 31,
-    "image": "1669666891002.png"
-  },
-  {
-    "category": "Vino Blanco",
-    "description": "vino tintomdasja",
-    "winery": "flores",
-    "origin": "mendoza",
-    "year": "2000",
-    "price": 200000,
-    "discount": 10,
-    "recomended": "true",
-    "id": 32,
-    "image": "1669778810881.png"
-  },
-  {
-    "category": "Vino Rosado",
-    "description": "Pruebaaaa EDICION",
-    "winery": "Pruebaaaa EDICION",
-    "origin": "image",
-    "year": "2000",
-    "price": 21094939,
-    "discount": 70,
-    "recomended": "false",
-    "id": 33,
-    "image": "1669778941318.png"
-  },
-  {
-    "category": "Vino Tinto",
-    "description": "Prueba Vino tinto",
-    "winery": "Prueba Vino tinto",
-    "origin": "Prueba Vino tinto",
-    "year": "2000",
-    "price": 210000,
-    "discount": 20,
-    "recomended": "true",
-    "id": 34,
-    "image": "1669779086992.png"
-  },
-  {
-    "category": "Vino Rosado",
-    "description": "fokapdjoiasjdoiajs",
-    "winery": "ansoisaiojfoisajd",
-    "origin": "fkasopja",
-    "year": "2000",
-    "price": 210000,
-    "discount": 10,
-    "recomended": "false",
-    "id": 35,
-    "image": "1669779208078.png"
   }
 ]

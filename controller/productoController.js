@@ -94,7 +94,7 @@ const productoController={
          })
          }
 
-      const productoIndex=  products.findIndex(
+        const productoIndex=  products.findIndex(
             (product) => {
               return product.id == req.params.id
             }
@@ -103,13 +103,13 @@ const productoController={
             return res.send('El producto que busca no exsiste')
           }
 
-          const productoCampos=req.body
-          productoCampos.price = parseFloat(productoCampos.price);
+        const productoCampos=req.body
+        productoCampos.price = parseFloat(productoCampos.price);
         productoCampos.discount = parseFloat(productoCampos.discount);
 
           products[productoIndex] = {
             ...products[productoIndex],
-            ...productoCampos,
+            ...req.body,
             image: req.file ? req.file.filename : req.body.image
           }
           fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
@@ -118,17 +118,12 @@ const productoController={
           return res.redirect('/');
     },
 
-    eliminarProducto:(req,res)=>{
-
-        const productToDelete = products.find((product)=> product.id == req.params.id);
-
-        if (productToDelete == undefined) { return res.send('El producto a borrar no existe')}
-        else{
-            products = products.filter((product) => {product.id != req.params.id});
-
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-        }; 
-
+    eliminarProducto:(req,res)=>{;
+                
+        const newProducts = products.filter((product) => product.id != req.params.id);
+        
+        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, 2));
+       
         return res.redirect('/');
     },
 
