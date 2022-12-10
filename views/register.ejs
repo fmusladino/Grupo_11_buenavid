@@ -6,6 +6,16 @@
     <div class="cuadro-formularios">
         <h2>Registrate</h2>
         <form action="/usuario/registro" method="post" enctype="multipart/form-data">
+            
+            
+            <p>
+                <label>Seleccione su Rol</label>
+                <select type="text" name="rol" id="rol"> 
+                    <option value="admin"> Administrador</option>
+                    <option value="cliente"> Cliente</option>
+                </select>
+              
+            
             <p>
               <label>Nombre/s</label>
               <input type="text" name="first_name" id="first_name">
@@ -36,11 +46,6 @@
               <input type="password" name="password" minlength="6">
               <i class="fas fa-info-circle"> Requiere mínimo 6 caracteres</i>
 
-            </p>
-
-            <p>
-                <label>Repetir Contraseña</label>
-                <input type="password" name="password" minlength="6">
             </p>
       
             <p>

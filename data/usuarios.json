@@ -1,9 +1,22 @@
-[{
+[
+  {
     "id": 1,
     "first_name": "Lautaro",
     "last_name": "Taurino",
     "date": "20-01-1986",
     "email": "lt@gmail.com",
     "cellphone": 1159728790,
-    "password": "1234"
-}]
+    "password": "1234",
+    "rol": "admin"
+  },
+  {
+    "rol": "admin",
+    "first_name": "Alejandro Manuel",
+    "last_name": "Torres",
+    "date": "1967-09-27",
+    "email": "aleto67@gmail.com",
+    "cellphone": "1153405380",
+    "password": "monito123",
+    "id": 2
+  }
+]

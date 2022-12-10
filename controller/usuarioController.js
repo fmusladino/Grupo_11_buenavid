@@ -14,9 +14,22 @@ const usuarioController={
     mostrarFormularioModificarUsuario: (req, res) => {
         //lógica para mostrar formulario para modificar campos de un usuario pre-cargado
     },
+
     almacenarNuevoUsuario: (req,res) => {
-        //logica para almacenar nuevo usuario
-    },
+        
+        const nuevoUsuario = req.body;
+      
+        //asignanción del id al nuevo usuario, una mas que el último id
+        const largoBD = usuarios.length;
+        nuevoUsuario.id = (usuarios[largoBD - 1].id)+1;
+
+        usuarios.push(nuevoUsuario);
+
+        fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
+
+        return res.redirect('/');                  
+    }, 
+
     almacenaUsuarioModificado: (req, res) => {
         //lógica para almacenar modificacion de usuario
     },
