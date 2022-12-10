@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
         cb(null, './public/images/productos')
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now() + '.png');
+        cb(null, Date.now() + file.originalname);
     }
 });
 const uploadFile = multer({storage});
