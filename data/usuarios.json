@@ -18,5 +18,45 @@
     "cellphone": "1153405380",
     "password": "monito123",
     "id": 2
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Facundo",
+    "last_name": "García",
+    "date": "2004-02-14",
+    "email": "fg@gmail.com",
+    "cellphone": "1133334444",
+    "password": "monito123",
+    "id": 3
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Nicolás",
+    "last_name": "Rojas",
+    "date": "2006-07-02",
+    "email": "nr@gmail.com",
+    "cellphone": "1122338899",
+    "password": "123monito",
+    "id": 4
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Santiago",
+    "last_name": "Uriburu",
+    "date": "2009-01-29",
+    "email": "su@gmail.com",
+    "cellphone": "1199887733",
+    "password": "monito123",
+    "id": 5
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Moira",
+    "last_name": "Sanchez",
+    "date": "1973-08-03",
+    "email": "ms@gmail.com",
+    "cellphone": "1188776655",
+    "password": "monito123",
+    "id": 6
   }
 ]

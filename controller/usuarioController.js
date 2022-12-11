@@ -11,8 +11,14 @@ const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 const usuarioController={
     mostrarFormularioLogin: (req,res) => {return res.render ('login')},
     mostrarFormularioRegistroUsuario: (req,res) => {return res.render ('register')},
+
     mostrarFormularioModificarUsuario: (req, res) => {
-        //lógica para mostrar formulario para modificar campos de un usuario pre-cargado
+        const usuarioId = req.params.id;       
+        const usuarioAMostrar = usuarios.find((user) => user.id == usuarioId);
+        if (usuarioAMostrar == undefined) {return res.render('not-found')};
+        //en la vista hay que referirse a "usuario" como el objeto que contiene los campos a mostrar
+        const viewData = {usuario: usuarioAMostrar};
+        return res.render('editarUsuario', viewData);
     },
 
     almacenarNuevoUsuario: (req,res) => {
@@ -32,6 +38,23 @@ const usuarioController={
 
     almacenaUsuarioModificado: (req, res) => {
         //lógica para almacenar modificacion de usuario
+        
+        const usuarioIndex=  usuarios.findIndex(
+            (user) => {
+              return user.id == req.params.id
+            }
+          )
+          if (usuarioIndex == -1) {
+            return res.send('El usuario que busca no existe')
+          }
+        const usuarioCampos=req.body
+          usuarios[usuarioIndex] = {
+            ...usuarios[usuarioIndex],
+            ...req.body,
+          }
+          fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
+
+        return res.redirect('/');                  
     },
     borrarUsuario: (req,res) => {
         //lógica para borrar usuario

@@ -23,9 +23,9 @@ const usuarioController = require('../controller/usuarioController');
 //Rutas
 router.get('/login', usuarioController.mostrarFormularioLogin);
 router.get('/registro', usuarioController.mostrarFormularioRegistroUsuario);
-router.get('/modificar/:id', usuarioController.mostrarFormularioModificarUsuario);
+router.get('/editar/:id', usuarioController.mostrarFormularioModificarUsuario);
 router.post('/registro', uploadFile.single('image'), usuarioController.almacenarNuevoUsuario);
-router.put('/modificar/:id',uploadFile.single('image'),usuarioController.almacenaUsuarioModificado);
+router.put('/editar/:id',uploadFile.single('image'),usuarioController.almacenaUsuarioModificado);
 router.delete('/borrar/:id', usuarioController.borrarUsuario);
 
 module.exports = router;

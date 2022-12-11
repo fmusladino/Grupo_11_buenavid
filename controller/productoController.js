@@ -99,7 +99,7 @@ const productoController={
             }
           )
           if (productoIndex == -1) {
-            return res.send('El producto que busca no exsiste')
+            return res.send('El producto que busca no existe')
           }
 
         const productoCampos=req.body
