@@ -57,7 +57,12 @@ const usuarioController={
         return res.redirect('/');                  
     },
     borrarUsuario: (req,res) => {
-        //lógica para borrar usuario
+
+      const newUsuarios = usuarios.filter((user) => user.id != req.params.id);
+        
+      fs.writeFileSync(usuariosFilePath, JSON.stringify(newUsuarios, null, 2));
+
+      return res.redirect('/');
     }
 }
 

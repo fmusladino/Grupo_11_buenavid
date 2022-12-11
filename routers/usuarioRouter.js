@@ -26,6 +26,6 @@ router.get('/registro', usuarioController.mostrarFormularioRegistroUsuario);
 router.get('/editar/:id', usuarioController.mostrarFormularioModificarUsuario);
 router.post('/registro', uploadFile.single('image'), usuarioController.almacenarNuevoUsuario);
 router.put('/editar/:id',uploadFile.single('image'),usuarioController.almacenaUsuarioModificado);
-router.delete('/borrar/:id', usuarioController.borrarUsuario);
+router.delete('/eliminar/:id', usuarioController.borrarUsuario);
 
 module.exports = router;

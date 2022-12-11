@@ -52,6 +52,12 @@
                 <button type="submit">Actualizar</button>
             </p>
           </form>
+          <form action="/usuario/eliminar/<%= usuario.id %>?_method=DELETE" method="POST">
+            <h4>PRESIONE EL SIGUIENTE BOTÓN SI REALMENTE DESEA ELIMINAR A ESTE USUARIO</h4>
+            <P>
+                <button type="submit"> Eliminar Usuario </button>
+            </P>
+        </form>
        
     </div>
 

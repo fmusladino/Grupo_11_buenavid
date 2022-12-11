@@ -31,16 +31,6 @@
   },
   {
     "rol": "cliente",
-    "first_name": "Nicolás",
-    "last_name": "Rojas",
-    "date": "2006-07-02",
-    "email": "nr@gmail.com",
-    "cellphone": "1122338899",
-    "password": "123monito",
-    "id": 4
-  },
-  {
-    "rol": "cliente",
     "first_name": "Santiago",
     "last_name": "Uriburu",
     "date": "2009-01-29",
