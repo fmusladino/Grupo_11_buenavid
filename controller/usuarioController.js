@@ -98,7 +98,7 @@ const usuarioController={
           return user.email == req.body.email
       })
       if (usuarioIndex == -1) {
-        return res.send('El usuario que busca no existe')
+        return res.render('usuarioNotFound')
       }
       let check = bcrypt.compareSync(req.body.password, usuarios[usuarioIndex].password)
       if (check) {
