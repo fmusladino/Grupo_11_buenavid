@@ -48,5 +48,25 @@
     "cellphone": "1188776655",
     "password": "monito123",
     "id": 6
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Fulano",
+    "last_name": "Detal",
+    "date": "2001-01-01",
+    "email": "fd@gmail.com",
+    "cellphone": "1155556666",
+    "password": "",
+    "id": 7
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Mengano",
+    "last_name": "Detal",
+    "date": "2004-01-01",
+    "email": "mdt@gmail.com",
+    "cellphone": "1199992222",
+    "password": "$2a$10$P534IEeg4pfQs5ihmijkCOfxyYEacwPXB1rPVwE192qDRQ8cgjowK",
+    "id": 8
   }
 ]

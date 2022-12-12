@@ -1,5 +1,6 @@
 const path = require ('path');
 const fs = require ('fs');
+const bcrypt = require('bcryptjs');
 
 const {validationResult} = require('express-validator');
 
@@ -28,6 +29,8 @@ const usuarioController={
         //asignanción del id al nuevo usuario, una mas que el último id
         const largoBD = usuarios.length;
         nuevoUsuario.id = (usuarios[largoBD - 1].id)+1;
+
+        nuevoUsuario.password = bcrypt.hashSync(req.body.password, 10);
 
         usuarios.push(nuevoUsuario);
 
