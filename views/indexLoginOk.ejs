@@ -1,0 +1,61 @@
+<%- include ('partials/head') %>
+    <%- include ('partials/headerLogin') %>
+
+
+    <main class="main-cuerpo">
+        <section>
+        <h3 class="prodes">Productos en Promocion</h3><br>    
+        <div class="products">
+            <% productosEnPromocion.forEach(productosEnPromocion => { %>
+                <article>
+                    <div class="contenedor-fts">
+                    <img src="images/productos/<%= productosEnPromocion.image %> " alt="pinot" class="product_img">
+                </div>
+                    <div class="main-article">
+                        <h4 class="description"><%= productosEnPromocion.winery %> </h4>
+                        <h5 class="description"> <%= productosEnPromocion.description %> </h5>
+                        <div class="flex-container">
+                            <p class="price">$ <%= productosEnPromocion.price %> </p>
+                            <p class="discount"><%= productosEnPromocion.discount %>% off</p>
+                        </div>
+                        
+                    </div>
+                    <button class="btn-carr"><a href="/producto/detalle/<%= productosEnPromocion.id %>"> Tienda </a></button>
+                </article>
+            <% }) %>
+    </section>
+    <section class="offers"><br>
+        <h3 class="ofer">Sugeridos del Mes</h3><br>
+        <br>
+        <br>
+        
+        <div class="products">
+            <% productosRecomendados.forEach(productosRecomendados => { %>
+                <article>
+                    <div class="contenedor-fts">
+                    <img src="images/productos/<%= productosRecomendados.image %> " alt="pinot" class="product_img">
+                    </div>
+                    <div class="main-article">
+                        <h4 class="description"><%= productosRecomendados.winery %> </h4>
+                        <h5 class="description"> <%= productosRecomendados.description %> </h5>
+                        <div class="flex-container">
+                            <p class="price">$ <%= productosRecomendados.price %> </p>
+                            <p class="discount"><%= productosRecomendados.discount %>% off</p>
+                        </div>
+                        
+                    </div>
+                    <button class="btn-carr"><a href="/producto/detalle/<%= productosRecomendados.id %>"> Tienda </a></button>
+                </article>
+            <% }) %>
+    </section>
+        </div>
+        </main>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <%- include ('partials/footer') %>
+            </body>
+
+            </html>

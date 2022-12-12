@@ -8,6 +8,10 @@ const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
 
 const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
+const productsFilePath = path.join(__dirname, '../data/productos.json');
+
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const usuarioController={
     mostrarFormularioLogin: (req,res) => {return res.render ('login')},
@@ -83,6 +87,35 @@ const usuarioController={
       fs.writeFileSync(usuariosFilePath, JSON.stringify(newUsuarios, null, 2));
 
       return res.redirect('/');
+    },
+
+    mostrarVistaLoginOk: (req, res) => {
+      //lógica para controlar los valores ingresados contra los de la BD
+      // si el usuario existe y el password es el correcto entones mostrar vista indexLoginOk
+
+      const usuarioIndex=  usuarios.findIndex(
+          (user) => {
+          return user.email == req.body.email
+      })
+      if (usuarioIndex == -1) {
+        return res.send('El usuario que busca no existe')
+      }
+      let check = bcrypt.compareSync(req.body.password, usuarios[usuarioIndex].password)
+      if (check) {
+
+        const productosRecomendados = products.filter(product => product.recomended=="true");
+        const productosEnPromocion = products.filter(product=> product.discount >= 10)
+        const viewData={
+            productosRecomendados: productosRecomendados,
+            productosEnPromocion: productosEnPromocion,
+            usuario: usuarios[usuarioIndex]
+        };
+        return res.render('indexLoginOk', viewData);
+
+      } else{
+        return res.render('login');
+      }
+    
     }
 }
 
