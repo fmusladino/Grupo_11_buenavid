@@ -12,25 +12,13 @@
     "image": "1669163181170-chacabuco-sauvignon-blanc.jpg"
   },
   {
-    "category": "Vino Tinto",
-    "description": "Finca La Celia Pinot Grigio",
-    "winery": "Finca La Celia",
-    "origin": "Mendoza",
-    "year": "2019",
-    "price": "1242",
-    "discount": "0",
-    "recomended": "true",
-    "id": 2,
-    "image": ""
-  },
-  {
     "category": "Vino Blanco",
     "description": "Luigi Bosca Chardonnay",
     "winery": "Luigi Bosca",
     "origin": "Mendoza",
-    "year": "2019",
-    "price": 14750,
-    "discount": 10,
+    "year": "2018",
+    "price": 16000,
+    "discount": 20,
     "recomended": "true",
     "id": 3,
     "image": "1669163415810-luigi-bosca-chardonnay-2019.jpeg"
@@ -41,8 +29,8 @@
     "winery": "Mendel",
     "origin": "Mendoza",
     "year": "2019",
-    "price": "3000",
-    "discount": "10",
+    "price": 3000,
+    "discount": 10,
     "recomended": "true",
     "id": 4,
     "image": "1669163637649-lunta-torrontes-2019.png"
@@ -53,8 +41,8 @@
     "winery": "Lagarde",
     "origin": "Mendoza",
     "year": "2021",
-    "price": "7500",
-    "discount": "150",
+    "price": 9000,
+    "discount": 20,
     "recomended": "false",
     "id": 5,
     "image": "1669163718993-proyecto-hermanas-sauvignon-blanc-2021.jpeg"
@@ -101,11 +89,11 @@
     "winery": "Achaval Ferrer",
     "origin": "Mendoza",
     "year": "2016",
-    "price": "2840",
-    "discount": "8",
-    "recomended": "false",
+    "price": 10000,
+    "discount": 10,
+    "recomended": "true",
     "id": 9,
-    "image": "1669164156470-achaval-ferrer-malbec-2016.jpg"
+    "image": "16706788905671669164156470-achaval-ferrer-malbec-2016.jpg"
   },
   {
     "category": "Vino Tinto",
@@ -142,18 +130,6 @@
     "recomended": "true",
     "id": 12,
     "image": "1669164396098-dv-catena-malbec-2021.jpg"
-  },
-  {
-    "category": "Vino Tinto",
-    "description": "Familia Schroeder Pinot Noir",
-    "winery": "Familia Schroeder",
-    "origin": "Neuquén",
-    "year": "2018",
-    "price": 4180,
-    "discount": 10,
-    "recomended": "false",
-    "id": 13,
-    "image": "1669164459422-familia-schroeder-pinot-noir-2018.jpeg"
   },
   {
     "category": "Vino Tinto",
@@ -324,51 +300,15 @@
     "image": "1669165287161-jasmine-monet-extra-brut.jpg"
   },
   {
-    "category": "Vino Tinto",
-    "description": "vino tinto de prueba",
+    "category": "Vino Espumantes",
+    "description": "vino blanco de prueba",
     "winery": "Toro Viejo",
     "origin": "Gonzalez Catán",
     "year": "2022",
-    "price": 100,
-    "discount": 0,
+    "price": 15002,
+    "discount": 22,
     "recomended": "true",
     "id": 28,
-    "image": "1669415110349.png"
-  },
-  {
-    "category": "Vino Blanco",
-    "description": "Pruebaaaa XDDD",
-    "winery": "Pruebaaaa Milagros",
-    "origin": "Pruebaaaa EDICION",
-    "year": "2000",
-    "price": 2010,
-    "discount": 10,
-    "recomended": "true",
-    "id": 29,
-    "image": "1669477018273.png"
-  },
-  {
-    "category": "Vino Rosado",
-    "description": "Bruno Producto",
-    "winery": "Bruno",
-    "origin": "Lucas",
-    "year": "2000",
-    "price": "5000",
-    "discount": "10",
-    "recomended": "true",
-    "id": 30,
-    "image": "1669482971379.png"
-  },
-  {
-    "category": "Vino Tinto",
-    "description": "vino tinto cualquiera",
-    "winery": "Resero",
-    "origin": "San Juan",
-    "year": "2022",
-    "price": 100,
-    "discount": 80,
-    "recomended": "true",
-    "id": 31,
-    "image": "1669666891002.png"
+    "image": "1670678645596Princesa Leia.jpg"
   }
 ]

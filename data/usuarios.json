@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "first_name": "Lautaro",
+    "last_name": "Taurino",
+    "date": "20-01-1986",
+    "email": "lt@gmail.com",
+    "cellphone": 1159728790,
+    "password": "1234",
+    "rol": "admin"
+  },
+  {
+    "rol": "admin",
+    "first_name": "Alejandro Manuel",
+    "last_name": "Torres",
+    "date": "1967-09-27",
+    "email": "aleto67@gmail.com",
+    "cellphone": "1153405380",
+    "password": "monito123",
+    "id": 2
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Facundo",
+    "last_name": "García",
+    "date": "2004-02-14",
+    "email": "fg@gmail.com",
+    "cellphone": "1133334444",
+    "password": "monito123",
+    "id": 3
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Santiago",
+    "last_name": "Uriburu",
+    "date": "2009-01-29",
+    "email": "su@gmail.com",
+    "cellphone": "1199887733",
+    "password": "monito123",
+    "id": 5
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Moira",
+    "last_name": "Sanchez",
+    "date": "1973-08-03",
+    "email": "ms@gmail.com",
+    "cellphone": "1188776655",
+    "password": "monito123",
+    "id": 6
+  }
+]

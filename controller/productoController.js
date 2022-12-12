@@ -16,13 +16,13 @@ const productoController={
 
     productDetail: (req,res) => {
         const productoID=req.params.productsId
-       const productoSiSuIdExsiste= products.find((product)=>product.id== productoID);
-       if (productoSiSuIdExsiste == undefined) {
+        const productoSiSuIdExsiste= products.find((product)=>product.id== productoID);
+        if (productoSiSuIdExsiste == undefined) {
         return res.render("not-found");
-      }
-      return res.render("productDetail", {
-          productoSiSuIdExsiste: productoSiSuIdExsiste,
-      });
+        }
+        return res.render("productDetail", {
+            productoSiSuIdExsiste: productoSiSuIdExsiste,
+        });
     },
 
     mostrarFormularioCargaProducto: (req, res) => {
@@ -37,8 +37,8 @@ const productoController={
 
         if(resultValidation.errors.length > 0){
         return res.render('formCarga',{
-           errors: resultValidation.mapped(),
-          valores: req.body
+            errors: resultValidation.mapped(),
+            valores: req.body
         })
         }
         const nuevoProducto = req.body;
@@ -73,14 +73,11 @@ const productoController={
 
     almacenaProductoEditado: (req,res) => {
 
-
-
-
         const resultValidation = validationResult(req);
 
         if(resultValidation.errors.length > 0){
          return res.render('formEdicion',{
-             errors: resultValidation.mapped(),
+            errors: resultValidation.mapped(),
             product: {
                 price: req.body.price,
                 description: req.body.description,
@@ -88,20 +85,27 @@ const productoController={
                 origin: req.body.origin,
                 year:req.body.year,
                 discount:req.body.discount,
-                id: req.params.id
-                
+                id: req.params.id,
+                //agregados para ver si se soluciona la falta de imagen y category ante error en la edicion
+                image: req.body.image,
+                category: req.body.category
             }
          })
-         }
+        }
 
-      const productoIndex=  products.findIndex(
+        const productoIndex=  products.findIndex(
             (product) => {
               return product.id == req.params.id
             }
           )
           if (productoIndex == -1) {
-            return res.send('El producto que busca no exsiste')
+            return res.send('El producto que busca no existe')
           }
+
+        const productoCampos=req.body
+        productoCampos.price = parseFloat(productoCampos.price);
+        productoCampos.discount = parseFloat(productoCampos.discount);
+
           products[productoIndex] = {
             ...products[productoIndex],
             ...req.body,
@@ -113,8 +117,13 @@ const productoController={
           return res.redirect('/');
     },
 
-    eliminarProducto:(req,res)=>{
-
+    eliminarProducto:(req,res)=>{;
+                
+        const newProducts = products.filter((product) => product.id != req.params.id);
+        
+        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, 2));
+       
+        return res.redirect('/');
     },
 
     productosRosados:(req,res)=>{

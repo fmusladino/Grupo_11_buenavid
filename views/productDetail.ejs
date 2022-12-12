@@ -11,9 +11,9 @@
             </div>  
                 <div class="contenedor-gral">
                     <div class="contenedor-detalle">
-                        <div class="contenedor-fotos">
+                        <div class="contenedor-fotos-detalle">
                             
-                        <img src="/Images/productos/<%= productoSiSuIdExsiste.image %> " alt="">
+                        <img src="/Images/productos/<%= productoSiSuIdExsiste.image %> " class="tamano-imagen-detalle" alt="">
                         </div>
 
                         <div class="contenedor-texto">
@@ -45,12 +45,22 @@
                         <div class="caracteristica">
                             <div class="info-producto">
                                 <h2>Caracteristicas Principales</h2>
+                                <ul class="ordenar-listado-caractPrincipales">
+                                   <h4>Descripción:</h4> <li><%=productoSiSuIdExsiste.description %> </li>
+                                  <h4>Bodega:</h4><li><%=productoSiSuIdExsiste.winery %> </li>
+                                    <h4>Origen:</h4><li><%=productoSiSuIdExsiste.origin %> </li>
+                                    <h4>Año:</h4><li><%=productoSiSuIdExsiste.year %> </li>
+                                </ul>
 
                             </div>
                             <br>
                         </div>
                         <div class="btn-crear">
-                            <button class="btn-mod"><a href="/producto/carga"> Crear Producto</a></button>
+                            
+                            <form class="btn-mod" action="/producto/eliminar/<%= productoSiSuIdExsiste.id %>?_method=DELETE" method="POST">
+                                <button type="submit"> Eliminar Producto </button>
+                            </form>
+
                             <button class="btn-mod"><a href="/producto/edicion/<%= productoSiSuIdExsiste.id %> "> Editar Producto</a></button>
                         </div>
                     </div>

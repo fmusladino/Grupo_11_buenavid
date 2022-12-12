@@ -4,8 +4,8 @@
    <main class="main-formularios">
     
     <div class="cuadro-formularios">
-        <h2>Registrate</h2>
-        <form action="/usuario/registro" method="post" enctype="multipart/form-data">
+        <h2>MODIFIQUE LOS CAMPOS QUE DESEE ACTUALIZAR</h2>
+        <form action="/usuario/editar/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             
             
             <p>
@@ -18,27 +18,27 @@
             
             <p>
               <label>Nombre/s</label>
-              <input type="text" name="first_name" id="first_name">
+              <input type="text" name="first_name" id="first_name" value="<%= usuario.first_name %>">
             </p>
 
             <p>
                 <label>Apellido/s</label>
-                <input type="text" name="last_name" id="last_name">
+                <input type="text" name="last_name" id="last_name" value="<%= usuario.last_name %>">
             </p>
 
             <p>
                 <label>Fecha de nacimiento</label>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" value="<%= usuario.date %>">
             </p>
 
             <p>
                 <label>Correo Electrónico</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" value="<%= usuario.email %>">
             </p>
 
             <p>
                 <label>Teléfono de contacto</label>
-                <input type="tel" name="cellphone" id="cellphone">
+                <input type="tel" name="cellphone" id="cellphone" value="<%= usuario.cellphone %>">
             </p>
       
             <p>
@@ -49,10 +49,16 @@
             </p>
       
             <p>
-                <button type="submit">Registrarme</button>
+                <button type="submit">Actualizar</button>
             </p>
           </form>
-        <a href="/usuario/login">Ya estoy registrado</a>
+          <form action="/usuario/eliminar/<%= usuario.id %>?_method=DELETE" method="POST">
+            <h4>PRESIONE EL SIGUIENTE BOTÓN SI REALMENTE DESEA ELIMINAR A ESTE USUARIO</h4>
+            <P>
+                <button type="submit"> Eliminar Usuario </button>
+            </P>
+        </form>
+       
     </div>
 
    </main>

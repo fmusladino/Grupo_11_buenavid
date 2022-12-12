@@ -14,6 +14,7 @@
             
             <form action="/producto/edicion/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <p>
+                    
                     <label>Categoría</label>
                     <select type="text" name="category">
                         <option <% if (product.category=='Vino Tinto') { %>
@@ -93,6 +94,7 @@
                 </p>
 
                 <p>
+                    
                     <br>
                     <label>Desea cambiar la foto del articulo?</label>
                     <img src="/images/productos/<%= product.image %>" width="50" height="50">
@@ -101,6 +103,7 @@
                 </p>
                
                 <br>
+                
                 <p>
                     <label>Es un producto recomendado</label>
                     <select type="boolean" name="recomended">

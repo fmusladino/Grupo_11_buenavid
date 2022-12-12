@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
         cb(null, './public/images/productos')
     },
     filename: function (req, file, cb) {
-        cb(null, Date.now() + '.png');
+        cb(null, Date.now() + file.originalname);
     }
 });
 const uploadFile = multer({storage});
@@ -35,6 +35,8 @@ router.post('/carga', uploadFile.single('image'), validacionesParaCarga, product
 router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
 router.put('/edicion/:id',uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
+
+router.delete('/eliminar/:id', productoController.eliminarProducto);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/', uploadFile.single('image'), mainController.controller.productDetail);
