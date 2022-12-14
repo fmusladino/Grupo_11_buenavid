@@ -7,6 +7,8 @@ const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
 
 const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
+const bcryptjs = require("bcryptjs")
+
 
 const usuarioController={
     mostrarFormularioLogin: (req,res) => {return res.render ('login')},
@@ -23,7 +25,10 @@ const usuarioController={
 
     almacenarNuevoUsuario: (req,res) => {
         
-        const nuevoUsuario = req.body;
+        const nuevoUsuario = {
+          ...req.body,
+          password: bcryptjs.hashSync(req.body.password, 10)
+        };
       
         //asignanción del id al nuevo usuario, una mas que el último id
         const largoBD = usuarios.length;

@@ -48,5 +48,25 @@
     "cellphone": "1188776655",
     "password": "monito123",
     "id": 6
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Giuliano",
+    "last_name": "Insegna Koltes",
+    "date": "1999-01-17",
+    "email": "ginsegna@hotmail.com.ar",
+    "cellphone": "2613627343",
+    "password": "giuliano08",
+    "id": 7
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Pedro",
+    "last_name": "Gimenez",
+    "date": "",
+    "email": "hola@2",
+    "cellphone": "",
+    "password": "777777",
+    "id": 8
   }
 ]
