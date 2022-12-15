@@ -1,5 +1,6 @@
 const path = require ('path');
 const fs = require ('fs');
+const bcrypt = require('bcryptjs');
 
 const {validationResult} = require('express-validator');
 
@@ -7,7 +8,9 @@ const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
 
 const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
-const bcryptjs = require("bcryptjs")
+const productsFilePath = path.join(__dirname, '../data/productos.json');
+
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 const usuarioController={
@@ -25,42 +28,58 @@ const usuarioController={
 
     almacenarNuevoUsuario: (req,res) => {
         
-        const nuevoUsuario = {
-          ...req.body,
-          password: bcryptjs.hashSync(req.body.password, 10)
-        };
+      const nuevoUsuario = req.body;
       
-        //asignanción del id al nuevo usuario, una mas que el último id
-        const largoBD = usuarios.length;
-        nuevoUsuario.id = (usuarios[largoBD - 1].id)+1;
+      //asignanción del id al nuevo usuario, una mas que el último id
+      const largoBD = usuarios.length;
+      nuevoUsuario.id = (usuarios[largoBD - 1].id)+1;
 
-        usuarios.push(nuevoUsuario);
+      nuevoUsuario.password = bcrypt.hashSync(req.body.password, 10);
 
-        fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
+      usuarios.push(nuevoUsuario);
 
-        return res.redirect('/');                  
+      fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
+
+      return res.redirect('/');                   
     }, 
 
     almacenaUsuarioModificado: (req, res) => {
         //lógica para almacenar modificacion de usuario
+
         
         const usuarioIndex=  usuarios.findIndex(
             (user) => {
               return user.id == req.params.id
             }
-          )
-          if (usuarioIndex == -1) {
+        )
+        if (usuarioIndex == -1) {
             return res.send('El usuario que busca no existe')
-          }
-        const usuarioCampos=req.body
-          usuarios[usuarioIndex] = {
-            ...usuarios[usuarioIndex],
-            ...req.body,
-          }
-          fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
+        }
+        // aca debo ver la forma de guardar el password anterior hasheado
+        //en el caso de que hubiera cambiado el el password, hashearlo, sino mantener el anterior
+
+        let passwordNuevaH = usuarios[usuarioIndex].password;
+
+        if (req.body.password != ""){ 
+          passwordNuevaH = bcrypt.hashSync(req.body.password, 10);
+        };
+          
+        usuarios[usuarioIndex] = {
+           id: usuarios[usuarioIndex].id,
+           rol: req.body.rol,
+           first_name: req.body.first_name,
+           last_name: req.body.last_name,
+           date: req.body.date,
+           email: req.body.email,
+           cellphone: req.body.cellphone,
+           password: passwordNuevaH
+        }
+
+        fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
 
         return res.redirect('/');                  
     },
+
     borrarUsuario: (req,res) => {
 
       const newUsuarios = usuarios.filter((user) => user.id != req.params.id);
@@ -68,6 +87,65 @@ const usuarioController={
       fs.writeFileSync(usuariosFilePath, JSON.stringify(newUsuarios, null, 2));
 
       return res.redirect('/');
+    },
+
+    mostrarVistaLoginOk: (req, res) => {
+      //lógica para controlar los valores ingresados contra los de la BD
+      // si el usuario existe y el password es el correcto entones mostrar vista indexLoginOk
+
+      const usuarioIndex=  usuarios.findIndex(
+          (user) => {
+          return user.email == req.body.email
+      })
+      if (usuarioIndex == -1) {
+        return res.render('usuarioNotFound')
+      }
+      let check = bcrypt.compareSync(req.body.password, usuarios[usuarioIndex].password)
+      if (check) {
+
+        const productosRecomendados = products.filter(product => product.recomended=="true");
+        const productosEnPromocion = products.filter(product=> product.discount >= 10)
+        const viewData={
+            productosRecomendados: productosRecomendados,
+            productosEnPromocion: productosEnPromocion,
+            usuario: usuarios[usuarioIndex]
+        };
+        return res.render('indexLoginOk', viewData);
+
+      } else{
+        return res.render('login');
+      }
+    
+    },
+    logueado: (req, res) => {
+      const usuarioIndex=  usuarios.findIndex(
+        (user) => {
+        return user.email == req.body.email
+    })
+    if (usuarioIndex == -1) {
+      return res.render('usuarioNotFound')
+    }
+    let check = bcrypt.compareSync(req.body.password, usuarios[usuarioIndex].password)
+    if (check) {
+      
+      const productosRecomendados = products.filter(product => product.recomended=="true");
+        const productosEnPromocion = products.filter(product=> product.discount >= 10)
+        const viewData={
+            productosRecomendados: productosRecomendados,
+            productosEnPromocion: productosEnPromocion,
+            usuario: usuarios[usuarioIndex]
+    };
+
+    //Hasta acá es la misma lógica que usó Aleto, de acá en adelante, cuando comprueba info, o devuelve una cookie guardada o renderiza de nuevo login con los errores que detectó
+
+      res.cookie("cookieLogueado", "Usuario logueado")
+
+      return res.render("index", viewData);
+
+    } else{
+      let errors = validationResult(req);
+      return res.render('login', { errors : errors.mapped(), old: req.body });
+    }
     }
 }
 

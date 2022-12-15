@@ -5,15 +5,10 @@ const {validationResult} = require('express-validator');
 
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-//const products = JSON.parse (fs.readFileSync("./data/productos.json"));
-
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const mainController = {
     index: (req,res) => {
-
-        products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         
         const productosRecomendados = products.filter(product => product.recomended=="true");
 

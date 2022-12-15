@@ -2,12 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
 
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 const publicPath = path.resolve('public');
 app.use(express.static(publicPath));
+app.use(cookieParser());
 
 const mainRouter = require('./routers/mainRouter')
 const productoRouter= require('./routers/productoRouter')

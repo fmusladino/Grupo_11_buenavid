@@ -1,72 +1,92 @@
 [
   {
     "id": 1,
+    "rol": "cliente",
     "first_name": "Lautaro",
     "last_name": "Taurino",
-    "date": "20-01-1986",
+    "date": "",
     "email": "lt@gmail.com",
-    "cellphone": 1159728790,
-    "password": "1234",
-    "rol": "admin"
+    "cellphone": "1159728790",
+    "password": "$2a$10$BC1owBVAHUICGntX8ujclexioJsx8iCoiD6J0TxnFumtzQ3Y2p/S2"
   },
   {
-    "rol": "admin",
+    "id": 2,
+    "rol": "cliente",
     "first_name": "Alejandro Manuel",
     "last_name": "Torres",
     "date": "1967-09-27",
     "email": "aleto67@gmail.com",
     "cellphone": "1153405380",
-    "password": "monito123",
-    "id": 2
+    "password": "$2a$10$23iTkJxy7cs6I/pzgyPYXevDaAcy1ejo207Q.79eJvsEQa8wK0ovq"
   },
   {
+    "id": 3,
     "rol": "cliente",
     "first_name": "Facundo",
     "last_name": "García",
     "date": "2004-02-14",
     "email": "fg@gmail.com",
     "cellphone": "1133334444",
-    "password": "monito123",
-    "id": 3
+    "password": "$2a$10$BwxQe2XXc/yff9d3DT.23e6Ch4EjmkHk5MhSZGhbQADiQ.wtHOzpq"
   },
   {
+    "id": 5,
     "rol": "cliente",
     "first_name": "Santiago",
     "last_name": "Uriburu",
     "date": "2009-01-29",
     "email": "su@gmail.com",
     "cellphone": "1199887733",
-    "password": "monito123",
-    "id": 5
+    "password": "$2a$10$L459ekc953EThmmHJLTMuuso201LmYv7jj5N9vmRsibsF1/y1GePC"
   },
   {
+    "id": 6,
     "rol": "cliente",
     "first_name": "Moira",
     "last_name": "Sanchez",
     "date": "1973-08-03",
     "email": "ms@gmail.com",
     "cellphone": "1188776655",
-    "password": "monito123",
-    "id": 6
+    "password": "$2a$10$i8dJzwiXRQHG9SamOq5pSunT8us15Bm8DQ2WKqsAm2DkyjLRMsw4y"
+  },
+  {
+    "id": 7,
+    "rol": "cliente",
+    "first_name": "Fulano",
+    "last_name": "Detal",
+    "date": "2001-01-01",
+    "email": "fd@gmail.com",
+    "cellphone": "1155556666",
+    "password": "$2a$10$ZD.T9vJUhy69I6Zh6mqEh.2V1yExffVSk6P2uQQvrLPlvBIsoP2/W"
+  },
+  {
+    "id": 8,
+    "rol": "cliente",
+    "first_name": "Mengano",
+    "last_name": "Detal",
+    "date": "2004-01-01",
+    "email": "mdt@gmail.com",
+    "cellphone": "",
+    "password": "$2a$10$mJ.paHU89cYDSjtD7PCGxeJ4XkmIyE8OEySDPcHd1x3ifzfP.q2ci"
+  },
+  {
+    "id": 9,
+    "rol": "cliente",
+    "first_name": "Sultano",
+    "last_name": "Perez",
+    "date": "2002-02-02",
+    "email": "sP@gmail.com",
+    "cellphone": "112244336655",
+    "password": "$2a$10$vvWP0ocPEDMVDZL2B9Zut.q3EkwckZh2JxjBDRnl.wRvdkdIv8Pu."
   },
   {
     "rol": "cliente",
     "first_name": "Giuliano",
-    "last_name": "Insegna Koltes",
+    "last_name": "Koltes",
     "date": "1999-01-17",
-    "email": "ginsegna@hotmail.com.ar",
+    "email": "giuliink@gmail.com",
     "cellphone": "2613627343",
-    "password": "giuliano08",
-    "id": 7
-  },
-  {
-    "rol": "cliente",
-    "first_name": "Pedro",
-    "last_name": "Gimenez",
-    "date": "",
-    "email": "hola@2",
-    "cellphone": "",
-    "password": "777777",
-    "id": 8
+    "password": "$2a$10$GKosZPqJyHj6YUZpkmARs.hhFE4BTiA/OvgnySjsugg4BBaBSRnv6",
+    "id": 10
   }
 ]

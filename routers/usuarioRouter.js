@@ -22,6 +22,8 @@ const usuarioController = require('../controller/usuarioController');
 
 //Rutas
 router.get('/login', usuarioController.mostrarFormularioLogin);
+//router.post('/login', usuarioController.mostrarVistaLoginOk);
+router.post('/login', usuarioController.logueado);
 router.get('/registro', usuarioController.mostrarFormularioRegistroUsuario);
 router.get('/editar/:id', usuarioController.mostrarFormularioModificarUsuario);
 router.post('/registro', uploadFile.single('image'), usuarioController.almacenarNuevoUsuario);
