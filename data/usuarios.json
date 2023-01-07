@@ -78,5 +78,25 @@
     "email": "sP@gmail.com",
     "cellphone": "112244336655",
     "password": "$2a$10$vvWP0ocPEDMVDZL2B9Zut.q3EkwckZh2JxjBDRnl.wRvdkdIv8Pu."
+  },
+  {
+    "rol": "admin",
+    "first_name": "NatiAdmin",
+    "last_name": "",
+    "date": "",
+    "email": "NatiAdmin@dh.com",
+    "cellphone": "1122334456",
+    "password": "$2a$10$YIVLjtB.D8GPWGDr/mfnIOAh5fIs9KkYWRj6QbiPwlttvUxBw5bJi",
+    "id": 10
+  },
+  {
+    "rol": "cliente",
+    "first_name": "NatiUser",
+    "last_name": "",
+    "date": "",
+    "email": "NatiUser@dh.com",
+    "cellphone": "1199887766",
+    "password": "$2a$10$HnKT9Uu0jC6A/dE/pING4.fUrGzG8DsItH2ZDVNz3MEb9yUU5GfEe",
+    "id": 11
   }
 ]
