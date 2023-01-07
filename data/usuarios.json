@@ -78,5 +78,45 @@
     "email": "sP@gmail.com",
     "cellphone": "112244336655",
     "password": "$2a$10$vvWP0ocPEDMVDZL2B9Zut.q3EkwckZh2JxjBDRnl.wRvdkdIv8Pu."
+  },
+  {
+    "rol": "admin",
+    "first_name": "NatiAdmin",
+    "last_name": "",
+    "date": "",
+    "email": "NatiAdmin@dh.com",
+    "cellphone": "",
+    "password": "$2a$10$U8Txb0cS3n0MGqCv7wZ9JO1QIRRnh1Be.m6aWOuVKdB0/EZ237qLK",
+    "id": 10
+  },
+  {
+    "rol": "cliente",
+    "first_name": "NatiUser",
+    "last_name": "",
+    "date": "",
+    "email": "NatiUser@dh.com",
+    "cellphone": "",
+    "password": "$2a$10$J8l4xIW87.J1INM1Ne1xuOvUJ5CyqCl9zxLrd7WqtwR.usIKrot3.",
+    "id": 11
+  },
+  {
+    "rol": "admin",
+    "first_name": "NatiAdmin",
+    "last_name": "",
+    "date": "",
+    "email": "NatiAdmin@dg.com",
+    "cellphone": "",
+    "password": "$2a$10$iZfBzqWRKCLZ7ccAtl5hpezGv6h4xSS.JbWaF9SWkj2wO5Ybk0t1u",
+    "id": 12
+  },
+  {
+    "rol": "cliente",
+    "first_name": "NatiUser",
+    "last_name": "",
+    "date": "",
+    "email": "NatiUser@dg.com",
+    "cellphone": "",
+    "password": "$2a$10$Jt4pfPX.CK77LtnC3dq.oe0M0Y9AkQ81RetB.vV7OpVw.O1OB735a",
+    "id": 13
   }
 ]
