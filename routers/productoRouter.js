@@ -22,21 +22,22 @@ const uploadFile = multer({storage});
 //Validaciones 
 const validacionesParaCarga= require('../validators/validatorCarga')
 const validacionesParaEdicion= require('../validators/validatorEdicion')
+const loginCheck = require('../middlewares/loginCheck')
 
 
 //Rutas
 
-router.get('/detalle/:productsId/', productoController.productDetail);
+router.get('/detalle/:productsId/', loginCheck, productoController.productDetail);
 
-router.get('/carga', productoController.mostrarFormularioCargaProducto);
+router.get('/carga', loginCheck, productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', uploadFile.single('image'), validacionesParaCarga, productoController.almacenaProducto);
+router.post('/carga', loginCheck, uploadFile.single('image'), validacionesParaCarga, productoController.almacenaProducto);
 
-router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
+router.get('/edicion/:id', loginCheck, productoController.mostrarFormularioEdicionProducto);
 
-router.put('/edicion/:id',uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
+router.put('/edicion/:id', loginCheck, uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
 
-router.delete('/eliminar/:id', productoController.eliminarProducto);
+router.delete('/eliminar/:id', loginCheck, productoController.eliminarProducto);
 
 // NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
 //router.post('/', uploadFile.single('image'), mainController.controller.productDetail);

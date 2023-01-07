@@ -28,19 +28,19 @@ const usuarioController={
 
     almacenarNuevoUsuario: (req,res) => {
         
-        const nuevoUsuario = req.body;
+      const nuevoUsuario = req.body;
       
-        //asignanción del id al nuevo usuario, una mas que el último id
-        const largoBD = usuarios.length;
-        nuevoUsuario.id = (usuarios[largoBD - 1].id)+1;
+      //asignanción del id al nuevo usuario, una mas que el último id
+      const largoBD = usuarios.length;
+      nuevoUsuario.id = (usuarios[largoBD - 1].id)+1;
 
-        nuevoUsuario.password = bcrypt.hashSync(req.body.password, 10);
+      nuevoUsuario.password = bcrypt.hashSync(req.body.password, 10);
 
-        usuarios.push(nuevoUsuario);
+      usuarios.push(nuevoUsuario);
 
-        fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
+      fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
 
-        return res.redirect('/');                  
+      return res.redirect('/');                   
     }, 
 
     almacenaUsuarioModificado: (req, res) => {
@@ -116,6 +116,36 @@ const usuarioController={
         return res.render('login');
       }
     
+    },
+    logueado: (req, res) => {
+      const usuarioIndex=  usuarios.findIndex(
+        (user) => {
+        return user.email == req.body.email
+    })
+    if (usuarioIndex == -1) {
+      return res.render('usuarioNotFound')
+    }
+    let check = bcrypt.compareSync(req.body.password, usuarios[usuarioIndex].password)
+    if (check) {
+      
+      const productosRecomendados = products.filter(product => product.recomended=="true");
+        const productosEnPromocion = products.filter(product=> product.discount >= 10)
+        const viewData={
+            productosRecomendados: productosRecomendados,
+            productosEnPromocion: productosEnPromocion,
+            usuario: usuarios[usuarioIndex]
+    };
+
+    //Hasta acá es la misma lógica que usó Aleto, de acá en adelante, cuando comprueba info, o devuelve una cookie guardada o renderiza de nuevo login con los errores que detectó
+
+      res.cookie("cookieLogueado", "Usuario logueado")
+
+      return res.render("index", viewData);
+
+    } else{
+      let errors = validationResult(req);
+      return res.render('login', { errors : errors.mapped(), old: req.body });
+    }
     }
 }
 
