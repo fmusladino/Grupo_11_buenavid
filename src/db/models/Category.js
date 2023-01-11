@@ -5,8 +5,8 @@ module.exports=(sequilize, dataTypes)=>{
     let cols={
         id: {
             autoIncrement: true,
-            priemaryKey: true,
-            type: DataTypes.INTEGER,
+            primaryKey: true,
+            type: dataTypes.INTEGER,
         },
         nombre:{
             type: dataTypes.STRING
@@ -17,7 +17,7 @@ module.exports=(sequilize, dataTypes)=>{
         timestamps: true
     }
 
-    const Category = sequelize.define(alias,cols,config)
+    const Category = sequilize.define(alias,cols,config)
 
 
 

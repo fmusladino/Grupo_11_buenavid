@@ -5,8 +5,8 @@ module.exports=(sequilize, dataTypes)=>{
     let cols={
         id: {
             autoIncrement: true,
-            priemaryKey: true,
-            type: DataTypes.INTEGER,
+            primaryKey: true,
+            type: dataTypes.INTEGER,
         },
         importe:{
             type: dataTypes.NUMBER
@@ -20,7 +20,7 @@ module.exports=(sequilize, dataTypes)=>{
         timestamps: true
     }
 
-    const Sale = sequelize.define(alias,cols,config)
+    const Sale = sequilize.define(alias,cols,config)
 
 
 

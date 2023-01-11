@@ -5,8 +5,8 @@ module.exports=(sequilize, dataTypes)=>{
     let cols={
         id: {
             autoIncrement: true,
-            priemaryKey: true,
-            type: DataTypes.INTEGER,
+            primaryKey: true,
+            type: dataTypes.INTEGER,
         },
         description:{
             type: dataTypes.TEXT
@@ -24,16 +24,16 @@ module.exports=(sequilize, dataTypes)=>{
             type: dataTypes.BOOLEAN
         },
         image:{
-            type:DataTypes.STRING
+            type:dataTypes.STRING
         },
         winery_id:{
-            type:DataTypes.INTEGER
+            type:dataTypes.INTEGER
         },
         category_id:{
-            type:DataTypes.INTEGER
+            type:dataTypes.INTEGER
         },
         origin_id:{
-            type:DataTypes.INTEGER
+            type:dataTypes.INTEGER
         }
     }
     let config= {
@@ -41,7 +41,7 @@ module.exports=(sequilize, dataTypes)=>{
         timestamps: true
     }
 
-    const Product = sequelize.define(alias,cols,config)
+    const Product = sequilize.define(alias,cols,config)
 
 
 

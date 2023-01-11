@@ -1,4 +1,4 @@
-const Product_have_sale12 = require("./Product_have_sale12");
+
 
 module.exports=(sequilize, dataTypes)=>{
 
@@ -6,8 +6,8 @@ module.exports=(sequilize, dataTypes)=>{
     let cols={
         id: {
             autoIncrement: true,
-            priemaryKey: true,
-            type: DataTypes.INTEGER,
+            primaryKey: true,
+            type: dataTypes.INTEGER,
         },
         product_id :{
             type: dataTypes.INTEGER
@@ -16,7 +16,7 @@ module.exports=(sequilize, dataTypes)=>{
             type:dataTypes.INTEGER
         },
         cantidad:{
-           type: DataTypes.NUMBER
+           type: dataTypes.NUMBER
         }
     }
     let config= {
@@ -24,7 +24,7 @@ module.exports=(sequilize, dataTypes)=>{
         timestamps: true
     }
 
-    const Product_have_sale = sequelize.define(alias,cols,config)
+    const Product_have_sale = sequilize.define(alias,cols,config)
 
 
 

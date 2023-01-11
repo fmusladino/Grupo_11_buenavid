@@ -5,17 +5,17 @@ module.exports=(sequilize, dataTypes)=>{
     let cols={
         id: {
             autoIncrement: true,
-            priemaryKey: true,
-            type: DataTypes.INTEGER,
+            primaryKey: true,
+            type: dataTypes.INTEGER,
         },
         pais:{
             type: dataTypes.STRING
         },
         region:{
-            type:DataTypes.STRING
+            type:dataTypes.STRING
         },
         zona:{
-            type:DataTypes.STRING
+            type:dataTypes.STRING
         }
     }
     let config= {
@@ -23,7 +23,7 @@ module.exports=(sequilize, dataTypes)=>{
         timestamps: true
     }
 
-    const Origin = sequelize.define(alias,cols,config)
+    const Origin = sequilize.define(alias,cols,config)
 
 
 
