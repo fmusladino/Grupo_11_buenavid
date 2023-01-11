@@ -7,6 +7,9 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const models=require("../db/models");
+const Category=models.Category
+
 const mainController = {
     index: (req,res) => {
         
@@ -21,10 +24,24 @@ const mainController = {
 
        return res.render ('index',viewData )
     },
+
     productCar: (req,res) => {
         return res.render ('productCar')
+    },
+
+    //ejemplo a ver si funciona la base de datos:
+    prueba: async (req, res) => {
+        Category.create({
+            nombre:"Bautista"
+        })
     }
    
 }
+
+
+
+
+
+
 
 module.exports = mainController
