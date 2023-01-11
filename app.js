@@ -11,9 +11,9 @@ const publicPath = path.resolve('public');
 app.use(express.static(publicPath));
 app.use(cookieParser());
 
-const mainRouter = require('./routers/mainRouter')
-const productoRouter= require('./routers/productoRouter')
-const usuarioRouter=require('./routers/usuarioRouter')
+const mainRouter = require('./src/routers/mainRouter')
+const productoRouter= require('./src/routers/productoRouter')
+const usuarioRouter=require('./src/routers/usuarioRouter')
 
 
 
