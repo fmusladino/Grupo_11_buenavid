@@ -22,6 +22,7 @@ const uploadFile = multer({storage});
 //Validaciones 
 const validacionesParaCarga= require('../validators/validatorCarga')
 const validacionesParaEdicion= require('../validators/validatorEdicion')
+//Middleware
 const loginCheck = require('../middlewares/loginCheck')
 
 

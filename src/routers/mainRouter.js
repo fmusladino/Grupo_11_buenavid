@@ -19,7 +19,7 @@ router.get('/carrito', mainController.productCar);
 
 router.post('/carrito', mainController.productCar);
 
-router.get('/prueba',mainController.prueba)
+
 
 
 

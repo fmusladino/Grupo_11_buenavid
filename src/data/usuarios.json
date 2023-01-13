@@ -118,5 +118,15 @@
     "cellphone": "",
     "password": "$2a$10$Jt4pfPX.CK77LtnC3dq.oe0M0Y9AkQ81RetB.vV7OpVw.O1OB735a",
     "id": 13
+  },
+  {
+    "rol": "cliente",
+    "first_name": "Faustino",
+    "last_name": "Lentz",
+    "date": "2023-01-28",
+    "email": "bl@gmail.com",
+    "cellphone": "1123245434",
+    "password": "$2a$10$IlDF21DhtAv1/yiRCqAtIuXJN9PZVs3NAVslQ56inR/3yM8xgq2gS",
+    "id": 14
   }
 ]

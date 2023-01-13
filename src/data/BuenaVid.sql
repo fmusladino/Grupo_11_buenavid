@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `BuenaVid`.`users` (
   `cellphone` VARCHAR(20) NULL,
   `date` DATE NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(12) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC)  ,
   INDEX `fk_users_roles1_idx` (`rol_id` ASC)  ,
@@ -74,10 +74,8 @@ ENGINE = InnoDB;
 -- Table `BuenaVid`.`origins`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BuenaVid`.`origins` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `pais` VARCHAR(45) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT, 
   `region` VARCHAR(45) NOT NULL,
-  `zona` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -89,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `BuenaVid`.`products` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(100) NOT NULL,
   `year` YEAR(4) NOT NULL,
-  `price` DECIMAL(2) NOT NULL,
+  `price` DECIMAL(9) NOT NULL,
   `discount` DECIMAL(2) NOT NULL,
   `recomended` TINYINT NOT NULL,
   `image` VARCHAR(100) NOT NULL,
