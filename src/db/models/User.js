@@ -46,5 +46,5 @@ return User;
 User.associate=function(models){
     User.belongsTo(models.Roles,{
         foreignKey: 'rol_id',
-        as:'Roles'
+        as:'roles'
     })}

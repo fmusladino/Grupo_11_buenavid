@@ -34,5 +34,5 @@ return Origin;
 Origin.associate=function(models){
     Origin.hasMany(models.Products,{
         foreignKey: 'origin_id',
-        as:'Products'
+        as:'products'
     })}

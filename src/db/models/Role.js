@@ -29,5 +29,5 @@ return Role;
 Role.associate=function(models){
     Role.belongsTo(models.Users,{
         foreignKey: 'rol_id',
-        as:'Users'
+        as:'users'
     })}

@@ -54,14 +54,14 @@ return Product;
 Product.associate=function(models){
     Product.belongsTo(models.Categories,{
         foreignKey: 'category_id',
-        as:'Categories'
+        as:'categories'
     }),
     Product.belongsTo(models.Origins,{
         foreignKey:'origin_id',
-        as:'Origins'
+        as:'origins'
     }),
     Product.belongsTo(models.Wineries,{
         foreignKey:'winery_id',
-        as:'Wineries'
+        as:'wineries'
     })
 }

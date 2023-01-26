@@ -29,5 +29,5 @@ return Winery;
 Winery.associate=function(models){
     Winery.hasMany(models.Products,{
         foreignKey: 'winery_id',
-        as:'Products'
+        as:'products'
     })}
