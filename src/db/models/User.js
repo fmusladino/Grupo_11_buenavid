@@ -1,6 +1,7 @@
 module.exports=(sequilize, dataTypes)=>{
 
     let alias= "Users";
+     //--- Definicion del modelo ---//
     let cols={
         id: {
             autoIncrement: true,
@@ -41,3 +42,9 @@ module.exports=(sequilize, dataTypes)=>{
 
 return User;
 }
+//--- Relaciones de la Tablas ---//
+User.associate=function(models){
+    User.belongsTo(models.Roles,{
+        foreignKey: 'rol_id',
+        as:'Roles'
+    })}

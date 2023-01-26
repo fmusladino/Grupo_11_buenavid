@@ -2,6 +2,7 @@
 module.exports=(sequilize, dataTypes)=>{
 
     let alias= "Wineries";
+     //--- Definicion del modelo ---//
     let cols={
         id: {
             autoIncrement: true,
@@ -23,3 +24,10 @@ module.exports=(sequilize, dataTypes)=>{
 
 return Winery;
 }
+
+//--- Relaciones de la Tablas ---//
+Winery.associate=function(models){
+    Winery.hasMany(models.Products,{
+        foreignKey: 'winery_id',
+        as:'Products'
+    })}

@@ -1,7 +1,9 @@
+const Category = require("./Category");
 
 module.exports=(sequilize, dataTypes)=>{
 
     let alias= "Products";
+     //--- Definicion del modelo ---//
     let cols={
         id: {
             autoIncrement: true,
@@ -46,4 +48,20 @@ module.exports=(sequilize, dataTypes)=>{
 
 
 return Product;
+}
+//--- Relaciones de la Tablas ---//
+
+Product.associate=function(models){
+    Product.belongsTo(models.Categories,{
+        foreignKey: 'category_id',
+        as:'Categories'
+    }),
+    Product.belongsTo(models.Origins,{
+        foreignKey:'origin_id',
+        as:'Origins'
+    }),
+    Product.belongsTo(models.Wineries,{
+        foreignKey:'winery_id',
+        as:'Wineries'
+    })
 }
