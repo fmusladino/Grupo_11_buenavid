@@ -1,19 +1,17 @@
 const express = require ('express');
-const { controller }  = require('../controller/mainController');
 const router = express.Router();
 const multer = require('multer');
 const {check} = require('express-validator');
 
+//--- Require de la base de datos ---//
+const db=require('../db/models')
 
-
+//--Controller--//
 const mainController = require('../controller/mainController');
 
+
+//--Rutas--//
 router.get('/', mainController.index);
-
-// NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
-//router.post('/', uploadFile.single('photo'), mainController.controller.index);
-
-
 
 router.get('/carrito', mainController.productCar);
 

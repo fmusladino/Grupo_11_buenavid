@@ -26,13 +26,12 @@ module.exports=(sequilize, dataTypes)=>{
 
     const Origin = sequilize.define(alias,cols,config)
 
-
-
-return Origin;
-}
 //--- Relaciones de la Tablas ---//
 Origin.associate=function(models){
     Origin.hasMany(models.Products,{
         foreignKey: 'origin_id',
         as:'products'
     })}
+
+return Origin;
+}

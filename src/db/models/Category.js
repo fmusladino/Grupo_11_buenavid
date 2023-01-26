@@ -20,11 +20,6 @@ module.exports=(sequilize, dataTypes)=>{
 
     const Category = sequilize.define(alias,cols,config)
 
-
-
-return Category;
-}
-
 //--- Relaciones de la Tablas ---//
 
 Category.associate=function(models){
@@ -32,3 +27,7 @@ Category.associate=function(models){
         foreignKey: 'category_id',
         as:'products'
     })}
+
+return Category;
+}
+

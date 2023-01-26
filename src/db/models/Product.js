@@ -44,24 +44,22 @@ module.exports=(sequilize, dataTypes)=>{
     }
 
     const Product = sequilize.define(alias,cols,config)
-
-
+//--- Relaciones de la Tablas ---//
+    Product.associate=function(models){
+        Product.belongsTo(models.Categories,{
+            foreignKey: 'category_id',
+            as:'categories'
+        });
+        Product.belongsTo(models.Origins,{
+            foreignKey:'origin_id',
+            as:'origins'
+        });
+        Product.belongsTo(models.Wineries,{
+            foreignKey:'winery_id',
+            as:'wineries'
+        });
+    }
 
 return Product;
 }
-//--- Relaciones de la Tablas ---//
 
-Product.associate=function(models){
-    Product.belongsTo(models.Categories,{
-        foreignKey: 'category_id',
-        as:'categories'
-    }),
-    Product.belongsTo(models.Origins,{
-        foreignKey:'origin_id',
-        as:'origins'
-    }),
-    Product.belongsTo(models.Wineries,{
-        foreignKey:'winery_id',
-        as:'wineries'
-    })
-}

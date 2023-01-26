@@ -20,14 +20,13 @@ module.exports=(sequilize, dataTypes)=>{
 
     const Role = sequilize.define(alias,cols,config)
 
-
-
-return Role;
-}
-
-//--- Relaciones de la Tablas ---//
+    //--- Relaciones de la Tablas ---//
 Role.associate=function(models){
     Role.belongsTo(models.Users,{
         foreignKey: 'rol_id',
         as:'users'
     })}
+
+
+return Role;
+}

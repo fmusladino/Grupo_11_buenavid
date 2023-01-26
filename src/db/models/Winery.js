@@ -20,14 +20,13 @@ module.exports=(sequilize, dataTypes)=>{
 
     const Winery = sequilize.define(alias,cols,config)
 
-
-
-return Winery;
-}
-
 //--- Relaciones de la Tablas ---//
 Winery.associate=function(models){
     Winery.hasMany(models.Products,{
         foreignKey: 'winery_id',
         as:'products'
     })}
+
+return Winery;
+}
+
