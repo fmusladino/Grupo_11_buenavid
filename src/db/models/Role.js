@@ -22,7 +22,7 @@ module.exports=(sequilize, dataTypes)=>{
 
     //--- Relaciones de la Tablas ---//
 Role.associate=function(models){
-    Role.belongsTo(models.Users,{
+    Role.hasMany(models.Users,{
         foreignKey: 'rol_id',
         as:'users'
     })}

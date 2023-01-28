@@ -10,26 +10,28 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db =require("../db/models");
 
 
+
+
 const mainController = {
-    index: (req,res) => {
+   
+
+   index: (req,res) => {
         
-       const productosRecomendados = products.filter(product => product.recomended=="true");
+      const productosRecomendados = products.filter(product => product.recomended=="true");
 
-       const productosEnPromocion = products.filter(product=> product.discount >= 10)
+      const productosEnPromocion = products.filter(product=> product.discount >= 10)
 
-        const viewData={
-           productosRecomendados,
-          productosEnPromocion
-     }
-
-     return res.render ('index',viewData )
-    },
-
-   productCar: (req,res) => {
-       return res.render ('productCar')
+       const viewData={
+          productosRecomendados,
+         productosEnPromocion
     }
 
-    
+    return res.render ('index',viewData )
+   },
+
+  productCar: (req,res) => {
+      return res.render ('productCar')
+   }
    
    
  }
