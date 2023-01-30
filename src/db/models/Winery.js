@@ -1,7 +1,7 @@
 
 module.exports=(sequilize, dataTypes)=>{
 
-    let alias= "Wineries";
+    let alias= "Winery";
      //--- Definicion del modelo ---//
     let cols={
         id: {
@@ -22,9 +22,9 @@ module.exports=(sequilize, dataTypes)=>{
 
 //--- Relaciones de la Tablas ---//
 Winery.associate=function(models){
-    Winery.hasMany(models.Products,{
+    Winery.hasMany(models.Product,{
         foreignKey: 'winery_id',
-        as:'products'
+        as:'product'
     })}
 
 return Winery;

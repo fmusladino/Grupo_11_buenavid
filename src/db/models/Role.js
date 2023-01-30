@@ -1,7 +1,7 @@
 
 module.exports=(sequilize, dataTypes)=>{
 
-    let alias= "Roles";
+    let alias= "Role";
      //--- Definicion del modelo ---//
     let cols={
         id: {
@@ -22,9 +22,9 @@ module.exports=(sequilize, dataTypes)=>{
 
     //--- Relaciones de la Tablas ---//
 Role.associate=function(models){
-    Role.hasMany(models.Users,{
+    Role.hasMany(models.User,{
         foreignKey: 'rol_id',
-        as:'users'
+        as:'user'
     })}
 
 

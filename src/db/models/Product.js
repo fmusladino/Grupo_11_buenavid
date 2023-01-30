@@ -2,7 +2,7 @@ const Category = require("./Category");
 
 module.exports=(sequilize, dataTypes)=>{
 
-    let alias= "Products";
+    let alias= "Product";
      //--- Definicion del modelo ---//
     let cols={
         id: {
@@ -46,17 +46,17 @@ module.exports=(sequilize, dataTypes)=>{
     const Product = sequilize.define(alias,cols,config)
 //--- Relaciones de la Tablas ---//
     Product.associate=function(models){
-        Product.belongsTo(models.Categories,{
+        Product.belongsTo(models.Category,{
             foreignKey: 'category_id',
-            as:'categories'
+            as:'category'
         });
-        Product.belongsTo(models.Origins,{
+        Product.belongsTo(models.Origin,{
             foreignKey:'origin_id',
-            as:'origins'
+            as:'origin'
         });
-        Product.belongsTo(models.Wineries,{
+        Product.belongsTo(models.Winery,{
             foreignKey:'winery_id',
-            as:'wineries'
+            as:'winery'
         });
     }
 

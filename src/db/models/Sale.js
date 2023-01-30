@@ -1,7 +1,7 @@
 
 module.exports=(sequilize, dataTypes)=>{
 
-    let alias= "Sales";
+    let alias= "Sale";
     let cols={
         id: {
             autoIncrement: true,

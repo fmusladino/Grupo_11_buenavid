@@ -1,7 +1,7 @@
 
 module.exports=(sequilize, dataTypes)=>{
 
-    let alias= "Origins";
+    let alias= "Origin";
         //--- Definicion del modelo ---//
     let cols={
         id: {
@@ -28,9 +28,9 @@ module.exports=(sequilize, dataTypes)=>{
 
 //--- Relaciones de la Tablas ---//
 Origin.associate=function(models){
-    Origin.hasMany(models.Products,{
+    Origin.hasMany(models.Product,{
         foreignKey: 'origin_id',
-        as:'products'
+        as:'product'
     })}
 
 return Origin;
