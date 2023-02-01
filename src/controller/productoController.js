@@ -11,7 +11,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 //--Require de la base de datos--//
 const db= require('../db/models')
-
+const Product=db.Product
 
 
 
@@ -46,6 +46,11 @@ const productoController={
             valores: req.body
         })
         }
+
+//--Logica con BD--//
+
+
+
         const nuevoProducto = req.body;
 
          //asignanción del id al nuevo producto, una mas que el último id

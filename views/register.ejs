@@ -9,6 +9,7 @@
             
             
             <p>
+                Nota (Bauti):averiguar como mostrar solo para Administradores.
                 <label>Seleccione su Rol</label>
                 <select type="number" name="rol" id="rol"> 
                     <option value=1> Cliente</option>
@@ -18,33 +19,69 @@
             
             <p>
               <label>Nombre/s</label>
-              <input type="text" name="first_name" id="first_name">
+              <input type="text" name="first_name" id="first_name"
+              value="<%= locals.valores ? valores.first_name : null %>">
+              <% if (locals.errors && errors.first_name) { %>
+                <div class="errores-de-formularios">
+                    <%= errors.first_name.msg %>
+                </div>
+                <% } %>
             </p>
 
             <p>
                 <label>Apellido/s</label>
-                <input type="text" name="last_name" id="last_name">
+                <input type="text" name="last_name" id="last_name"
+                value="<%= locals.valores ? valores.last_name : null %>">
+                <% if (locals.errors && errors.last_name) { %>
+                    <div class="errores-de-formularios">
+                        <%= errors.last_name.msg %>
+                    </div>
+                    <% } %>
             </p>
 
             <p>
                 <label>Fecha de nacimiento</label>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date"
+                value="<%= locals.valores ? valores.date : null %>">
+                <% if (locals.errors && errors.date) { %>
+                    <div class="errores-de-formularios">
+                        <%= errors.date.msg %>
+                    </div>
+                    <% } %>
             </p>
 
             <p>
                 <label>Correo Electrónico</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email"
+                value="<%= locals.valores ? valores.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="errores-de-formularios">
+                        <%= errors.email.msg %>
+                    </div>
+                    <% } %>
             </p>
 
             <p>
                 <label>Teléfono de contacto</label>
-                <input type="tel" name="cellphone" id="cellphone">
+                <input type="tel" name="cellphone" id="cellphone"
+                value="<%= locals.valores ? valores.cellphone : null %>">
+                <% if (locals.errors && errors.cellphone) { %>
+                    <div class="errores-de-formularios">
+                        <%= errors.cellphone.msg %>
+                    </div>
+                    <% } %>
             </p>
       
             <p>
               <label>Contraseña</label>
-              <input type="password" name="password" minlength="6">
+              <input type="password" name="password" minlength="6"
+              value="<%= locals.valores ? valores.password : null %>">
               <i class="fas fa-info-circle"> Requiere mínimo 6 caracteres</i>
+              <% if (locals.errors && errors.password) { %>
+                <div class="errores-de-formularios">
+                    <%= errors.password.msg %>
+                </div>
+                <% } %>
 
             </p>
       

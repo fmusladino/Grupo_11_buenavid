@@ -49,6 +49,16 @@ const usuarioController = {
   //--Crear Nuevo Usuario--//
   almacenarNuevoUsuario: (req, res) => {
 
+//--Validators para Registro--//
+const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render('register', {
+        errors: resultValidation.mapped(),
+        valores: req.body
+      })
+    }
+
     //--Variable que junta los campos del formulario--//
     let user = {
       rol_id: req.body.rol,
@@ -72,7 +82,7 @@ const usuarioController = {
 
 
 
-  //--Logica para Modificar Usuario--//
+  //--Logica para Modificar Usuario--//(Falta hacerlo con Sequelize)
   almacenaUsuarioModificado: (req, res) => {
 
 
@@ -181,7 +191,7 @@ const usuarioController = {
     }
 
 
-    //--Buscamos el mismo email en la bd con el email que puso el CL en el formulario--//
+    //--Buscamos el mismo email en la bd con el email que puso el cl en el formulario--//
     User.findOne({
       where: { email: req.body.email }
     })
@@ -192,11 +202,11 @@ const usuarioController = {
           const isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
           if (isOkPassword) {
             req.session.userLogged = userToLogin;
-
+console.log(req.session.userLogged)
 //--Si el usuario apreto el checkbox de Recordame--//
 //--Creamos una cookie que se le guarde session por 24 horas--//
             if (req.body.recordarme) {
-              res.cookie({ where: { email: req.body.email } }, { maxAge: 1000 * 60 * 60 * 24 })
+              res.cookie("cookieLogueado",{ where: { email: req.body.email } }, { maxAge: 1000 * 60 * 60 * 24 })
             }
             //--Lo mandamos a Index--//
             return res.redirect('/');

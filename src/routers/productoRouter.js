@@ -22,29 +22,33 @@ const uploadFile = multer({storage});
 //Validaciones 
 const validacionesParaCarga= require('../validators/validatorCarga')
 const validacionesParaEdicion= require('../validators/validatorEdicion')
-//Middleware
+
+//--Middleware del Login check--//
 const loginCheck = require('../middlewares/loginCheck')
 
 
 //Rutas
 
-router.get('/detalle/:productsId/', loginCheck, productoController.productDetail);
+//--Detalle--//
+router.get('/detalle/:productsId/',loginCheck, productoController.productDetail);
 
-router.get('/carga', loginCheck, productoController.mostrarFormularioCargaProducto);
+//--Carga--//
+router.get('/carga',loginCheck, productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', loginCheck, uploadFile.single('image'), validacionesParaCarga, productoController.almacenaProducto);
+router.post('/carga', uploadFile.single('image'), validacionesParaCarga, productoController.almacenaProducto);
 
-router.get('/edicion/:id', loginCheck, productoController.mostrarFormularioEdicionProducto);
+//--Edicion--//
+router.get('/edicion/:id', loginCheck,productoController.mostrarFormularioEdicionProducto);
 
-router.put('/edicion/:id', loginCheck, uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
+router.put('/edicion/:id', uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
 
-router.delete('/eliminar/:id', loginCheck, productoController.eliminarProducto);
-
-// NO ESTOY SEGURO SI SIRVE ESTA RUTA PARA ALGO
-//router.post('/', uploadFile.single('image'), mainController.controller.productDetail);
+//--Eliminar--//
+router.delete('/eliminar/:id', productoController.eliminarProducto);
 
 
-//Rutas para vinos especificos 
+
+
+//--Rutas para vinos especificos--// 
 
 router.get('/rosados',productoController.productosRosados)
 
