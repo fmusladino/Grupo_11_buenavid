@@ -33,7 +33,7 @@ module.exports=(sequilize, dataTypes)=>{
     }
     let config= {
         tableName: "Users",
-        timestamps: true
+        timestamps: false
     }
 
     const User = sequilize.define(alias,cols,config)

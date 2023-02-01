@@ -7,6 +7,9 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+
+
+//--Require de la base de datos--//
 const db= require('../db/models')
 
 
@@ -34,7 +37,7 @@ const productoController={
 
     almacenaProducto: (req,res) => {
         
-
+//--Validator--//
         const resultValidation = validationResult(req);
 
         if(resultValidation.errors.length > 0){

@@ -12,13 +12,30 @@
             <form action="/usuario/login" method="POST">
                 <p>
                     <label>Correo Electrónico</label>
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" >
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="errores-de-formularios">
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %>
                 </p>
 
                 <p>
                     <label>Contraseña</label>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" >
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="errores-de-formularios">
+                            <%= errors.password.msg %>
+                        </div>
+                        <% } %>
                 </p>
+
+
+
+                <p class="boton-recordame">
+                    <input type="checkbox" name="recordarme"><label class="checkbox-inline">Recordarme</label>
+                </p>
+
 
                 <p>
                     <button class="boton-formulario" type="submit">Ingresar</button>
