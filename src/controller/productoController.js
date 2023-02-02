@@ -47,7 +47,7 @@ const productoController={
         })
         }
 
-//--Logica con BD--//
+//--Logica con BD--(falta modificaciones en la vista)--> en proceso//
 
 //let product={
     //category_id:req.body.category,
