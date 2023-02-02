@@ -2,7 +2,7 @@
 
 const loginCheck= (req, res, next) => {
 
-    if (req.cookies.cookieLogueado) {
+    if (req.session.userLogged) {
         next();  
     }
     else {

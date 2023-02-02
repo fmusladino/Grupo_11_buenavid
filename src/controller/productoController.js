@@ -49,26 +49,38 @@ const productoController={
 
 //--Logica con BD--//
 
+let product={
+    category_id:req.body.category,
+    description:req.body.description,
+    winery_id:req.body.winery,
+    origin_id:req.body.origin,
+    year:req.body.year,
+    price:req.body.price,
+    discount:req.body.discount,
+    image:req.body.image,//Duda con Multer
+    recomended:req.body.recomended
+}
 
+Product.create(product)
 
-        const nuevoProducto = req.body;
+      //  const nuevoProducto = req.body;
 
          //asignanción del id al nuevo producto, una mas que el último id
-        const largoBD = products.length;
-        nuevoProducto.id = (products[largoBD - 1].id)+1;
+        //const largoBD = products.length;
+       // nuevoProducto.id = (products[largoBD - 1].id)+1;
 
         // pasar a numeros los string de precio y descuento que vengan del formulario
-        nuevoProducto.price = parseFloat(nuevoProducto.price);
-        nuevoProducto.discount = parseFloat(nuevoProducto.discount);
+    //    nuevoProducto.price = parseFloat(nuevoProducto.price);
+      //  nuevoProducto.discount = parseFloat(nuevoProducto.discount);
 
         // agrego el campo con el nombre de la foto del producto que se guardó en public/images/products
-        nuevoProducto.image = req.file.filename;
+    //    nuevoProducto.image = req.file.filename;
 
-        products.push(nuevoProducto);
+      //  products.push(nuevoProducto);
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+     //   fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
  
-		return res.redirect('/');
+		//return res.redirect('/');
               
     },
     
