@@ -38,7 +38,7 @@ const User= db.User
 
 //--Validaciones de Login--//
 const validacionesParaLogin=require('../validators/validatorLogin')
-//--Validaciones de Registro--//
+//--Validaciones de Registro---->(Con errores)--> en proceso//
 const validacionesParaRegistro=require('../validators/validatorRegistro')
 
 
@@ -46,7 +46,7 @@ const validacionesParaRegistro=require('../validators/validatorRegistro')
 //Rutas
 //-Registro--//
 router.get('/registro', usuarioController.mostrarFormularioRegistroUsuario);
-router.post('/registro',validacionesParaRegistro, uploadFile.single('image'), usuarioController.almacenarNuevoUsuario);
+router.post('/registro', uploadFile.single('image'), usuarioController.almacenarNuevoUsuario);
 
 //--Login--//
 router.get('/login', usuarioController.mostrarFormularioLogin);
