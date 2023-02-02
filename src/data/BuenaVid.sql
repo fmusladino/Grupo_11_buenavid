@@ -51,16 +51,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `BuenaVid`.`wineries`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `BuenaVid`.`wineries` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `BuenaVid`.`categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BuenaVid`.`categories` (
@@ -91,18 +81,12 @@ CREATE TABLE IF NOT EXISTS `BuenaVid`.`products` (
   `discount` DECIMAL(2) NOT NULL,
   `recomended` TINYINT NOT NULL,
   `image` VARCHAR(100) NOT NULL,
-  `winery_id` INT NOT NULL,
+  `winery` VARCHAR(100) NOT NULL,
   `category_id` INT NOT NULL,
   `origin_id` INT NOT NULL,
   PRIMARY KEY (`id`, `category_id`, `origin_id`),
-  INDEX `fk_products_wineries1_idx` (`winery_id` ASC)  ,
   INDEX `fk_products_categories1_idx` (`category_id` ASC)  ,
   INDEX `fk_products_origins1_idx` (`origin_id` ASC)  ,
-  CONSTRAINT `fk_products_wineries1`
-    FOREIGN KEY (`winery_id`)
-    REFERENCES `BuenaVid`.`wineries` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_products_categories1`
     FOREIGN KEY (`category_id`)
     REFERENCES `BuenaVid`.`categories` (`id`)

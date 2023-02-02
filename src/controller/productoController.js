@@ -62,6 +62,11 @@ let product={
 }
 
 Product.create(product)
+.then(() => {
+    return res.redirect('/');
+  })
+    .catch(error => console.log(error));
+
 
       //  const nuevoProducto = req.body;
 

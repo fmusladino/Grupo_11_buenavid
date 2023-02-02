@@ -28,8 +28,8 @@ module.exports=(sequilize, dataTypes)=>{
         image:{
             type:dataTypes.STRING
         },
-        winery_id:{
-            type:dataTypes.INTEGER
+        winery:{
+            type:dataTypes.STRING
         },
         category_id:{
             type:dataTypes.INTEGER
@@ -40,7 +40,7 @@ module.exports=(sequilize, dataTypes)=>{
     }
     let config= {
         tableName: "Products",
-        timestamps: true
+        timestamps: false
     }
 
     const Product = sequilize.define(alias,cols,config)
@@ -54,10 +54,7 @@ module.exports=(sequilize, dataTypes)=>{
             foreignKey:'origin_id',
             as:'origin'
         });
-        Product.belongsTo(models.Winery,{
-            foreignKey:'winery_id',
-            as:'winery'
-        });
+       
     }
 
 return Product;

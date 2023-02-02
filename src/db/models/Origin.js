@@ -9,15 +9,10 @@ module.exports=(sequilize, dataTypes)=>{
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        pais:{
-            type: dataTypes.STRING
-        },
         region:{
             type:dataTypes.STRING
         },
-        zona:{
-            type:dataTypes.STRING
-        }
+       
     }
     let config= {
         tableName: "Origins",

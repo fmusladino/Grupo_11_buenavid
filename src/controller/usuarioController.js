@@ -206,7 +206,7 @@ console.log(req.session.userLogged)
 //--Si el usuario apreto el checkbox de Recordame--//
 //--Creamos una cookie que se le guarde session por 24 horas--//
             if (req.body.recordarme) {
-              res.cookie("cookieLogueado",{ where: { email: req.body.email } }, { maxAge: 1000 * 60 * 60 * 24 })
+              res.cookie({ where: { email: req.body.email } }, { maxAge: 1000 * 60 * 60 * 24 })
             }
             //--Lo mandamos a Index--//
             return res.redirect('/');
