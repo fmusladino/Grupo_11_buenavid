@@ -230,6 +230,33 @@ console.log(req.session.userLogged)
         })
       })
   },
+  listaUsuarios: (req, res) => {
+    
+    const obj = {}
+
+    db.User.findAll( {attributes: { exclude : ['password']}} )
+
+      .then( usersList => {
+        obj.count = usersList.length
+        usersList.map(usuario => 
+          usuario.detail = '/usuarios/api/user/' + usuario.id
+        )
+        obj.users = usersList
+        return res.json(obj.users)
+      })
+    },
+
+  detalleUsuario: (req, res) => {
+
+    const user = {}
+
+    db.User.findByPk(req.params.id, {attributes: { exclude : ['password']}})
+
+    .then( usuario => {
+      usuario.imageURL = 'usuario/api/users/id/' + 'aca-deberia-ir-imagen' + usuario.id
+      return res.json(usuario)
+    })
+  }
   
 }
 
