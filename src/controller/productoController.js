@@ -49,47 +49,67 @@ const productoController={
 
 //--Logica con BD--(falta modificaciones en la vista)--> en proceso//
 
-//let product={
-    //category_id:req.body.category,
-    //description:req.body.description,
-    //winery:req.body.winery,
-    //origin_id:req.body.origin,
-    //year:req.body.year,
-    //price:req.body.price,
-    //discount:req.body.discount,
-    //image:req.file.image,//Duda con Multer
-  //  recomended:req.body.recomended
-//}
+//--Buscar Origin datos para mostrar en las vistas--//
+db.Origin.findAll(origin).then(() => {
+    return res.render('formCarga',{origin});
+  })
+    .catch(error => console.log(error));
 
-//Product.create(product)
-//.then(() => {
-   // return res.redirect('/');
- // })
-  //  .catch(error => console.log(error));
+//--Variable que toma los datos del formulario--//
+let product={
+    category_id:req.body.category,
+    description:req.body.description,
+    winery:req.body.winery,
+    origin_id:req.body.origin,
+    year:req.body.year,
+    price:req.body.price,
+    discount:req.body.discount,
+    image:req.file.image,
+    recomended:req.body.recomended
+}
+
+//--Mostrar a la vista--//
+
+
+Product.create(product)
+.then(() => {
+    return res.redirect('/');
+  })
+    .catch(error => console.log(error));
+    },
+
+
+
+
 
 
     //--LOGISTICA CON JSON--//
-       const nuevoProducto = req.body;
+
+
+      // const nuevoProducto = req.body;
 
          //asignanción del id al nuevo producto, una mas que el último id
-        const largoBD = products.length;
-        nuevoProducto.id = (products[largoBD - 1].id)+1;
+     //   const largoBD = products.length;
+       // nuevoProducto.id = (products[largoBD - 1].id)+1;
 
         // pasar a numeros los string de precio y descuento que vengan del formulario
-    nuevoProducto.price = parseFloat(nuevoProducto.price);
-        nuevoProducto.discount = parseFloat(nuevoProducto.discount);
+    //nuevoProducto.price = parseFloat(nuevoProducto.price);
+      //  nuevoProducto.discount = parseFloat(nuevoProducto.discount);
 
         // agrego el campo con el nombre de la foto del producto que se guardó en public/images/products
-      nuevoProducto.image = req.file.filename;
+    //  nuevoProducto.image = req.file.filename;
 
-        products.push(nuevoProducto);
+      //  products.push(nuevoProducto);
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        //fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
  
-		return res.redirect('/');
+		//return res.redirect('/');
               
-    },
+    //},
     
+
+
+    //Modificar
     mostrarFormularioEdicionProducto: (req,res) => {
         const productId = req.params.id;       
         const productoAMostrar = products.find((product) => product.id == productId);
@@ -99,6 +119,8 @@ const productoController={
         return res.render('formEdicion', viewData);
     },
 
+
+    //Modificar
     almacenaProductoEditado: (req,res) => {
 
         const resultValidation = validationResult(req);
@@ -145,6 +167,8 @@ const productoController={
           return res.redirect('/');
     },
 
+
+    //Modificar
     eliminarProducto:(req,res)=>{;
                 
         const newProducts = products.filter((product) => product.id != req.params.id);
@@ -154,6 +178,7 @@ const productoController={
         return res.redirect('/');
     },
 
+    //Modificar
     productosRosados:(req,res)=>{
         const productosCategoria= products.filter(product=>product.category=='Vino Rosado')
 
@@ -162,6 +187,7 @@ const productoController={
         }
         res.render('vinosCategorias',mostarEnconsola)
     },
+    //Modificar
     productosBlancos:(req,res)=>{
         const productosCategoria= products.filter(product=>product.category=='Vino Blanco')
 
@@ -170,6 +196,7 @@ const productoController={
         }
         res.render('vinosCategorias',mostarEnconsola)
     },
+    //Modifcar
     productosTintos:(req,res)=>{
         const productosCategoria= products.filter(product=>product.category=='Vino Tinto')
 
@@ -178,6 +205,7 @@ const productoController={
         }
         res.render('vinosCategorias',mostarEnconsola)
     },
+    //Modificar
     productosEspumantes:(req,res)=>{
         const productosCategoria= products.filter(product=>product.category=='Vino Espumantes')
 
@@ -186,6 +214,7 @@ const productoController={
         }
         res.render('vinosCategorias',mostarEnconsola)
     },
+    //Modificar
     productosEnPromo:(req,res)=>{
         const productosCategoria= products.filter(product=>product.discount>0)
         const mostarEnconsola={

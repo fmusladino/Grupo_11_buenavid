@@ -16,7 +16,7 @@ module.exports=(sequilize, dataTypes)=>{
     }
     let config= {
         tableName: "Origins",
-        timestamps: true
+        timestamps: false
     }
 
     const Origin = sequilize.define(alias,cols,config)

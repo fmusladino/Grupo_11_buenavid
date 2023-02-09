@@ -19,12 +19,12 @@
                             <label>Categoría</label>
                             <select type="text" name="category">
                                 <option value="">Selecciona una categoria</option>
-                                <% let categories=[ "Vino Tinto","Vino Blanco","Vino Dulce","Vino Espumantes"] %>
+                                <% let categories=[ "Vino Tinto" ,"Vino Blanco","Vino Dulce","Vino Espumantes"] %>
                                     <% for( const oneCategory of categories) { %>
-                                        <option
-                                            value="<%= oneCategory %>"
-                                            <%= locals.valores && (oneCategory === valores.category) ? 'selected': null%>
-                                            > <%= oneCategory %> </option>
+                                        <option value="<%= oneCategory %>" <%=locals.valores &&
+                                            (oneCategory===valores.category) ? 'selected' : null%>
+                                            > <%= oneCategory %>
+                                        </option>
                                         <% } %>
                             </select>
                             <% if (locals.errors && errors.category) { %>
@@ -57,9 +57,15 @@
                         </p>
 
                         <p>
-                            <label>Origen</label>
-                            <input type="text" name="origin" id="origin"
-                                value="<%= locals.valores ? valores.origin : null %>">
+                            <label for="">Origen</label>
+
+                            <select name="origin">
+                                <% for(let i = 0; i < origin.lenght; i++) {%>
+                                    <option value="<%=origin[i].id %>">
+                                        <%= origin[i].region %>
+                                    </option>
+                                    <% } %>
+                            </select>
                             <% if (locals.errors && errors.origin) { %>
                                 <div class="errores-de-formularios">
                                     <%= errors.origin.msg %>

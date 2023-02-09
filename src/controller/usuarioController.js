@@ -32,7 +32,7 @@ const usuarioController = {
 
 
 
-  //--Mostrar Formulario de Editar Usuario--//
+  //--Mostrar Formulario de Editar Usuario--//--A MODIFICAR
   mostrarFormularioModificarUsuario: (req, res) => {
     const usuarioId = req.params.id;
     const usuarioAMostrar = usuarios.find((user) => user.id == usuarioId);
@@ -125,7 +125,7 @@ const resultValidation = validationResult(req);
 
 
 
-  //--Logica para Borrar Usuario--//
+  //--Logica para Borrar Usuario--//--A MODIFICAR
   borrarUsuario: (req, res) => {
 
     const newUsuarios = usuarios.filter((user) => user.id != req.params.id);
