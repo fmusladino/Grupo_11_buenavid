@@ -57,7 +57,7 @@ const productoController={
     //year:req.body.year,
     //price:req.body.price,
     //discount:req.body.discount,
-    //image:req.body.image,//Duda con Multer
+    //image:req.file.image,//Duda con Multer
   //  recomended:req.body.recomended
 //}
 
