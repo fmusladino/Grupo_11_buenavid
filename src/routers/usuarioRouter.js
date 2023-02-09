@@ -59,4 +59,8 @@ router.put('/editar/:id',uploadFile.single('image'),usuarioController.almacenaUs
 //--Eliminar usuario--//
 router.delete('/eliminar/:id', usuarioController.borrarUsuario);
 
+//-- API lista de usuarios y detalles de usuario --//
+router.get('/api/users', usuarioController.listaUsuarios)
+router.get('/api/users/:id', usuarioController.detalleUsuario)
+
 module.exports = router;
