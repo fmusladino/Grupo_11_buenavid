@@ -12,6 +12,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //--Require de la base de datos--//
 const db= require('../db/models')
 const Product=db.Product
+const Origin=db.Origin
 
 
 
@@ -30,8 +31,14 @@ const productoController={
         });
     },
 
-    mostrarFormularioCargaProducto: (req, res) => {
-        return res.render ('formCarga')
+    mostrarFormularioCargaProducto: (req, res) =>{
+    //--Buscar Origin datos para mostrar en las vistas--//
+    
+    Origin.findAll().then((origins) => {
+        return res.render('formCarga',{origins:origins});
+      })
+        .catch(error => console.log(error));
+      
     },
     
 
@@ -40,20 +47,20 @@ const productoController={
 //--Validator--//
         const resultValidation = validationResult(req);
 
-        if(resultValidation.errors.length > 0){
-        return res.render('formCarga',{
-            errors: resultValidation.mapped(),
-            valores: req.body
-        })
-        }
+
+
+        if(resultValidation.errors.length > 0){  
+            Origin.findAll().then((origins) => {
+                return res.render('formCarga',{
+                        errors: resultValidation.mapped(),
+                        valores: req.body,
+                        origins:origins
+                    })
+              })
 
 //--Logica con BD--(falta modificaciones en la vista)--> en proceso//
 
-//--Buscar Origin datos para mostrar en las vistas--//
-db.Origin.findAll(origin).then(() => {
-    return res.render('formCarga',{origin});
-  })
-    .catch(error => console.log(error));
+
 
 //--Variable que toma los datos del formulario--//
 let product={
@@ -69,6 +76,11 @@ let product={
 }
 
 //--Mostrar a la vista--//
+Origin.findAll().then((origins) => {
+    return res.render('formCarga',{error:error,origins:origins});
+  })
+    .catch(error => console.log(error));
+  
 
 
 Product.create(product)
@@ -76,7 +88,9 @@ Product.create(product)
     return res.redirect('/');
   })
     .catch(error => console.log(error));
-    },
+    }
+},
+    
 
 
 

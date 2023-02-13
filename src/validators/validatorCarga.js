@@ -14,8 +14,8 @@ body('category')
         .isLength({min: 3}).withMessage('la bodega debe tener como mínimo 3 caractéres'),
 
     body('origin')
-        .notEmpty().withMessage('Debes completar el origen regional').bail()  
-        .isLength({min: 5}).withMessage('El origen regional debe tener como mínimo 5 caractéres'),
+        .notEmpty().withMessage('Debes completar el origen regional').bail(), 
+       
 
     body('year')
         .notEmpty().withMessage('Debes completar el año').bail()

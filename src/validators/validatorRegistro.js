@@ -24,7 +24,7 @@ const validacionesParaRegistro = [
         .isLength({min: 10}).withMessage('Su numero es invalido').bail()
         .isNumeric().bail()
         .custom((value, { req }) => {
-            if(value === +54){
+            if(value === +54 + value){
                 return true
             }else{
                 throw new Error('Su numero debe llevar +54')

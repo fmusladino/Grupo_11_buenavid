@@ -230,6 +230,8 @@ console.log(req.session.userLogged)
         })
       })
   },
+
+  
   listaUsuarios: (req, res) => {
     
     const obj = {}
