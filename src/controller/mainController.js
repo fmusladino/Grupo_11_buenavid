@@ -7,8 +7,10 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const db =require("../db/models");
+const {op}=require('sequelize')
 
+const db =require("../db/models");
+const Product=db.Product
 
 
 
@@ -17,13 +19,28 @@ const mainController = {
 
    index: (req,res) => {
         
-      const productosRecomendados = products.filter(product => product.recomended=="true");
+      const productosRecomendados = Product.findAll().then( { where:{
+         recomended: true
+      }})
+      .catch(error => console.log(error));
+  
+   
 
-      const productosEnPromocion = products.filter(product=> product.discount >= 10)
+      const productosEnPromocion = Product.findAll()
+         .then({where:{
+            discount: {[op.gt]: 10}
+         }})
+         .catch(error => console.log(error));
+  
+     console.log(productosEnPromocion)
 
        const viewData={
           productosRecomendados,
          productosEnPromocion
+
+    }
+    if(req.session.userLogged){
+      viewData.userLogged =req.session.userLogged
     }
 
     return res.render ('index',viewData )

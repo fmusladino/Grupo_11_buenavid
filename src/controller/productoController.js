@@ -50,18 +50,20 @@ const productoController={
 
 
         if(resultValidation.errors.length > 0){  
+            console.log('Entro aca')
             Origin.findAll().then((origins) => {
                 return res.render('formCarga',{
                         errors: resultValidation.mapped(),
                         valores: req.body,
                         origins:origins
                     })
-              })
+        })
+        }
 
 //--Logica con BD--(falta modificaciones en la vista)--> en proceso//
 
 
-
+console.log(req.file)
 //--Variable que toma los datos del formulario--//
 let product={
     category_id:req.body.category,
@@ -71,7 +73,7 @@ let product={
     year:req.body.year,
     price:req.body.price,
     discount:req.body.discount,
-    image:req.file.image,
+    image:req.file.filename,
     recomended:req.body.recomended
 }
 
@@ -88,7 +90,7 @@ Product.create(product)
     return res.redirect('/');
   })
     .catch(error => console.log(error));
-    }
+    
 },
     
 

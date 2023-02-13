@@ -15,7 +15,7 @@ module.exports=(sequilize, dataTypes)=>{
     }
     let config= {
         tableName: "Categories",
-        timestamps: true
+        timestamps: false
     }
 
     const Category = sequilize.define(alias,cols,config)

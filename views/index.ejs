@@ -6,21 +6,21 @@
         <section>
         <h3 class="prodes">Productos en Promocion</h3><br>    
         <div class="products">
-            <% productosEnPromocion.forEach(productosEnPromocion => { %>
+            <% productosEnPromocion.forEach(productosPromocion => { %>
                 <article>
                     <div class="contenedor-fts">
-                    <img src="images/productos/<%= productosEnPromocion.image %> " alt="pinot" class="product_img">
+                    <img src="images/productos/<%= productosPromocion.image %> " alt="pinot" class="product_img">
                 </div>
                     <div class="main-article">
-                        <h4 class="description"><%= productosEnPromocion.winery %> </h4>
-                        <h5 class="description"> <%= productosEnPromocion.description %> </h5>
+                        <h4 class="description"><%= productosPromocion.winery %> </h4>
+                        <h5 class="description"> <%= productosPromocion.description %> </h5>
                         <div class="flex-container">
-                            <p class="price">$ <%= productosEnPromocion.price %> </p>
-                            <p class="discount"><%= productosEnPromocion.discount %>% off</p>
+                            <p class="price">$ <%= productosPromocion.price %> </p>
+                            <p class="discount"><%= productosPromocion.discount %>% off</p>
                         </div>
                         
                     </div>
-                    <button class="btn-carr"><a href="/producto/detalle/<%= productosEnPromocion.id %>"> Tienda </a></button>
+                    <button class="btn-carr"><a href="/producto/detalle/<%= productosPromocion.id %>"> Tienda </a></button>
                 </article>
             <% }) %>
     </section>

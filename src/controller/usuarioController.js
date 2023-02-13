@@ -15,6 +15,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 //--Require de la base de datos--//
 const db = require('../db/models')
 const User = db.User
+const Role=db.Role
 
 
 
@@ -32,14 +33,25 @@ const usuarioController = {
 
 
 
-  //--Mostrar Formulario de Editar Usuario--//--A MODIFICAR
+  //--Mostrar Formulario de Editar Usuario--//
   mostrarFormularioModificarUsuario: (req, res) => {
-    const usuarioId = req.params.id;
-    const usuarioAMostrar = usuarios.find((user) => user.id == usuarioId);
-    if (usuarioAMostrar == undefined) { return res.render('not-found') };
-    //en la vista hay que referirse a "usuario" como el objeto que contiene los campos a mostrar
-    const viewData = { usuario: usuarioAMostrar };
-    return res.render('editarUsuario', viewData);
+    const traerRoles=Role.findAll();
+    const buscarUsuario=User.findByPk(req.params.id,{
+      include:[{association:"role"}]
+    })
+    Promise.all([traerRoles,buscarUsuario])
+    .then((resultado)=>{
+
+      if(resultado[1]==null){
+
+        res.render('not-found')
+      }
+      const viewdata={
+        roles:resultado[0],
+        usuario:resultado[1]
+      }
+      res.render('editarUsuario',viewdata)
+    })
   },
 
 
@@ -201,7 +213,7 @@ const resultValidation = validationResult(req);
         if (userToLogin) {
           const isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
           if (isOkPassword) {
-            req.session.userLogged = userToLogin;
+            req.session.userLogged = userToLogin.dataValues;
 console.log(req.session.userLogged)
 //--Si el usuario apreto el checkbox de Recordame--//
 //--Creamos una cookie que se le guarde session por 24 horas--//

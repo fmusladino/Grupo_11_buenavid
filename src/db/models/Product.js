@@ -14,7 +14,7 @@ module.exports=(sequilize, dataTypes)=>{
             type: dataTypes.TEXT
         },
         year:{
-            type:dataTypes.DATE
+            type:dataTypes.INTEGER
         },
         price:{
             type:dataTypes.FLOAT

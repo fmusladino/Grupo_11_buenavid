@@ -15,7 +15,7 @@ module.exports=(sequilize, dataTypes)=>{
     }
     let config= {
         tableName: "Roles",
-        timestamps: true
+        timestamps: false
     }
 
     const Role = sequilize.define(alias,cols,config)
