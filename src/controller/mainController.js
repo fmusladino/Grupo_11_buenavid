@@ -16,41 +16,26 @@ const Product=db.Product
 
 const mainController = {
 
-   index: (req,res) => {
+   index: async (req,res) => {
       
-      async function productosRecomendados () {
-         try {
-            productosRecomendados = await Product.findAll({ where:{
-               recomended: true
-            }},
-            { limit: 9 })
-            console.log("111111111111")
-            console.log(productosRecomendados)
-            console.log("111111111111")
-            return productosRecomendados
-         }
-         catch(error) {console.log(error)}
-      }
-      async function productosEnPromocion () {
-         try {  
-            productosEnPromocion = await Product.findAll({where:{
-            discount: {[Op.gte]: 10}
-            }})
-            console.log("222222222222")
-            console.log(productosEnPromocion)
-            console.log("222222222222")
-            return productosEnPromocion
-         }
-         catch(error) {console.log(error)}
-      }
-      const viewData = {
-         productosEnPromocion,
-         productosRecomendados
-      }
-      if(req.session.userLogged){
-         viewData.userLogged =req.session.userLogged
-      }
-    return res.render ('index',viewData)
+      const productosRecomendados = await Product.findAll({ 
+         limit: 9, 
+         where:{recomended: true }
+            })
+
+      const productosEnPromocion = await Product.findAll({where:{
+               discount: 10
+               }})   
+
+               if(req.session.userLogged){
+                  userLogged =req.session.userLogged
+               }
+             return res.render ('index',{productosRecomendados, productosEnPromocion})
+         },
+      
+      
+
+      
 
    /*   Product.findAll({ where:{
          recomended: true
@@ -78,7 +63,6 @@ const mainController = {
          
       .catch(error => console.log(error));*/
 
-   },
 
   productCar: (req, res) => {
       return res.render ('productCar')

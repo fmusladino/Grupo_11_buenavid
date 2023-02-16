@@ -42,6 +42,8 @@ const validacionesParaLogin=require('../validators/validatorLogin')
 const validacionesParaRegistro=require('../validators/validatorRegistro')
 
 
+//--Middleware--//
+
 
 //Rutas
 //-Registro--//

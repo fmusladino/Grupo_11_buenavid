@@ -10,6 +10,9 @@ const db=require('../db/models')
 const mainController = require('../controller/mainController');
 
 
+//--Middleware--//
+const userLogged=require('../middlewares/userLogged')
+
 //--Rutas--//
 router.get('/', mainController.index);
 
