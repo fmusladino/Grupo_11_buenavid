@@ -206,6 +206,9 @@ Product.create(product)
         const mostarEnconsola={
             productosCategoria
         }
+        if(req.session.userLogged){
+            mostarEnconsola.userLogged =req.session.userLogged
+         }
         res.render('vinosCategorias',mostarEnconsola)
     },
    
@@ -218,6 +221,9 @@ Product.create(product)
         const mostarEnconsola={
             productosCategoria
         }
+        if(req.session.userLogged){
+            mostarEnconsola.userLogged =req.session.userLogged
+         }
         res.render('vinosCategorias',mostarEnconsola)
     },
 
@@ -230,6 +236,9 @@ Product.create(product)
         const mostarEnconsola={
             productosCategoria
         }
+        if(req.session.userLogged){
+            mostarEnconsola.userLogged =req.session.userLogged
+         }
         res.render('vinosCategorias',mostarEnconsola)
     },
   
@@ -241,6 +250,9 @@ Product.create(product)
         const mostarEnconsola={
             productosCategoria
         }
+        if(req.session.userLogged){
+            mostarEnconsola.userLogged =req.session.userLogged
+         }
         res.render('vinosCategorias',mostarEnconsola)
     },
     //--Falta que sean Mayor a 10--//
@@ -253,6 +265,9 @@ Product.create(product)
         const mostarEnconsola={
             productosCategoria
         }
+        if(req.session.userLogged){
+            mostarEnconsola.userLogged =req.session.userLogged
+         }
         res.render('vinosCategorias',mostarEnconsola)
     }
     

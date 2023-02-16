@@ -26,11 +26,15 @@ const mainController = {
       const productosEnPromocion = await Product.findAll({where:{
                discount: 10
                }})   
+const viewData= {
+   productosRecomendados, 
+   productosEnPromocion,
+}
 
                if(req.session.userLogged){
-                  userLogged =req.session.userLogged
+                  viewData.userLogged =req.session.userLogged
                }
-             return res.render ('index',{productosRecomendados, productosEnPromocion})
+             return res.render ('index',viewData)
          },
       
       
