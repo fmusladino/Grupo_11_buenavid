@@ -13,6 +13,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const db= require('../db/models')
 const Product=db.Product
 const Origin=db.Origin
+const Category=db.Category
 
 
 
@@ -194,45 +195,61 @@ Product.create(product)
         return res.redirect('/');
     },
 
-    //Modificar
-    productosRosados:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Vino Rosado')
+//--Vistas dinamicas finalizadas con Sequelize--//
+    productosRosados:async (req,res)=>{
+        const productosCategoria= await Product.findAll({
+            include : [{association : 'category'}],
+            where:{category_id:3}
+         
+        })
+    
+        const mostarEnconsola={
+            productosCategoria
+        }
+        res.render('vinosCategorias',mostarEnconsola)
+    },
+   
+    productosBlancos:async (req,res)=>{
+        const productosCategoria= await Product.findAll({
+            include : [{association : 'category'}],
+            where:{category_id:1}
+        })
 
         const mostarEnconsola={
             productosCategoria
         }
         res.render('vinosCategorias',mostarEnconsola)
     },
-    //Modificar
-    productosBlancos:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Vino Blanco')
+
+    productosTintos:async(req,res)=>{
+        const productosCategoria= await Product.findAll({
+            include : [{association : 'category'}],
+            where:{category_id:2}
+        })
 
         const mostarEnconsola={
             productosCategoria
         }
         res.render('vinosCategorias',mostarEnconsola)
     },
-    //Modifcar
-    productosTintos:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Vino Tinto')
-
+  
+    productosEspumantes:async(req,res)=>{
+        const productosCategoria= await Product.findAll({
+            include : [{association : 'category'}],
+            where:{category_id:4}
+        })
         const mostarEnconsola={
             productosCategoria
         }
         res.render('vinosCategorias',mostarEnconsola)
     },
-    //Modificar
-    productosEspumantes:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.category=='Vino Espumantes')
-
-        const mostarEnconsola={
-            productosCategoria
-        }
-        res.render('vinosCategorias',mostarEnconsola)
-    },
-    //Modificar
-    productosEnPromo:(req,res)=>{
-        const productosCategoria= products.filter(product=>product.discount>0)
+    //--Falta que sean Mayor a 10--//
+    productosEnPromo:async(req,res)=>{
+        const productosCategoria= await Product.findAll({
+            where:{
+                discount:10
+            }
+        })
         const mostarEnconsola={
             productosCategoria
         }

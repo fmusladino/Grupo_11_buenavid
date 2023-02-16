@@ -22,7 +22,7 @@ const mainController = {
          limit: 9, 
          where:{recomended: true }
             })
-
+//--Falta que sea Mayor a 10--//
       const productosEnPromocion = await Product.findAll({where:{
                discount: 10
                }})   
