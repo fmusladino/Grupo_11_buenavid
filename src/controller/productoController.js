@@ -159,38 +159,38 @@ Product.create(product)
          })
         }
 
-        const productoIndex=  products.findIndex(
+        const productoIndex=  Producto.findByPk(
             (product) => {
               return product.id == req.params.id
-            }
-          )
-          if (productoIndex == -1) {
+            })
+        if (productoIndex == -1) {
             return res.send('El producto que busca no existe')
-          }
+        } else {
+          /*  const productoCampos = req.body
+            productoCampos.price = parseFloat(productoCampos.price);
+            productoCampos.discount = parseFloat(productoCampos.discount);*/
 
-        const productoCampos=req.body
-        productoCampos.price = parseFloat(productoCampos.price);
-        productoCampos.discount = parseFloat(productoCampos.discount);
-
-          products[productoIndex] = {
-            ...products[productoIndex],
+            Product[productoIndex] = {
+            ...Product[productoIndex],
             ...req.body,
             image: req.file ? req.file.filename : req.body.image
-          }
-          fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+            }
+            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
       
-          //return res.send(products[productoIndex])
-          return res.redirect('/');
+            //return res.send(products[productoIndex])
+            return res.redirect('/');
+        }
+
     },
 
 
-    //Modificar
-    eliminarProducto:(req,res)=>{;
-                
-        const newProducts = products.filter((product) => product.id != req.params.id);
-        
-        fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, 2));
-       
+    //Eliminar
+    eliminarProducto:(req,res)=>{
+
+        Product.destroy(
+            {where: {id : req.params.id }}
+        )
+
         return res.redirect('/');
     },
 

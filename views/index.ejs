@@ -1,28 +1,30 @@
 <%- include ('partials/head') %>
     <%- include ('partials/header') %>
 
-
     <main class="main-cuerpo">
         <section>
         <h3 class="prodes">Productos en Promocion</h3><br>    
         <div class="products">
-            <% productosEnPromocion.forEach(productosPromocion => { %>
-                <article>
-                    <div class="contenedor-fts">
-                    <img src="images/productos/<%= productosPromocion.image %> " alt="pinot" class="product_img">
-                </div>
-                    <div class="main-article">
-                        <h4 class="description"><%= productosPromocion.winery %> </h4>
-                        <h5 class="description"> <%= productosPromocion.description %> </h5>
-                        <div class="flex-container">
-                            <p class="price">$ <%= productosPromocion.price %> </p>
-                            <p class="discount"><%= productosPromocion.discount %>% off</p>
-                        </div>
-                        
+            <% if (productosEnPromocion != undefined) { %>
+                <% productosEnPromocion.forEach( producto => { %>
+                    <article>
+                        <div class="contenedor-fts">
+                        <img src="images/productos/<%= producto.image %> " alt="pinot" class="product_img">
                     </div>
-                    <button class="btn-carr"><a href="/producto/detalle/<%= productosPromocion.id %>"> Tienda </a></button>
-                </article>
-            <% }) %>
+                        <div class="main-article">
+                            <h4 class="description"><%= producto.winery %> </h4>
+                            <h5 class="description"> <%= producto.description %> </h5>
+                            <div class="flex-container">
+                                <p class="price">$ <%= producto.price %> </p>
+                                <p class="discount"><%= producto.discount %>% off</p>
+                            </div>
+                            
+                        </div>
+                        <button class="btn-carr"><a href="/producto/detalle/<%= producto.id %>"> Tienda </a></button>
+                    </article>
+                <% }) %>
+            <% } %>
+            
     </section>
     <section class="offers"><br>
         <h3 class="ofer">Sugeridos del Mes</h3><br>
@@ -30,21 +32,21 @@
         <br>
         
         <div class="products">
-            <% productosRecomendados.forEach(productosRecomendados => { %>
+            <% productosRecomendados.forEach(recomendado => { %>
                 <article>
                     <div class="contenedor-fts">
-                    <img src="images/productos/<%= productosRecomendados.image %> " alt="pinot" class="product_img">
+                    <img src="images/productos/<%= recomendado.image %> " alt="pinot" class="product_img">
                     </div>
                     <div class="main-article">
-                        <h4 class="description"><%= productosRecomendados.winery %> </h4>
-                        <h5 class="description"> <%= productosRecomendados.description %> </h5>
+                        <h4 class="description"><%= recomendado.winery %> </h4>
+                        <h5 class="description"> <%= recomendado.description %> </h5>
                         <div class="flex-container">
-                            <p class="price">$ <%= productosRecomendados.price %> </p>
-                            <p class="discount"><%= productosRecomendados.discount %>% off</p>
+                            <p class="price">$ <%= recomendado.price %> </p>
+                            <p class="discount"><%= recomendado.discount %>% off</p>
                         </div>
                         
                     </div>
-                    <button class="btn-carr"><a href="/producto/detalle/<%= productosRecomendados.id %>"> Tienda </a></button>
+                    <button class="btn-carr"><a href="/producto/detalle/<%= recomendado.id %>"> Tienda </a></button>
                 </article>
             <% }) %>
     </section>
