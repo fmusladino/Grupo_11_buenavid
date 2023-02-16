@@ -44,7 +44,7 @@ const usuarioController = {
 
       if(resultado[1]==null){
 
-        res.render('not-found')
+        res.render('usuarioNotFound')
       }
       const viewdata={
         roles:resultado[0],
@@ -146,46 +146,6 @@ const resultValidation = validationResult(req);
 
     return res.redirect('/');
   },
-
-
-
-
-
-
-
-
-  mostrarVistaLoginOk: (req, res) => {
-    //lógica para controlar los valores ingresados contra los de la BD
-    // si el usuario existe y el password es el correcto entones mostrar vista indexLoginOk
-
-    const usuarioIndex = usuarios.findIndex(
-      (user) => {
-        return user.email == req.body.email
-      })
-    if (usuarioIndex == -1) {
-      return res.render('usuarioNotFound')
-    }
-    let check = bcrypt.compareSync(req.body.password, usuarios[usuarioIndex].password)
-    if (check) {
-
-      const productosRecomendados = products.filter(product => product.recomended == "true");
-      const productosEnPromocion = products.filter(product => product.discount >= 10)
-      const viewData = {
-        productosRecomendados: productosRecomendados,
-        productosEnPromocion: productosEnPromocion,
-        usuario: usuarios[usuarioIndex]
-      };
-      return res.render('indexLoginOk', viewData);
-
-    } else {
-      return res.render('login');
-    }
-
-  },
-
-
-
-
 
 
 

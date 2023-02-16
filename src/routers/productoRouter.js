@@ -24,21 +24,21 @@ const validacionesParaCarga= require('../validators/validatorCarga')
 const validacionesParaEdicion= require('../validators/validatorEdicion')
 
 //--Middleware del Login check--//
-const loginCheck = require('../middlewares/loginCheck')
+//const loginCheck = require('../middlewares/loginCheck')
 
 
 //Rutas
 
 //--Detalle--//
-router.get('/detalle/:productsId/',loginCheck, productoController.productDetail);
+router.get('/detalle/:productsId/', productoController.productDetail);
 
 //--Carga--//
-router.get('/carga',loginCheck, productoController.mostrarFormularioCargaProducto);
+router.get('/carga', productoController.mostrarFormularioCargaProducto);
 
 router.post('/carga', uploadFile.single('image'), validacionesParaCarga, productoController.almacenaProducto);
 
 //--Edicion--//
-router.get('/edicion/:id', loginCheck,productoController.mostrarFormularioEdicionProducto);
+router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
 
 router.put('/edicion/:id', uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
 
