@@ -44,7 +44,6 @@ const validacionesParaRegistro=require('../validators/validatorRegistro')
 
 //--Middleware--//
 
-
 //Rutas
 //-Registro--//
 router.get('/registro', usuarioController.mostrarFormularioRegistroUsuario);
@@ -53,6 +52,9 @@ router.post('/registro', uploadFile.single('image'), usuarioController.almacenar
 //--Login--//
 router.get('/login', usuarioController.mostrarFormularioLogin);
 router.post('/login',validacionesParaLogin, usuarioController.logueado);
+
+//--Logouot--//
+router.get('/logout', usuarioController.logout);
 
 //--Editar usuario--//
 router.get('/editar/:id', usuarioController.mostrarFormularioModificarUsuario);

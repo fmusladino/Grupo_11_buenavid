@@ -67,7 +67,7 @@ const productoController = {
 
 
     //--Crear nuevo producto--//
-    almacenaProducto: (req, res) => {
+    almacenaProducto: async (req, res) => {
 
         //--Validator--//
         const resultValidation = validationResult(req);
@@ -98,23 +98,19 @@ const productoController = {
             year: req.body.year,
             price: req.body.price,
             discount: req.body.discount,
-            image: req.file.filename,
+            image: req.filename,
             recomended: req.body.recomended
         }
 
         //--Mostrar a la vista--//
-        Origin.findAll().then((origins) => {
-            return res.render('formCarga', { error: error, origins: origins });
-        })
-            .catch(error => console.log(error));
+        
 
 
 
         Product.create(product)
             .then(() => {
                 return res.redirect('/');
-            })
-            .catch(error => console.log(error));
+            });
 
     },
 
@@ -152,12 +148,26 @@ const productoController = {
 
     //Modificar-->Sequelize
     mostrarFormularioEdicionProducto: (req, res) => {
-        const productId = req.params.id;
-        const productoAMostrar = products.find((product) => product.id == productId);
-        if (productoAMostrar == undefined) { return res.render('not-found') };
-        //en la vista hay que referirse a "product" como el objeto que contiene los campos a mostrar
-        const viewData = { product: productoAMostrar };
-        return res.render('formEdicion', viewData);
+        
+        const category=Category.findAll();
+        const origen=Origin.findAll();
+        const producto = Product.findByPk(req.params.id,{
+         include:[{association:"category"}, {association:"origin"}]
+        })
+
+        Promise.all([origen, category, producto])
+        .then((resultado)=>{
+            if(resultado[2]==null){
+
+                res.render('productNotFound')
+            }
+            const viewdata={
+                origen:resultado[0],
+                category:resultado[1],
+                producto: resultado [2]
+            }
+            res.render('formEdicion', viewdata)
+        })
     },
 
 

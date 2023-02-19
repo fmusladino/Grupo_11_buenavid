@@ -8,28 +8,28 @@
         <div class="cuadro-formularios">
 
             <h2>Por favor, modificar aquí los datos del producto</h2>
-            <h2> con Id número:  <%= product.id%>  </h2>
+            <h2> con Id número:  <%= producto.id%>  </h2>
 
              <br>
             
-            <form action="/producto/edicion/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/producto/edicion/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <p>
                     
                     <label>Categoría</label>
                     <select type="text" name="category">
-                        <option <% if (product.category=='Vino Tinto') { %>
+                        <option <% if (producto.category=='Vino Tinto') { %>
                             selected
                         <% } %> value="Vino Tinto"> Vinos Tintos </option>
-                        <option <% if (product.category=='Vino Blanco') { %>
+                        <option <% if (producto.category=='Vino Blanco') { %>
                             selected
                         <% } %> value="Vino Blanco"> Vinos Blancos </option>
-                        <option <% if (product.category=='Vino Rosado') { %>
+                        <option <% if (producto.category=='Vino Rosado') { %>
                             selected
                         <% } %> value="Vino Rosado"> Vinos Rosados </option>
-                        <option <% if (product.category=='Vino Espumantes') { %>
+                        <option <% if (producto.category=='Vino Espumantes') { %>
                             selected
                         <% } %> value="Vino Espumantes">Vinos Espumantes </option>
-                        <option <% if (product.category=='otros') { %>
+                        <option <% if (producto.category=='otros') { %>
                             selected
                         <% } %>value="otros"> Otros </option>
                     </select>
@@ -37,7 +37,7 @@
 
                 <p>
                     <label>Descripción</label>
-                    <input type="text" name="description" value="<%= product.description %>">
+                    <input type="text" name="description" value="<%= producto.description %>">
                     <% if (locals.errors && errors.description) { %>
                         <div class="errores-de-formularios">
                         <%= errors.description.msg %> 
@@ -47,7 +47,7 @@
 
                 <p>
                     <label>Bodega / Productor / Fabricante</label>
-                    <input type="text" name="winery" value="<%= product.winery %>">
+                    <input type="text" name="winery" value="<%= producto.winery %>">
                     <% if (locals.errors && errors.winery) { %>
                         <div class="errores-de-formularios">
                         <%= errors.winery.msg %> 
@@ -57,7 +57,7 @@
                 
                 <p>
                     <label>Origen</label>
-                    <input type="text" name="origin" value="<%= product.origin %>">
+                    <input type="text" name="origin" value="<%= producto.origin %>">
                     <% if (locals.errors && errors.origin) { %>
                         <div class="errores-de-formularios">
                         <%= errors.origin.msg %> 
@@ -66,7 +66,7 @@
                 </p>
                 <p>
                     <label>Año</label>
-                    <input type="number" name="year" value="<%= product.year %>">
+                    <input type="number" name="year" value="<%= producto.year %>">
                     <% if (locals.errors && errors.year) { %>
                         <div class="errores-de-formularios">
                         <%= errors.year.msg %> 
@@ -75,7 +75,7 @@
                 </p>
                 <p>
                     <label>Precio</label>
-                    <input type="number" name="price" value="<%= product.price %>">
+                    <input type="number" name="price" value="<%= producto.price %>">
                     <% if (locals.errors && errors.price) { %>
                         <div class="errores-de-formularios">
                         <%= errors.price.msg %> 
@@ -85,7 +85,7 @@
                
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" placeholder="0 o el numero sin el %" value="<%= product.discount %>">
+                    <input type="number" name="discount" placeholder="0 o el numero sin el %" value="<%= producto.discount %>">
                     <% if (locals.errors && errors.discount) { %>
                         <div class="errores-de-formularios">
                         <%= errors.discount.msg %> 
@@ -97,8 +97,8 @@
                     
                     <br>
                     <label>Desea cambiar la foto del articulo?</label>
-                    <img src="/images/productos/<%= product.image %>" width="50" height="50">
-                    <input type="hidden" name="image" value="<%=product.image%>">
+                    <img src="/images/productos/<%= producto.image %>" width="50" height="50">
+                    <input type="hidden" name="image" value="<%=producto.image%>">
                     <input type="file" name="image" accept="image/.jpg .png .jpeg">
                 </p>
                
@@ -108,10 +108,10 @@
                     <label>Es un producto recomendado</label>
                     <select type="boolean" name="recomended">
                         <option
-                        <% if (product.recomended =='true') { %>
+                        <% if (producto.recomended =='true') { %>
                          selected
                         <% } %> value="true"> SI </option>
-                        <option <% if (product.recomended =='false') { %>
+                        <option <% if (producto.recomended =='false') { %>
                             selected
                            <% } %> value="false"> NO </option>
                     </select>

@@ -61,32 +61,32 @@ const usuarioController = {
   //--Crear Nuevo Usuario--//
   almacenarNuevoUsuario: (req, res) => {
 
-//--Validators para Registro--//
-const resultValidation = validationResult(req);
+    //--Validators para Registro--//
+    const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
-      return res.render('register', {
-        errors: resultValidation.mapped(),
-        valores: req.body
-      })
-    }
+        if (resultValidation.errors.length > 0) {
+          return res.render('register', {
+            errors: resultValidation.mapped(),
+            valores: req.body
+          })
+        }
 
-    //--Variable que junta los campos del formulario--//
-    let user = {
-      rol_id: req.body.rol,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      date: req.body.date,
-      email: req.body.email,
-      cellphone: req.body.cellphone,
-      password: bcrypt.hashSync(req.body.password, 10)
-    }
+        //--Variable que junta los campos del formulario--//
+        let user = {
+          rol_id: req.body.rol,
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          date: req.body.date,
+          email: req.body.email,
+          cellphone: req.body.cellphone,
+          password: bcrypt.hashSync(req.body.password, 10)
+        }
 
-    //--Logica para crear un nuevo usuario y se guarde en la base de datos--//
-    User.create(user).then(() => {
-      return res.redirect('/');
-    })
-      .catch(error => console.log(error));
+        //--Logica para crear un nuevo usuario y se guarde en la base de datos--//
+        User.create(user).then(() => {
+          return res.redirect('/');
+        })
+          .catch(error => console.log(error));
   },
 
 
@@ -96,53 +96,29 @@ const resultValidation = validationResult(req);
 
   //--Logica para Modificar Usuario--//(Falta hacerlo con Sequelize)
   almacenaUsuarioModificado: (req, res) => {
-
-
-    const usuarioIndex = usuarios.findIndex(
-      (user) => {
-        return user.id == req.params.id
-      }
-    )
-    if (usuarioIndex == -1) {
-      return res.send('El usuario que busca no existe')
-    }
-    // aca debo ver la forma de guardar el password anterior hasheado
-    //en el caso de que hubiera cambiado el el password, hashearlo, sino mantener el anterior
-
-    let passwordNuevaH = usuarios[usuarioIndex].password;
-
-    if (req.body.password != "") {
-      passwordNuevaH = bcrypt.hashSync(req.body.password, 10);
-    };
-
-    usuarios[usuarioIndex] = {
-      id: usuarios[usuarioIndex].id,
-      rol: req.body.rol,
+    User.update ({
+      rol_id: req.body.rol,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       date: req.body.date,
       email: req.body.email,
       cellphone: req.body.cellphone,
-      password: passwordNuevaH
-    }
-
-    fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
-
-    return res.redirect('/');
+      password: bcrypt.hashSync(req.body.password, 10)
+      }, {
+      where: {
+          id: req.params.id
+     }
+  })
+  .then(()=> {return res.redirect('/')})
   },
-
-
-
-
-
 
 
   //--Logica para Borrar Usuario--//--A MODIFICAR
   borrarUsuario: (req, res) => {
 
-    const newUsuarios = usuarios.filter((user) => user.id != req.params.id);
-
-    fs.writeFileSync(usuariosFilePath, JSON.stringify(newUsuarios, null, 2));
+    User.destroy(
+      { where: { id: req.params.id } }
+  )
 
     return res.redirect('/');
   },
@@ -178,7 +154,7 @@ console.log(req.session.userLogged)
 //--Si el usuario apreto el checkbox de Recordame--//
 //--Creamos una cookie que se le guarde session por 24 horas--//
             if (req.body.recordarme) {
-              res.cookie({ where: { email: req.body.email } }, { maxAge: 1000 * 60 * 60 * 24 })
+              res.cookie("recordarUsuario", { where: { email: req.body.email } }, { maxAge: 1000 * 60 * 60 * 24 })
             }
             //--Lo mandamos a Index--//
             return res.redirect('/');
@@ -201,6 +177,12 @@ console.log(req.session.userLogged)
           }
         })
       })
+  },
+
+  logout: (req, res) => {
+      res.clearCookie("recordarUsuario")
+      req.session.destroy()
+      return res.redirect("/")
   },
 
   

@@ -13,7 +13,9 @@
     <nav class="menu_nav">
         <ul class="menu_ul">
             <% if(locals.userLogged){ %>
-                 <li><a href="/usuario/editar/<%=locals.userLogged.id %>">Mi perfil</a></li>    
+                <li><a href="">"Hola <%=locals.userLogged.first_name %> !</a></li>
+                <li><a href="/usuario/editar/<%=locals.userLogged.id %>">Editar perfil</a></li>
+                <li><a href="/usuario/logout">Cerrar sesión</a></li>
           <%  } else{ %>
             <li> <i class="fa fa-sign-in" aria-hidden="true"></i><a href="/usuario/login">Login</a></li>
             <li> <i class="fa fa-registered" aria-hidden="true"></i><a href="/usuario/registro">Registro</a></li>  

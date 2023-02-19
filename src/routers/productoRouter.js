@@ -25,6 +25,7 @@ const validacionesParaEdicion= require('../validators/validatorEdicion')
 
 //--Middleware del Login check--//
 //const loginCheck = require('../middlewares/loginCheck')
+const userRole = require('../middlewares/userRole')
 
 
 //Rutas
