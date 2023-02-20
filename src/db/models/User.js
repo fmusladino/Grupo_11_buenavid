@@ -9,9 +9,7 @@ module.exports=(sequilize, dataTypes)=>{
             type: dataTypes.INTEGER,
         },
         rol_id:{
-            type: dataTypes.INTEGER,
-            onUpdate: 'NO ACTION',
-            onDelete: 'RESTRICT'
+            type: dataTypes.INTEGER
         }
         ,
         first_name:{

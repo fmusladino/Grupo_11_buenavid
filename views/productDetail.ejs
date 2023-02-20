@@ -3,8 +3,6 @@
 
         <body>
 
-
-
             <div class="contenedor-volver">
 
                 <button class="btnvolver"><a href="/">Volver al listado</a></button>
@@ -38,7 +36,6 @@
                             </div>
                         </div>
 
-
                     </div>
 
                     <div class="contenedor-bajo">
@@ -55,14 +52,18 @@
                             </div>
                             <br>
                         </div>
-                        <div class="btn-crear">
-                            
-                            <form class="btn-mod" action="/producto/eliminar/<%= productoSiSuIdExsiste.id %>?_method=DELETE" method="POST">
-                                <button type="submit"> Eliminar Producto </button>
-                            </form>
+                        <% if(locals.userLogged){ %>
+                            <% if (locals.userLogged.rol_id === 2) { %>
+                                <div class="btn-crear">
+                                    
+                                    <form class="btn-mod" action="/producto/eliminar/<%= productoSiSuIdExsiste.id %>?_method=DELETE" method="POST">
+                                        <button type="submit"> Eliminar Producto </button>
+                                    </form>
 
-                            <button class="btn-mod"><a href="/producto/edicion/<%= productoSiSuIdExsiste.id %> "> Editar Producto</a></button>
-                        </div>
+                                    <button class="btn-mod"><a href="/producto/edicion/<%= productoSiSuIdExsiste.id %> "> Editar Producto</a></button>
+                                </div>
+                            <% } %>
+                        <% } %>
                     </div>
                 </div>
               

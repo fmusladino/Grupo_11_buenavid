@@ -11,6 +11,7 @@ const { Op } = require('sequelize')
 
 const db =require("../db/models");
 const Product=db.Product
+const Role = db.Role
 
 
 

@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 const publicPath = path.resolve('public');
 app.use(express.static(publicPath));
+app.use(express.urlencoded( { extended : false}))
 
 //--Cookies--//
 app.use(cookieParser());

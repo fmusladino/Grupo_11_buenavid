@@ -4,18 +4,20 @@ const session = require('express-session');
 const db = require('../db/models')
 const Role=db.Role
 
-const userRole= (req, res, next) => {
+const userRole= async (req, res, next) => {
     
     if (req.session.userLogged) {
-        if ( req.session.userLogged.rol_id == Role.id && Role.id === 2) {
+        const traerRoles = await Role.findByPk(req.session.userLogged.rol_id)
+
+        if ( traerRoles.nombre == "Administrador" ) {
             next(); 
         } else {
-            return res.redirect("/")
+            return res.redirect("back")
         }
 
     }
     else {
-        return res.redirect("/")
+        return res.redirect("back")
     }
 
 }

@@ -1,15 +1,12 @@
 //Middleware que chequea si el usuario está logueado para permitirle entrar a una view--//
 
-//--No funciona--//
 
 const loginCheck= (req, res, next) => {
     
-    if (res.session.userLogged) {
-        next();  
+    if (req.session.userLogged) {
+        return res.redirect("/")  
     }
-    else {
-        res.redirect("/usuario/login");
-    }
+    next()
 
 }
 

@@ -4,13 +4,6 @@ const bcrypt = require('bcryptjs');
 
 const { validationResult } = require('express-validator');
 
-const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
-
-const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
-
-const productsFilePath = path.join(__dirname, '../data/productos.json');
-
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 //--Require de la base de datos--//
 const db = require('../db/models')
@@ -28,9 +21,6 @@ const usuarioController = {
   //--Mostar Formulario de Login y Registro--//
   mostrarFormularioLogin: (req, res) => { return res.render('login') },
   mostrarFormularioRegistroUsuario: (req, res) => { return res.render('register') },
-
-
-
 
 
   //--Mostrar Formulario de Editar Usuario--//
@@ -54,13 +44,9 @@ const usuarioController = {
     })
   },
 
-
-
-
-
   //--Crear Nuevo Usuario--//
   almacenarNuevoUsuario: (req, res) => {
-
+    
     //--Validators para Registro--//
     const resultValidation = validationResult(req);
 
@@ -84,32 +70,47 @@ const usuarioController = {
 
         //--Logica para crear un nuevo usuario y se guarde en la base de datos--//
         User.create(user).then(() => {
-          return res.redirect('/');
+          return res.render('login');
         })
           .catch(error => console.log(error));
   },
 
-
-
-
-
-
   //--Logica para Modificar Usuario--//(Falta hacerlo con Sequelize)
   almacenaUsuarioModificado: (req, res) => {
-    User.update ({
-      rol_id: req.body.rol,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      date: req.body.date,
-      email: req.body.email,
-      cellphone: req.body.cellphone,
-      password: bcrypt.hashSync(req.body.password, 10)
-      }, {
-      where: {
-          id: req.params.id
-     }
-  })
-  .then(()=> {return res.redirect('/')})
+
+    if (req.body.password == "" || req.body.password == null) {
+      User.update ({
+        rol_id: req.body.rol,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        date: req.body.date,
+        email: req.body.email,
+        cellphone: req.body.cellphone,
+        }, {
+        where: {
+            id: req.params.id,
+        }
+      })
+      .then(()=> {return res.redirect('/')})
+    } else {
+      User.update ({
+        rol_id: req.body.rol,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        date: req.body.date,
+        email: req.body.email,
+        cellphone: req.body.cellphone,
+        password: bcrypt.hashSync(req.body.password, 10)
+        }, {
+        where: {
+            id: req.params.id,
+        }
+      })
+      .then(()=> {return res.redirect('/')})
+    }
+
+      
+    
   },
 
 
@@ -118,7 +119,9 @@ const usuarioController = {
 
     User.destroy(
       { where: { id: req.params.id } }
-  )
+    )
+    res.clearCookie("recordarUsuario")
+    req.session.destroy()
 
     return res.redirect('/');
   },

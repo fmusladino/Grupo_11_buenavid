@@ -4,10 +4,11 @@
 
 
 const userSession = (req, res, next) => {
+
         if(req.session.userLogged){
-          userLogged =req.session.userLogged
+          viewData.userLogged =req.session.userLogged
         }
-        res.render(userLogged)
+        res.render(viewData)
         next()
     }
 

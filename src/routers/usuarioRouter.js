@@ -16,14 +16,9 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({storage});
 
-
-
-
 //--Controller--//
 //Require de Controller
 const usuarioController = require('../controller/usuarioController');
-
-
 
 //--Base de datos--//
 
@@ -32,7 +27,6 @@ const db= require('../db/models')
 
 //--Require del modelo User--//
 const User= db.User
-
 
 //--Validaciones--//
 
@@ -43,21 +37,24 @@ const validacionesParaRegistro=require('../validators/validatorRegistro')
 
 
 //--Middleware--//
+const loginCheck = require('../middlewares/loginCheck')
+const matchearUserId = require('../middlewares/matchearUserId')
+
 
 //Rutas
 //-Registro--//
-router.get('/registro', usuarioController.mostrarFormularioRegistroUsuario);
-router.post('/registro', uploadFile.single('image'), usuarioController.almacenarNuevoUsuario);
+router.get('/registro', loginCheck, usuarioController.mostrarFormularioRegistroUsuario);
+router.post('/registro', validacionesParaRegistro, usuarioController.almacenarNuevoUsuario);
 
 //--Login--//
-router.get('/login', usuarioController.mostrarFormularioLogin);
+router.get('/login',loginCheck, usuarioController.mostrarFormularioLogin);
 router.post('/login',validacionesParaLogin, usuarioController.logueado);
 
 //--Logouot--//
 router.get('/logout', usuarioController.logout);
 
 //--Editar usuario--//
-router.get('/editar/:id', usuarioController.mostrarFormularioModificarUsuario);
+router.get('/editar/:id', matchearUserId, usuarioController.mostrarFormularioModificarUsuario);
 router.put('/editar/:id',uploadFile.single('image'),usuarioController.almacenaUsuarioModificado);
 
 //--Eliminar usuario--//

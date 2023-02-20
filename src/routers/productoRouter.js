@@ -1,6 +1,5 @@
 const express = require ('express');
 const router = express.Router();
-const { body } = require('express-validator');
 const multer = require('multer');
 
 
@@ -34,17 +33,17 @@ const userRole = require('../middlewares/userRole')
 router.get('/detalle/:productsId/', productoController.productDetail);
 
 //--Carga--//
-router.get('/carga', productoController.mostrarFormularioCargaProducto);
+router.get('/carga', userRole, productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', uploadFile.single('image'), validacionesParaCarga, productoController.almacenaProducto);
+router.post('/carga', validacionesParaCarga, uploadFile.single('image'), productoController.almacenaProducto);
 
 //--Edicion--//
-router.get('/edicion/:id',productoController.mostrarFormularioEdicionProducto);
+router.get('/edicion/:id', userRole, productoController.mostrarFormularioEdicionProducto);
 
-router.put('/edicion/:id', uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
+router.put('/edicion/:id', validacionesParaEdicion, uploadFile.single('image'), productoController.almacenaProductoEditado);
 
 //--Eliminar--//
-router.delete('/eliminar/:id', productoController.eliminarProducto);
+router.delete('/eliminar/:id', userRole, productoController.eliminarProducto);
 
 
 

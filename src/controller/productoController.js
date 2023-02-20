@@ -71,24 +71,21 @@ const productoController = {
 
         //--Validator--//
         const resultValidation = validationResult(req);
-
-
+        const origins = await Origin.findAll()
+        const category = await Category.findAll()
 
         if (resultValidation.errors.length > 0) {
-            console.log('Entro aca')
-            Origin.findAll().then((origins) => {
                 return res.render('formCarga', {
                     errors: resultValidation.mapped(),
                     valores: req.body,
-                    origins: origins
+                    origins: origins,
+                    category: category
                 })
-            })
+            
         }
 
         //--Logica con BD--//
 
-
-        console.log(req.file)
         //--Variable que toma los datos del formulario--//
         let product = {
             category_id: req.body.category,
@@ -103,9 +100,6 @@ const productoController = {
         }
 
         //--Mostrar a la vista--//
-        
-
-
 
         Product.create(product)
             .then(() => {
@@ -116,37 +110,7 @@ const productoController = {
 
 
 
-
-
-
-
-    //--LOGISTICA CON JSON--//
-
-
-    // const nuevoProducto = req.body;
-
-    //asignanción del id al nuevo producto, una mas que el último id
-    //   const largoBD = products.length;
-    // nuevoProducto.id = (products[largoBD - 1].id)+1;
-
-    // pasar a numeros los string de precio y descuento que vengan del formulario
-    //nuevoProducto.price = parseFloat(nuevoProducto.price);
-    //  nuevoProducto.discount = parseFloat(nuevoProducto.discount);
-
-    // agrego el campo con el nombre de la foto del producto que se guardó en public/images/products
-    //  nuevoProducto.image = req.file.filename;
-
-    //  products.push(nuevoProducto);
-
-    //fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-
-    //return res.redirect('/');
-
-    //},
-
-
-
-    //Modificar-->Sequelize
+    //Funciona
     mostrarFormularioEdicionProducto: (req, res) => {
         
         const category=Category.findAll();

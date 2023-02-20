@@ -38,12 +38,12 @@
             <li><a href="/producto/espumantes">Vinos Espumantes</a></li>
             
             <li><a href="/producto/rosados">Vinos Rosados</a></li>
-
-            <li><a href="/producto/carga">Agregar Producto</a></li>
-
-
-
             
+            <% if(locals.userLogged){ %>
+                <% if (locals.userLogged.rol_id === 2) { %>
+                    <li><a href="/producto/carga">Agregar Producto</a></li>
+                <% } %>
+            <% } %>
 
         </ul>
     </nav>
