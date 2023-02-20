@@ -7,6 +7,8 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const { Op } = require('sequelize');
+
 
 
 //--Require de la base de datos--//
@@ -130,6 +132,8 @@ const productoController = {
                 category:resultado[1],
                 producto: resultado [2]
             }
+
+          
             res.render('formEdicion', viewdata)
         })
     },
@@ -257,7 +261,7 @@ const productoController = {
     productosEnPromo: async (req, res) => {
         const productosCategoria = await Product.findAll({
             where: {
-                discount: 10
+                discount: {[Op.gte]: 10}
             }
         })
         const mostarEnconsola = {

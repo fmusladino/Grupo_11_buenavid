@@ -25,7 +25,7 @@ const mainController = {
             })
 //--Falta que sea Mayor a 10--//
       const productosEnPromocion = await Product.findAll({where:{
-               discount: 10
+               discount: {[Op.gte]: 10}
                }})   
 const viewData= {
    productosRecomendados, 
