@@ -7,6 +7,8 @@ const productsFilePath = path.join(__dirname, '../data/productos.json');
 
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const { Op } = require('sequelize');
+
 
 
 //--Require de la base de datos--//
@@ -56,12 +58,18 @@ const productoController = {
          //--Formulario de Carga de producto vista--//
     mostrarFormularioCargaProducto: (req, res) => {
         //--Buscar Origin datos para mostrar en las vistas--//
-
-        Origin.findAll().then((origins) => {
-            return res.render('formCarga', { origins: origins });
-        })
-            .catch(error => console.log(error));
-
+     
+      Origin.findAll()
+      .then((origins) => {
+     const viewData={
+      origins
+      }
+      if(req.session.userLogged){
+        viewData.userLogged =req.session.userLogged
+     }
+        return res.render('formCarga', viewData);
+    })
+        .catch(error => console.log(error));
     },
 
 
@@ -130,6 +138,8 @@ const productoController = {
                 category:resultado[1],
                 producto: resultado [2]
             }
+
+          
             res.render('formEdicion', viewdata)
         })
     },
@@ -257,7 +267,7 @@ const productoController = {
     productosEnPromo: async (req, res) => {
         const productosCategoria = await Product.findAll({
             where: {
-                discount: 10
+                discount: {[Op.gte]: 10}
             }
         })
         const mostarEnconsola = {
