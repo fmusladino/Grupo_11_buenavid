@@ -3,6 +3,7 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 
 const { validationResult } = require('express-validator');
+const { body } = require('express-validator');
 
 
 //--Require de la base de datos--//
@@ -57,22 +58,23 @@ const usuarioController = {
           })
         }
 
-        //--Variable que junta los campos del formulario--//
-        let user = {
-          rol_id: req.body.rol,
-          first_name: req.body.first_name,
-          last_name: req.body.last_name,
-          date: req.body.date,
-          email: req.body.email,
-          cellphone: req.body.cellphone,
-          password: bcrypt.hashSync(req.body.password, 10)
-        }
+            //--Variable que junta los campos del formulario--//
+          let user = {
+            rol_id: req.body.rol,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            date: req.body.date,
+            email: req.body.email,
+            cellphone: req.body.cellphone,
+            password: bcrypt.hashSync(req.body.password, 10)
+          }
 
-        //--Logica para crear un nuevo usuario y se guarde en la base de datos--//
-        User.create(user).then(() => {
-          return res.render('login');
-        })
-          .catch(error => console.log(error));
+          //--Logica para crear un nuevo usuario y se guarde en la base de datos--//
+          User.create(user).then(() => {
+            return res.render('login');
+          })
+            .catch(error => console.log(error));
+
   },
 
   //--Logica para Modificar Usuario--//(Falta hacerlo con Sequelize)

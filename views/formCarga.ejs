@@ -1,7 +1,7 @@
 <%- include ('partials/head') %>
     <%- include ('partials/header') %>
 
-
+    <script src="/src/validators/cargaFrontEnd.js"></script>
 
         <body>
 
@@ -11,9 +11,7 @@
 
                     <h2>Por favor, cargar aquí los datos del producto a incorporar</h2>
 
-                    <form action="/producto/carga" method="post" enctype="multipart/form-data">
-
-
+                    <form id = "formulario-carga" action="/producto/carga" method="post" enctype="multipart/form-data">
 
                         <p>
                             <label>Categoría</label>
@@ -138,8 +136,6 @@
                 </div>
 
             </main>
-
-
 
         </body>
 

@@ -1,6 +1,9 @@
 //--Funciona Mal--//
 const { body } = require('express-validator');
 
+const db = require('../db/models')
+const User = db.User
+
 const validacionesParaRegistro = [
 
     body('first_name')
@@ -17,7 +20,15 @@ const validacionesParaRegistro = [
 
     body('email')
         .not().isEmpty().withMessage('Debes completar el email').bail()  
-        .isEmail().withMessage('Email invalido'),
+        .isEmail().withMessage('Email invalido')
+        .custom(value => {
+            return User.findOne({
+                where: { email : value }}).then(user => {
+              if (user) {
+                return Promise.reject('El email ingresado ya existe');
+              }
+            });
+          }),
 
     body('cellphone')
         .not().isEmpty().withMessage('Debes completar el telefono de contacto').bail()
