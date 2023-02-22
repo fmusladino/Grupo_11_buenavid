@@ -1,6 +1,6 @@
 //Middleware que detecta si los datos del usuario están guardados en la session para devolver la vista de Header
 
-//--No funciona--//
+
 
 
 const userSession = (req, res, next) => {

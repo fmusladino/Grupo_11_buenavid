@@ -58,12 +58,18 @@ const productoController = {
          //--Formulario de Carga de producto vista--//
     mostrarFormularioCargaProducto: (req, res) => {
         //--Buscar Origin datos para mostrar en las vistas--//
-
-        Origin.findAll().then((origins) => {
-            return res.render('formCarga', { origins: origins });
-        })
-            .catch(error => console.log(error));
-
+     
+      Origin.findAll()
+      .then((origins) => {
+     const viewData={
+      origins
+      }
+      if(req.session.userLogged){
+        viewData.userLogged =req.session.userLogged
+     }
+        return res.render('formCarga', viewData);
+    })
+        .catch(error => console.log(error));
     },
 
 

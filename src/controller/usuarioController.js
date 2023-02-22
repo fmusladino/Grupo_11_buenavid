@@ -40,6 +40,9 @@ const usuarioController = {
         roles:resultado[0],
         usuario:resultado[1]
       }
+      if(req.session.userLogged){
+        viewdata.userLogged =req.session.userLogged
+     }
       res.render('editarUsuario',viewdata)
     })
   },
