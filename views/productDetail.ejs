@@ -45,7 +45,7 @@
                                 <ul class="ordenar-listado-caractPrincipales">
                                    <h4>Descripción:</h4> <li><%=productoSiSuIdExsiste.description %> </li>
                                   <h4>Bodega:</h4><li><%=productoSiSuIdExsiste.winery %> </li>
-                                    <h4>Origen:</h4><li><%=productoSiSuIdExsiste.origin %> </li>
+                                    <h4>Origen:</h4><li><%=productoSiSuIdExsiste.id %> </li>
                                     <h4>Año:</h4><li><%=productoSiSuIdExsiste.year %> </li>
                                 </ul>
 
@@ -57,7 +57,7 @@
                                 <div class="btn-crear">
                                     
                                     <form class="btn-mod" action="/producto/eliminar/<%= productoSiSuIdExsiste.id %>?_method=DELETE" method="POST">
-                                        <button type="submit"> Eliminar Producto </button>
+                                        <button class="btn-mod" type="submit"> Eliminar Producto </button>
                                     </form>
 
                                     <button class="btn-mod"><a href="/producto/edicion/<%= productoSiSuIdExsiste.id %> "> Editar Producto</a></button>

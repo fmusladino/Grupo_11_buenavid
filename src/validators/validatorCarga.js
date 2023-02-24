@@ -22,7 +22,7 @@ const validacionesParaCarga = [
 
     body('price')
         .notEmpty().withMessage('Debes completar el precio').bail()
-        .isLength({ min: 3 }).withMessage('El precio debe tener como mínimo 3 caractéres (numércios, además del "."'),
+        .isLength({ min: 3 }).withMessage('El precio debe tener como mínimo 4 numeros'),
 
     body('discount')
         .notEmpty().withMessage('Debes completar el descuento - con 0 si no hubiera descuento').bail()

@@ -80,8 +80,18 @@ const usuarioController = {
 
   },
 
-  //--Logica para Modificar Usuario--//(Falta hacerlo con Sequelize)
   almacenaUsuarioModificado: (req, res) => {
+
+    //Validacion 
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render('editarUsuario', {
+        errors: resultValidation.mapped(),
+        valores: req.body,
+        
+      })
+    }
 
     if (req.body.password == "" || req.body.password == null) {
       User.update ({

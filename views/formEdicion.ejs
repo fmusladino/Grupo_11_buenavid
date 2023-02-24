@@ -19,24 +19,20 @@
                     
                     <label>Categoría</label>
                     <select type="text" name="category">
-                        <option <% if (producto.category=='Vino Tinto') { %>
+                        <option <% if (producto.category=='1') { %>
                             selected
-                        <% } %> value="Vino Tinto"> Vinos Tintos </option>
-                        <option <% if (producto.category=='Vino Blanco') { %>
+                        <% } %> value="1" > Vinos Tintos </option>
+                        <option <% if (producto.category=='2') { %>
                             selected
-                        <% } %> value="Vino Blanco"> Vinos Blancos </option>
-                        <option <% if (producto.category=='Vino Rosado') { %>
+                        <% } %> value="2"> Vinos Blancos </option>
+                        <option <% if (producto.category=='3') { %>
                             selected
-                        <% } %> value="Vino Rosado"> Vinos Rosados </option>
-                        <option <% if (producto.category=='Vino Espumantes') { %>
+                        <% } %> value="3"> Vinos Rosados </option>
+                        <option <% if (producto.category=='4') { %>
                             selected
-                        <% } %> value="Vino Espumantes">Vinos Espumantes </option>
-                        <option <% if (producto.category=='otros') { %>
-                            selected
-                        <% } %>value="otros"> Otros </option>
-                    </select>
+                        <% } %> value="4">Vinos Espumantes </option>
                 </p>
-
+<br>
                 <p>
                     <label>Descripción</label>
                     <input type="text" name="description" value="<%= producto.description %>">
