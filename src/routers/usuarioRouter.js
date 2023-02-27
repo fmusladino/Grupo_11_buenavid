@@ -4,18 +4,6 @@ const multer = require('multer');
 const {check} = require('express-validator');
 
 
-//Multer
-const storage = multer.diskStorage({
-    destination:    function (req, file, cb) {
-        cb(null, './public/images/usuarios')
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname);
-    }
-});
-
-const uploadFile = multer({storage});
-
 //--Controller--//
 //Require de Controller
 const usuarioController = require('../controller/usuarioController');
@@ -32,10 +20,10 @@ const User= db.User
 
 //--Validaciones de Login--//
 const validacionesParaLogin=require('../validators/validatorLogin')
-//--Validaciones de Registro---->(Con errores)--> en proceso//
+//--Validaciones de Registro--//
 const validacionesParaRegistro=require('../validators/validatorRegistro')
-
-
+//--Validaciones de Edicion--//
+const validacionesParaEditarUsuario=require('../validators/validatorEdicionUser')
 //--Middleware--//
 const loginCheck = require('../middlewares/loginCheck')
 const matchearUserId = require('../middlewares/matchearUserId')
@@ -55,7 +43,7 @@ router.get('/logout', usuarioController.logout);
 
 //--Editar usuario--//
 router.get('/editar/:id', matchearUserId, usuarioController.mostrarFormularioModificarUsuario);
-router.put('/editar/:id',uploadFile.single('image'),usuarioController.almacenaUsuarioModificado);
+router.put('/editar/:id',validacionesParaEditarUsuario,usuarioController.almacenaUsuarioModificado);
 
 //--Eliminar usuario--//
 router.delete('/eliminar/:id', usuarioController.borrarUsuario);

@@ -33,7 +33,7 @@ const productoController = {
                     res.render('not-found')
                 }
                const viewData={
-                productoSiSuIdExsiste:productoSiSuIdExsiste
+                productoSiSuIdExsiste:productoSiSuIdExsiste,
                }
                if(req.session.userLogged){
                 viewData.userLogged =req.session.userLogged
@@ -107,7 +107,7 @@ const productoController = {
             year: req.body.year,
             price: req.body.price,
             discount: req.body.discount,
-            image: req.filename,
+            image: req.file.filename,
             recomended: req.body.recomended
         }
 
@@ -116,8 +116,8 @@ const productoController = {
         Product.create(product)
             .then(() => {
                 return res.redirect('/');
-            });
-
+            })
+            .catch(error => console.log(error));
     },
 
 
@@ -165,8 +165,7 @@ const productoController = {
                     year: req.body.year,
                     discount: req.body.discount,
                     id: req.params.id,
-                    //agregados para ver si se soluciona la falta de imagen y category ante error en la edicion
-                    image: req.body.image,
+                    image: req.file,
                     category: req.body.category
                 }
             })
@@ -267,7 +266,7 @@ const productoController = {
         }
         res.render('vinosCategorias', mostarEnconsola)
     },
-    //--Falta que sean Mayor a 10--//
+    
     productosEnPromo: async (req, res) => {
         const productosCategoria = await Product.findAll({
             where: {

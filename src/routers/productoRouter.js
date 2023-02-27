@@ -35,12 +35,12 @@ router.get('/detalle/:productsId/', productoController.productDetail);
 //--Carga--//
 router.get('/carga', userRole, productoController.mostrarFormularioCargaProducto);
 
-router.post('/carga', validacionesParaCarga, uploadFile.single('image'), productoController.almacenaProducto);
+router.post('/carga', uploadFile.single('image'),validacionesParaCarga, productoController.almacenaProducto);
 
 //--Edicion--//
 router.get('/edicion/:id', userRole, productoController.mostrarFormularioEdicionProducto);
 
-router.put('/edicion/:id', validacionesParaEdicion, uploadFile.single('image'), productoController.almacenaProductoEditado);
+router.put('/edicion/:id', uploadFile.single('image'),validacionesParaEdicion, productoController.almacenaProductoEditado);
 
 //--Eliminar--//
 router.delete('/eliminar/:id', userRole, productoController.eliminarProducto);

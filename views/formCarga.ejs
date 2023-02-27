@@ -20,10 +20,10 @@
                             <select type="text" name="category">
                                 <option value="">Selecciona una categoria</option>
                                         </option>
-                                        <option value=1>Vino Blanco</option>
-                                        <option value=2>Vino Tinto</option>
-                                        <option value=3>Vino Rosado</option>
-                                        <option value=4>Vino Espumantes</option>
+                                        <option value=1 <%= locals.valores && ('1'===valores.category) ? 'selected' : null%>>Vino Blanco</option>
+                                        <option value=2 <%= locals.valores && ('2'===valores.category) ? 'selected' : null%>>Vino Tinto</option>
+                                        <option value=3 <%= locals.valores && ('3'===valores.category) ? 'selected' : null%>>Vino Rosado</option>
+                                        <option value=4 <%= locals.valores && ('4'===valores.category) ? 'selected' : null%>>Vino Espumantes</option>
                                        
                             </select>
                             <% if (locals.errors && errors.category) { %>
@@ -61,7 +61,7 @@
                             <select name="origin">
                                 <option value="">Selecciona un origen</option>
                                 <% origins.forEach(origin => { %>
-                                    <option value="<%=origin.id %>"><%=origin.region %></option>
+                                    <option value="<%=origin.id %>"<%= locals.valores && (origin.id === origin.region) ? 'selected' : null%>><%=origin.region %></option>
                                   <% }); %>
                             </select>
                             <% if (locals.errors && errors.origin) { %>
