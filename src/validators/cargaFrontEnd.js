@@ -1,14 +1,14 @@
-// Validación front-end del formulario de carga de 
+// Validación front-end del formulario de carga de producto
 
-window.addEventListener('load', function(){
-    
-    const formulario = document.querySelector(form.formulario-carga)
+    const formulario = document.querySelector("#formulario-carga")
 
-    formulario.addEventListener( (e) => {
-        
-        let errores = [];
+    const divErrores = document.querySelector("#errores-front")
 
-        const descripcion = document.querySelector(input.description)
+    const validacion = (e) => {
+
+        e.preventDefault()
+
+        const descripcion = formulario.description
 
         if ( descripcion.value = "" ) {
             errores.push("La descripción no puede estar vacía")
@@ -17,12 +17,18 @@ window.addEventListener('load', function(){
             errores.push("La descripción tiene que tener un mínimo de 4 letras")
         }
 
-        if ( errores.length > 0 ) {
-            e.preventDefault()
-        } else {
-            next()
+        const imagen = formulario.image
+
+        const extension = imagen.value
+
+        console.log("11111111111")
+        console.log(extension)
+        console.log("11111111111")
+
+        if ( imagen ) {
+            errores.push("El formato de imagen elegido no es válido (JPG, JPEG, PNG o GIF)")
         }
 
-    })
+    }
 
-})
+    formulario.addEventListener("submit", validacion)

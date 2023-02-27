@@ -11,6 +11,7 @@ const { Op } = require('sequelize');
 
 
 
+
 //--Require de la base de datos--//
 const db = require('../db/models')
 const Product = db.Product
@@ -81,13 +82,16 @@ const productoController = {
         const resultValidation = validationResult(req);
         const origins = await Origin.findAll()
         const category = await Category.findAll()
+        const viewData = {}
 
         if (resultValidation.errors.length > 0) {
+            viewData.userLogged = req.session.userLogged
                 return res.render('formCarga', {
                     errors: resultValidation.mapped(),
                     valores: req.body,
                     origins: origins,
-                    category: category
+                    category: category,
+                    viewData: viewData
                 })
             
         }
