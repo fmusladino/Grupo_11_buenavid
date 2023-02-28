@@ -13,8 +13,12 @@
             <h2> con Id número:  <%= producto.id%>  </h2>
 
              <br>
+
+            <div id= "errores-front">
+
+            </div>
             
-            <form action="/producto/edicion/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form id = "form-edicion-producto" action="/producto/edicion/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <p>
                     
                     <label>Categoría</label>
@@ -32,10 +36,10 @@
                             selected
                         <% } %> value="4">Vinos Espumantes </option>
                 </p>
-<br>
+
                 <p>
                     <label>Descripción</label>
-                    <input type="text" name="description" value="<%= producto.description %>">
+                    <input type="text" name="description" id="description" value="<%= producto.description %>">
                     <% if (locals.errors && errors.description) { %>
                         <div class="errores-de-formularios">
                         <%= errors.description.msg %> 
@@ -135,7 +139,7 @@
 
     </main>
 
-
+    <script src="/src/validators/ediciónFrontEnd.js"></script>
 
 </body>
 

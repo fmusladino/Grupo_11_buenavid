@@ -9,7 +9,12 @@
 
         <div class="cuadro-formularios">
             <h2>Ingresá con tu cuenta</h2>
-            <form action="/usuario/login" method="POST">
+
+            <div id= "errores-front">
+
+            </div>
+
+            <form action="/usuario/login" method="POST" id="formulario-login">
                 <p>
                     <label>Correo Electrónico</label>
                     <input type="email" name="email" >
@@ -44,6 +49,8 @@
         </div>
 
     </main>
+
+    <script src="/src/validators/loginFrontEnd.js"></script>
 
     <%- include ('partials/footer') %> 
 

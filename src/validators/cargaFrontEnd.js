@@ -10,24 +10,14 @@
 
         const descripcion = formulario.description
 
-        if ( descripcion.value = "" ) {
+        divErrores.innerHTML = ""
+
+        if ( descripcion.value == "" ) {
            divErrores.innerHTML += '<p> La descripción no puede estar vacía </p>'
         }
         if ( !descripcion.value.isLength( { min : 4 }) ) {
             divErrores.innerHTML += '<p> La descripción tiene que tener un mínimo de 4 letras </p>'
         }
-
-        const imagen = formulario.image
-
-        const extension = imagen.value
-
-        console.log("11111111111")
-        console.log(extension)
-        console.log("11111111111")
-
-  /*      if ( imagen ) {
-            errores.push("El formato de imagen elegido no es válido (JPG, JPEG, PNG o GIF)")
-        }*/
 
     }
 

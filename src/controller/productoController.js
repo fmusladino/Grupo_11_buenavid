@@ -137,7 +137,7 @@ const productoController = {
 
                 res.render('productNotFound')
             }
-            const viewdata={
+            const viewData={
                 origins:resultado[0],
                 category:resultado[1],
                 producto: resultado [2]
@@ -145,7 +145,7 @@ const productoController = {
             if(req.session.userLogged){
                 viewData.userLogged =req.session.userLogged
             }
-            res.render('formEdicion', viewdata)
+            res.render('formEdicion', viewData)
         })
     },
 

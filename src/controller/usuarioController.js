@@ -39,8 +39,7 @@ const usuarioController = {
       }
       const viewdata={
         roles:resultado[0],
-        usuario:resultado[1],
-        valores: resultado[1]
+        usuario:resultado[1]
       }
       if(req.session.userLogged){
         viewdata.userLogged =req.session.userLogged
@@ -110,15 +109,12 @@ const usuarioController = {
 
     if (resultValidation.errors.length > 0) {
       console.log(req.body)
-      const viewData={
+      return res.render('editarUsuario', {
         errors: resultValidation.mapped(),
         valores: req.body,
         usuario: buscarUsuario,
-      }
-      if(req.session.userLogged){
-        viewData.userLogged =req.session.userLogged
-     }
-      return res.render('editarUsuario',viewData )
+      /*  viewData*/
+      })
     }
 
     if (req.body.password == "" || req.body.password == null) {
