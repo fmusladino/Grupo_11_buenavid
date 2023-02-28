@@ -17,17 +17,6 @@ const validacionesParaCargaUsuario = [
     body('date')
         .not().isEmpty().withMessage('Debes completar la fecha de nacimiento'),
 
-    body('email')
-        .not().isEmpty().withMessage('Debes completar el email').bail()  
-        .isEmail().withMessage('Email invalido')
-        .custom(value => {
-            return User.findOne({
-                where: { email : value }}).then(user => {
-              if (user) {
-                return Promise.reject('El email ingresado ya existe');
-              }
-            });
-          }),
 
     body('cellphone')
         .not().isEmpty().withMessage('Debes completar el telefono de contacto').bail()

@@ -54,14 +54,21 @@
                 </p>
                 
                 <p>
-                    <label>Origen</label>
-                    <input type="text" name="origin" value="<%= producto.origin %>">
+                    <label for="">Origen</label>
+
+                    <select name="origin">
+                        <option value="">Selecciona un origen</option>
+                        <% origins.forEach(origin => { %>
+                            <option value="<%=origin.id %>"<%= locals.valores && (origin.id === origin.region) ? 'selected' : null%>><%=origin.region %></option>
+                          <% }); %>
+                    </select>
                     <% if (locals.errors && errors.origin) { %>
                         <div class="errores-de-formularios">
-                        <%= errors.origin.msg %> 
-                    </div>
-                       <% } %>  
+                            <%= errors.origin.msg %>
+                        </div>
+                        <% } %>
                 </p>
+
                 <p>
                     <label>Año</label>
                     <input type="number" name="year" value="<%= producto.year %>">

@@ -82,22 +82,18 @@ const productoController = {
         const resultValidation = validationResult(req);
         const origins = await Origin.findAll()
         const category = await Category.findAll()
-        const viewData = {}
-
-        viewData.userLogged = req.session.userLogged,
-
-        console.log("1111111")
-        console.log(viewData)
-        console.log("1111111")
         
         if (resultValidation.errors.length > 0) {
-                return res.render('formCarga', {
-                    errors: resultValidation.mapped(),
-                    valores: req.body,
-                    origins: origins,
-                    category: category,
-                    viewData
-                })
+            const viewData={
+                errors: resultValidation.mapped(),
+                valores: req.body,
+                origins: origins,
+                category: category}
+                if(req.session.userLogged){
+                    viewData.userLogged =req.session.userLogged
+                }       
+                
+                return res.render('formCarga', viewData )
         }
 
         //--Logica con BD--//
@@ -119,7 +115,7 @@ const productoController = {
 
         Product.create(product)
             .then(() => {
-                return res.redirect('/', viewData);
+                return res.redirect('/');
             })
             .catch(error => console.log(error));
     },
@@ -132,7 +128,7 @@ const productoController = {
         const category=Category.findAll();
         const origen=Origin.findAll();
         const producto = Product.findByPk(req.params.id,{
-         include:[{association:"category"}, {association:"origin"}]
+         include:[{association:"category"}]
         })
 
         Promise.all([origen, category, producto])
@@ -142,12 +138,13 @@ const productoController = {
                 res.render('productNotFound')
             }
             const viewdata={
-                origen:resultado[0],
+                origins:resultado[0],
                 category:resultado[1],
                 producto: resultado [2]
             }
-
-          
+            if(req.session.userLogged){
+                viewData.userLogged =req.session.userLogged
+            }
             res.render('formEdicion', viewdata)
         })
     },
@@ -166,7 +163,7 @@ const productoController = {
         }
         
         if ( req.file == undefined ) {
-            Producto.update({
+            Product.update({
                 category_id: req.body.category,
                 description: req.body.description,
                 winery: req.body.winery,
@@ -175,10 +172,14 @@ const productoController = {
                 price: req.body.price,
                 discount: req.body.discount,
                 recomended: req.body.recomended
+            },{
+                where:{
+                    id:req.params.id
+                }
             })
             .then(()=> {return res.redirect('/', viewData)})
         } else {
-            Producto.update({
+            Product.update({
                 category_id: req.body.category,
                 description: req.body.description,
                 winery: req.body.winery,
@@ -188,6 +189,11 @@ const productoController = {
                 discount: req.body.discount,
                 image: req.file.filename,
                 recomended: req.body.recomended
+            },{
+                where: 
+            {
+                id:req.params.id
+            }
             })
             .then(()=> {return res.redirect('/', viewData)})
         }
