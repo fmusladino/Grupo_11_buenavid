@@ -43,7 +43,7 @@ router.get('/logout', usuarioController.logout);
 
 //--Editar usuario--//
 router.get('/editar/:id', matchearUserId, usuarioController.mostrarFormularioModificarUsuario);
-router.put('/editar/:id',validacionesParaEditarUsuario,usuarioController.almacenaUsuarioModificado);
+router.put('/editar/:id', validacionesParaEditarUsuario,usuarioController.almacenaUsuarioModificado);
 
 //--Eliminar usuario--//
 router.delete('/eliminar/:id', usuarioController.borrarUsuario);

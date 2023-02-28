@@ -23,7 +23,7 @@
             
             <p>
               <label>Nombre/s</label>
-              <input type="text" name="first_name" id="first_name" value="<%= usuario.first_name %>">
+              <input type="text" name="first_name" id="first_name" value="<%= locals.valores ? valores.first_name : null%>">
               <% if (locals.errors && errors.first_name) { %>
                 <div class="errores-de-formularios">
                     <%= errors.first_name.msg %>
@@ -33,7 +33,7 @@
 
             <p>
                 <label>Apellido/s</label>
-                <input type="text" name="last_name" id="last_name" value="<%= usuario.last_name %>">
+                <input type="text" name="last_name" id="last_name" value="<%= locals.valores ? valores.last_name : null  %>">
                 <% if (locals.errors && errors.last_name) { %>
                     <div class="errores-de-formularios">
                         <%= errors.last_name.msg %>
@@ -43,7 +43,7 @@
 
             <p>
                 <label>Fecha de nacimiento</label>
-                <input type="date" name="date" id="date" value="<%= usuario.date %>">
+                <input type="date" name="date" id="date" value="<%= locals.valores ? valores.date : null %>">
                 <% if (locals.errors && errors.date) { %>
                     <div class="errores-de-formularios">
                         <%= errors.date.msg %>
@@ -53,7 +53,7 @@
 
             <p>
                 <label>Correo Electrónico</label>
-                <input type="email" name="email" id="email" value="<%= usuario.email %>">
+                <input type="email" name="email" id="email" value="<%= locals.valores ? valores.email : null %>">
                 <% if (locals.errors && errors.email) { %>
                     <div class="errores-de-formularios">
                         <%= errors.email.msg %>
@@ -63,7 +63,7 @@
 
             <p>
                 <label>Teléfono de contacto</label>
-                <input type="tel" name="cellphone" id="cellphone" value="<%= usuario.cellphone %>">
+                <input type="tel" name="cellphone" id="cellphone" value="<%= locals.valores ? valores.cellphone : null %>">
                 <% if (locals.errors && errors.cellphone) { %>
                     <div class="errores-de-formularios">
                         <%= errors.cellphone.msg %>

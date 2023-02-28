@@ -73,27 +73,52 @@ const usuarioController = {
           }
 
           //--Logica para crear un nuevo usuario y se guarde en la base de datos--//
-          User.create(user).then(() => {
-            return res.render('login');
+          User.create(user)
+          .then( (user) =>{
+            req.session.userLogged = user.dataValues;
+          })
+          .then(() => {
+            return res.redirect('/');
           })
             .catch(error => console.log(error));
 
   },
 
-  almacenaUsuarioModificado: (req, res) => {
+  almacenaUsuarioModificado: async (req, res) => {
+
+    const buscarUsuario= await User.findByPk(req.params.id,{
+      include:[{association:"role"}]
+    })
+   /* let viewData = {}
+
+    const traerRoles= await Role.findAll();
+    const buscarUsuario= await User.findByPk(req.params.id,{
+      include:[{association:"role"}]
+    })
+    Promise.all([traerRoles,buscarUsuario])
+    .then((resultado)=>{
+      viewdata = {
+        roles:resultado[0],
+        usuario:resultado[1]
+      }
+      viewdata.userLogged =req.session.userLogged
+    })*/
 
     //Validacion 
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
+      console.log(req.body)
       return res.render('editarUsuario', {
         errors: resultValidation.mapped(),
         valores: req.body,
-        
+        usuario: buscarUsuario,
+      /*  viewData*/
       })
     }
 
     if (req.body.password == "" || req.body.password == null) {
+      console.log(req.body)
       User.update ({
         rol_id: req.body.rol,
         first_name: req.body.first_name,
@@ -108,6 +133,7 @@ const usuarioController = {
       })
       .then(()=> {return res.redirect('/')})
     } else {
+      console.log(req.body)
       User.update ({
         rol_id: req.body.rol,
         first_name: req.body.first_name,
@@ -168,7 +194,6 @@ const usuarioController = {
           const isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
           if (isOkPassword) {
             req.session.userLogged = userToLogin.dataValues;
-console.log(req.session.userLogged)
 //--Si el usuario apreto el checkbox de Recordame--//
 //--Creamos una cookie que se le guarde session por 24 horas--//
             if (req.body.recordarme) {

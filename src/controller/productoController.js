@@ -65,9 +65,9 @@ const productoController = {
      const viewData={
       origins
       }
-      if(req.session.userLogged){
+ 
         viewData.userLogged =req.session.userLogged
-     }
+     
         return res.render('formCarga', viewData);
     })
         .catch(error => console.log(error));
@@ -84,16 +84,20 @@ const productoController = {
         const category = await Category.findAll()
         const viewData = {}
 
+        viewData.userLogged = req.session.userLogged,
+
+        console.log("1111111")
+        console.log(viewData)
+        console.log("1111111")
+        
         if (resultValidation.errors.length > 0) {
-            viewData.userLogged = req.session.userLogged
                 return res.render('formCarga', {
                     errors: resultValidation.mapped(),
                     valores: req.body,
                     origins: origins,
                     category: category,
-                    viewData: viewData
+                    viewData
                 })
-            
         }
 
         //--Logica con BD--//
@@ -115,7 +119,7 @@ const productoController = {
 
         Product.create(product)
             .then(() => {
-                return res.redirect('/');
+                return res.redirect('/', viewData);
             })
             .catch(error => console.log(error));
     },
@@ -157,40 +161,35 @@ const productoController = {
         if (resultValidation.errors.length > 0) {
             return res.render('formEdicion', {
                 errors: resultValidation.mapped(),
-                product: {
-                    price: req.body.price,
-                    description: req.body.description,
-                    winery: req.body.winery,
-                    origin: req.body.origin,
-                    year: req.body.year,
-                    discount: req.body.discount,
-                    id: req.params.id,
-                    image: req.file,
-                    category: req.body.category
-                }
+                valores: req.body,
             })
         }
-
-        const productoIndex = Producto.findByPk(
-            (product) => {
-                return product.id == req.params.id
+        
+        if ( req.file == undefined ) {
+            Producto.update({
+                category_id: req.body.category,
+                description: req.body.description,
+                winery: req.body.winery,
+                origin_id: req.body.origin,
+                year: req.body.year,
+                price: req.body.price,
+                discount: req.body.discount,
+                recomended: req.body.recomended
             })
-        if (productoIndex == -1) {
-            return res.send('El producto que busca no existe')
+            .then(()=> {return res.redirect('/', viewData)})
         } else {
-            /*  const productoCampos = req.body
-              productoCampos.price = parseFloat(productoCampos.price);
-              productoCampos.discount = parseFloat(productoCampos.discount);*/
-
-            Product[productoIndex] = {
-                ...Product[productoIndex],
-                ...req.body,
-                image: req.file ? req.file.filename : req.body.image
-            }
-            fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
-
-            //return res.send(products[productoIndex])
-            return res.redirect('/');
+            Producto.update({
+                category_id: req.body.category,
+                description: req.body.description,
+                winery: req.body.winery,
+                origin_id: req.body.origin,
+                year: req.body.year,
+                price: req.body.price,
+                discount: req.body.discount,
+                image: req.file.filename,
+                recomended: req.body.recomended
+            })
+            .then(()=> {return res.redirect('/', viewData)})
         }
 
     },
