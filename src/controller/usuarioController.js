@@ -39,7 +39,8 @@ const usuarioController = {
       }
       const viewdata={
         roles:resultado[0],
-        usuario:resultado[1]
+        usuario:resultado[1],
+        valores: resultado[1]
       }
       if(req.session.userLogged){
         viewdata.userLogged =req.session.userLogged
@@ -89,34 +90,21 @@ const usuarioController = {
     const buscarUsuario= await User.findByPk(req.params.id,{
       include:[{association:"role"}]
     })
-   /* let viewData = {}
-
-    const traerRoles= await Role.findAll();
-    const buscarUsuario= await User.findByPk(req.params.id,{
-      include:[{association:"role"}]
-    })
-    Promise.all([traerRoles,buscarUsuario])
-    .then((resultado)=>{
-      viewdata = {
-        roles:resultado[0],
-        usuario:resultado[1]
-      }
-      viewdata.userLogged =req.session.userLogged
-    })*/
-
-    //Validacion 
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
       console.log(req.body)
-      return res.render('editarUsuario', {
+      const viewData={
         errors: resultValidation.mapped(),
         valores: req.body,
         usuario: buscarUsuario,
-      /*  viewData*/
-      })
+      }
+      if(req.session.userLogged){
+        viewData.userLogged =req.session.userLogged
+     }
+      return res.render('editarUsuario',viewData )
     }
-
+    res.clearCookie("recordarUsuario")
     if (req.body.password == "" || req.body.password == null) {
       console.log(req.body)
       User.update ({

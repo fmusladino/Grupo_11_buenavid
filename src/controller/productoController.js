@@ -124,83 +124,88 @@ const productoController = {
 
     //Funciona
     mostrarFormularioEdicionProducto: (req, res) => {
-        
-        const category=Category.findAll();
-        const origen=Origin.findAll();
+        const category = Category.findAll();
+        const origen = Origin.findAll();
         const producto = Product.findByPk(req.params.id,{
          include:[{association:"category"}]
-        })
-
+        });
+    
         Promise.all([origen, category, producto])
-        .then((resultado)=>{
-            if(resultado[2]==null){
-
-                res.render('productNotFound')
+        .then((resultado) => {
+            if (resultado[2] == null) {
+                res.render('productNotFound');
             }
-            const viewData={
-                origins:resultado[0],
-                category:resultado[1],
-                producto: resultado [2]
+    
+            const viewData = {
+                origins: resultado[0],
+                category: resultado[1],
+                valores: resultado[2],
+            };
+    
+            if (req.session.userLogged) {
+                viewData.userLogged = req.session.userLogged;
             }
-            if(req.session.userLogged){
-                viewData.userLogged =req.session.userLogged
-            }
-            res.render('formEdicion', viewData)
-        })
+    
+            res.render('formEdicion', viewData);
+        });
     },
+    
+    
 
 
     //Modificar
-    almacenaProductoEditado: (req, res) => {
-
+    almacenaProductoEditado: async (req, res) => {
         const resultValidation = validationResult(req);
-
+      
         if (resultValidation.errors.length > 0) {
-            return res.render('formEdicion', {
-                errors: resultValidation.mapped(),
-                valores: req.body,
-            })
+          const origins = await Origin.findAll()
+          const viewData= {
+            errors: resultValidation.mapped(),
+            valores: req.body,
+            origins: origins
+          }
+      
+          if(req.session.userLogged){
+            viewData.userLogged =req.session.userLogged
+          }       
+      
+          return res.render('formEdicion', viewData);
         }
-        
-        if ( req.file == undefined ) {
-            Product.update({
-                category_id: req.body.category,
-                description: req.body.description,
-                winery: req.body.winery,
-                origin_id: req.body.origin,
-                year: req.body.year,
-                price: req.body.price,
-                discount: req.body.discount,
-                recomended: req.body.recomended
-            },{
-                where:{
-                    id:req.params.id
-                }
-            })
-            .then(()=> {return res.redirect('/', viewData)})
-        } else {
-            Product.update({
-                category_id: req.body.category,
-                description: req.body.description,
-                winery: req.body.winery,
-                origin_id: req.body.origin,
-                year: req.body.year,
-                price: req.body.price,
-                discount: req.body.discount,
-                image: req.file.filename,
-                recomended: req.body.recomended
-            },{
-                where: 
-            {
-                id:req.params.id
-            }
-            })
-            .then(()=> {return res.redirect('/', viewData)})
+      
+        try {
+          const producto = await Product.findByPk(req.params.id);
+      
+          if (req.file == undefined) {
+            await producto.update({
+              category_id: req.body.category,
+              description: req.body.description,
+              winery: req.body.winery,
+              origin_id: req.body.origin,
+              year: req.body.year,
+              price: req.body.price,
+              discount: req.body.discount,
+              recomended: req.body.recomended,
+            });
+          } else {
+            await producto.update({
+              category_id: req.body.category,
+              description: req.body.description,
+              winery: req.body.winery,
+              origin_id: req.body.origin,
+              year: req.body.year,
+              price: req.body.price,
+              discount: req.body.discount,
+              image: req.file.filename,
+              recomended: req.body.recomended,
+            });
+          }
+      
+          res.redirect('/');
+      
+        } catch (error) {
+          console.log(error);
         }
-
-    },
-
-
+      },
     //Eliminar
     eliminarProducto: (req, res) => {
 

@@ -12,7 +12,7 @@ const validacionesParaEdicion = [
 
     body('origin')
         .notEmpty().withMessage('Debes completar el origen regional').bail()  
-        .isLength({min: 5}).withMessage('El origen regional debe tener como mínimo 5 caractéres'),
+        ,
 
     body('year')
         .notEmpty().withMessage('Debes completar el año').bail()

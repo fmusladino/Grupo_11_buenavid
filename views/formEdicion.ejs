@@ -10,36 +10,31 @@
         <div class="cuadro-formularios">
 
             <h2>Por favor, modificar aquí los datos del producto</h2>
-            <h2> con Id número:  <%= producto.id%>  </h2>
+            <h2> con Id número:  <%= valores.id%>  </h2>
 
              <br>
-
-            <div id= "errores-front">
-
-            </div>
             
-            <form id = "form-edicion-producto" action="/producto/edicion/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/producto/edicion/<%= valores.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <p>
-                    
                     <label>Categoría</label>
                     <select type="text" name="category">
-                        <option <% if (producto.category=='1') { %>
-                            selected
-                        <% } %> value="1" > Vinos Tintos </option>
-                        <option <% if (producto.category=='2') { %>
-                            selected
-                        <% } %> value="2"> Vinos Blancos </option>
-                        <option <% if (producto.category=='3') { %>
-                            selected
-                        <% } %> value="3"> Vinos Rosados </option>
-                        <option <% if (producto.category=='4') { %>
-                            selected
-                        <% } %> value="4">Vinos Espumantes </option>
+                        <option value="">Selecciona una categoria</option>
+                                </option>
+                                <option value=1 <%= locals.valores && ('1'===valores.category) ? 'selected' : null%>>Vino Blanco</option>
+                                <option value=2 <%= locals.valores && ('2'===valores.category) ? 'selected' : null%>>Vino Tinto</option>
+                                <option value=3 <%= locals.valores && ('3'===valores.category) ? 'selected' : null%>>Vino Rosado</option>
+                                <option value=4 <%= locals.valores && ('4'===valores.category) ? 'selected' : null%>>Vino Espumantes</option>
+                               
+                    </select>
+                    <% if (locals.errors && errors.category) { %>
+                        <div class="errores-de-formularios">
+                            <%= errors.category.msg %>
+                        </div>
+                        <% } %>
                 </p>
-
                 <p>
                     <label>Descripción</label>
-                    <input type="text" name="description" id="description" value="<%= producto.description %>">
+                    <input type="text" name="description" value="<%= locals.valores ? valores.description : null %>">
                     <% if (locals.errors && errors.description) { %>
                         <div class="errores-de-formularios">
                         <%= errors.description.msg %> 
@@ -49,7 +44,7 @@
 
                 <p>
                     <label>Bodega / Productor / Fabricante</label>
-                    <input type="text" name="winery" value="<%= producto.winery %>">
+                    <input type="text" name="winery" value="<%= locals.valores ? valores.winery : null %>">
                     <% if (locals.errors && errors.winery) { %>
                         <div class="errores-de-formularios">
                         <%= errors.winery.msg %> 
@@ -75,7 +70,7 @@
 
                 <p>
                     <label>Año</label>
-                    <input type="number" name="year" value="<%= producto.year %>">
+                    <input type="number" name="year" value="<%= locals.valores ? valores.year : null %>">
                     <% if (locals.errors && errors.year) { %>
                         <div class="errores-de-formularios">
                         <%= errors.year.msg %> 
@@ -84,7 +79,7 @@
                 </p>
                 <p>
                     <label>Precio</label>
-                    <input type="number" name="price" value="<%= producto.price %>">
+                    <input type="number" name="price" value="<%= locals.valores ? valores.price : null %>">
                     <% if (locals.errors && errors.price) { %>
                         <div class="errores-de-formularios">
                         <%= errors.price.msg %> 
@@ -94,7 +89,7 @@
                
                 <p>
                     <label>Si está en Oferta/Promoción, indique el porcentaje del descuento</label>
-                    <input type="number" name="discount" placeholder="0 o el numero sin el %" value="<%= producto.discount %>">
+                    <input type="number" name="discount" placeholder="0 o el numero sin el %" value="<%= locals.valores ? valores.discount : null %>">
                     <% if (locals.errors && errors.discount) { %>
                         <div class="errores-de-formularios">
                         <%= errors.discount.msg %> 
@@ -106,8 +101,8 @@
                     
                     <br>
                     <label>Desea cambiar la foto del articulo?</label>
-                    <img src="/images/productos/<%= producto.image %>" width="50" height="50">
-                    <input type="hidden" name="image" value="<%=producto.image%>">
+                    <img src="/images/productos/<%= valores.image %>" width="50" height="50">
+                    <input type="hidden" name="image" value="<%= locals.valores ? valores.image : null %>">
                     <input type="file" name="image" accept="image/.jpg .png .jpeg">
                 </p>
                
@@ -117,10 +112,10 @@
                     <label>Es un producto recomendado</label>
                     <select type="boolean" name="recomended">
                         <option
-                        <% if (producto.recomended =='true') { %>
+                        <% if (valores.recomended =='true') { %>
                          selected
                         <% } %> value="true"> SI </option>
-                        <option <% if (producto.recomended =='false') { %>
+                        <option <% if (valores.recomended =='false') { %>
                             selected
                            <% } %> value="false"> NO </option>
                     </select>
@@ -139,7 +134,7 @@
 
     </main>
 
-    <script src="/src/validators/ediciónFrontEnd.js"></script>
+
 
 </body>
 

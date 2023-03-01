@@ -5,12 +5,7 @@
     
     <div class="cuadro-formularios">
         <h2>Registrate</h2>
-
-        <div id= "errores-front">
-
-        </div>
-
-        <form action="/usuario/registro" method="post" id= "formulario-registro">
+        <form action="/usuario/registro" method="post">
             
             
             <p>
@@ -79,7 +74,7 @@
       
             <p>
               <label>Contraseña</label>
-              <input type="password" name="password" minlength="6" id= "password"
+              <input type="password" name="password" minlength="6"
               value="<%= locals.valores ? valores.password : null %>">
               <i class="fas fa-info-circle"> Requiere mínimo 6 caracteres</i>
               <% if (locals.errors && errors.password) { %>
@@ -98,8 +93,6 @@
     </div>
 
    </main>
-
-   <script src="/src/validators/registroFrontEnd.js"></script>
     
    <%- include ('partials/footer') %> 
 </html>
