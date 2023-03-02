@@ -85,9 +85,49 @@ div.cuadro-formularios a {
     margin: 10px;
 }
 
-.boton-recordame{
-
-}
+.boton-recordame {
+    display: inline-block;
+    border: none;
+    color: #512d38;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .boton-recordame:focus {
+    outline: none;
+  }
+  
+  .boton-recordame:active {
+    transform: translateY(1px);
+  }
+  
+  .boton-recordame input[type="checkbox"] {
+    display: none;
+  }
+  
+  .boton-recordame label {
+    display: inline-block;
+    padding-left: 25px;
+    position: relative;
+  }
+  
+  .boton-recordame label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #512d38;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    border-radius: 3px;
+  }
+  
+  .boton-recordame input[type="checkbox"]:checked + label:before {
+    content: "\2713";
+    text-align: center;
+    line-height: 16px;
+  }
 
 /*
     FIN FORMULARIOS
