@@ -45,8 +45,9 @@ router.put('/edicion/:id', userRole, uploadFile.single('image'),validacionesPara
 //--Eliminar--//
 router.delete('/eliminar/:id', userRole, productoController.eliminarProducto);
 
-
-
+//--Buscador--//
+router.get('/buscar/:searchTerm',productoController.mostrarVistaDelBuscador)
+router.post('/buscar',productoController.search)
 
 //--Rutas para vinos especificos--// 
 

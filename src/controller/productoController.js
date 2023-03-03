@@ -46,14 +46,7 @@ const productoController = {
             
       
 
-        /* const productoID=req.params.productsId
-         const productoSiSuIdExsiste= products.find((product)=>product.id== productoID);
-         if (productoSiSuIdExsiste == undefined) {
-         return res.render("not-found");
-         }
-         return res.render("productDetail", {
-             productoSiSuIdExsiste: productoSiSuIdExsiste,
-         }); */
+    
     
 
          //--Formulario de Carga de producto vista--//
@@ -153,7 +146,7 @@ const productoController = {
     
 
 
-    //Modificar
+  
     almacenaProductoEditado: async (req, res) => {
         const resultValidation = validationResult(req);
       
@@ -290,7 +283,59 @@ const productoController = {
             mostarEnconsola.userLogged = req.session.userLogged
         }
         res.render('vinosCategorias', mostarEnconsola)
-    }
+    },
+
+
+
+    mostrarVistaDelBuscador:
+    (req,res)=>{
+        res.render('buscador')
+    },
+
+    search:
+    (req,res)=>{
+        const searchTerm = req.body.q
+Product.findAll({
+    where: {
+        [Op.or]: [
+          {
+            description: {
+              [Op.like]: `%${searchTerm}%`
+            }
+          },
+          {
+            winery: {
+              [Op.like]: `%${searchTerm}%`
+            }
+          }
+        ]
+      },
+      include: [
+        {
+          model: Category,
+          as: 'category'
+        }
+      ]
+    }).then((productos) => {
+      const viewData={
+        productos: productos,
+      }
+      if(req.session.userLogged){
+        viewData.userLogged =req.session.userLogged
+      }     
+      if (productos.length === 0) {
+        return res.render('not-found', viewData);
+      }else{
+        res.render('buscador', viewData);
+      }
+     
+    }).catch((error) => {
+      res.render('not-found');
+    });
+  }
+
+
+
 
 
 

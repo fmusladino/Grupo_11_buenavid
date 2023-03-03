@@ -1,0 +1,33 @@
+<%- include ('partials/head') %>
+<%- include ('partials/header') %>
+
+
+<main class="main-cuerpo">
+    <section>
+      <h3 class="prodes">Buscador</h3><br>
+      <div class="products">
+        <% if (productos.length > 0) { %>
+          <% productos.forEach( producto => { %>
+            <article>
+              <div class="contenedor-fts">
+                <% console.log(producto.image) %>
+                <img src="/Images/productos/<%= producto.image %>" alt="pinot" class="product_img">
+              </div>
+              <div class="main-article">
+                <h4 class="description"><%= producto.winery %> </h4>
+                <h5 class="description"> <%= producto.description %> </h5>
+                <div class="flex-container">
+                  <p class="price">$ <%= producto.price %> </p>
+                  <p class="discount"><%= producto.discount %>% off</p>
+                </div>
+              </div>
+              <button class="btn-carr"><a href="/producto/detalle/<%= producto.id %>"> Tienda </a></button>
+            </article>
+          <% }) %>
+        <% } %>
+      </div>
+    </section>
+  </main>
+  
+
+    <%- include ('partials/footer') %> 
