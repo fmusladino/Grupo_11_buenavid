@@ -1,8 +1,6 @@
 <%- include ('partials/head') %>
 <%- include ('partials/header') %> 
 
-<script src="/src/validators/ediciónFrontEnd.js"></script>
-
 <body>
 
     <main class="main-formularios">
@@ -13,8 +11,12 @@
             <h2> con Id número:  <%= valores.id%>  </h2>
 
              <br>
+
+             <div id= "errores-front">
+
+             </div>
             
-            <form action="/producto/edicion/<%= valores.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form id = "formulario-edicion" action="/producto/edicion/<%= valores.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <p>
                     <label>Categoría</label>
                     <select type="text" name="category">
@@ -134,7 +136,7 @@
 
     </main>
 
-
+    <script src="/ValidatorsFront/ediciónFrontEnd.js"></script>
 
 </body>
 

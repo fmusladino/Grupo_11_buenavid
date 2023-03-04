@@ -12,9 +12,6 @@ const User = db.User
 const Role=db.Role
 
 
-
-
-
 const usuarioController = {
 
 
@@ -119,6 +116,10 @@ const usuarioController = {
             id: req.params.id,
         }
       })
+      .then( (usuario) => {
+        req.session.userLogged.first_name = req.body.first_name
+        req.session.save()
+      })
       .then(()=> {return res.redirect('/')})
     } else {
       console.log(req.body)
@@ -135,11 +136,13 @@ const usuarioController = {
             id: req.params.id,
         }
       })
+      .then( (usuario) => {
+        req.session.userLogged.first_name = req.body.first_name
+        req.session.save()
+      })
       .then(()=> {return res.redirect('/')})
     }
 
-      
-    
   },
 
 
@@ -246,38 +249,6 @@ const usuarioController = {
   }
   
 }
-
-
-      //const usuarioIndex=  usuarios.findIndex(
-       // (user) => {
-      //  return user.email == req.body.email
-   // })
-  //  if (usuarioIndex == -1) {
-    //  return res.render('usuarioNotFound')
-  //  }
-   // let check = bcrypt.compareSync(req.body.password, usuarios[usuarioIndex].password)
-   // if (check) {
-
-    //  const productosRecomendados = products.filter(product => product.recomended=="true");
-      //  const productosEnPromocion = products.filter(product=> product.discount >= 10)
-        //const viewData={
-          //  productosRecomendados: productosRecomendados,
-          // productosEnPromocion: productosEnPromocion,
-           // usuario: usuarios[usuarioIndex]
-   // };
-
-    //Hasta acá es la misma lógica que usó Aleto, de acá en adelante, cuando comprueba info, o devuelve una cookie guardada o renderiza de nuevo login con los errores que detectó
-
-    //  res.cookie("cookieLogueado", "Usuario logueado")
-
-     // return res.render("index", viewData);
-
-   // } else{
-    //  let errors = validationResult(req);
-   //   return res.render('login', { errors : errors.mapped(), old: req.body });
-   // }
-    
-
 
 
 module.exports = usuarioController

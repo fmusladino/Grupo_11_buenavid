@@ -21,19 +21,12 @@ const validacionesParaCargaUsuario = [
     body('cellphone')
         .not().isEmpty().withMessage('Debes completar el telefono de contacto').bail()
         .isLength({min: 10}).withMessage('Su numero es invalido').bail()
-        .isNumeric().bail()
-        /*.custom((value, { req }) => {
-            if(value === +54 + value){
-                return true
-            }else{
-                throw new Error('Su numero debe llevar +54')
-            }
-        })*/,
+        .isNumeric().bail(),
 
     body('password')
-        .not().isEmpty().withMessage('Debes completar la contraseña').bail()
+        .if(body('password').notEmpty())
         .isLength({min: 6}).withMessage('La contraseña debe tener al menos 6 caracteres'),
-                
+
 ];
 
 
