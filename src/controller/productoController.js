@@ -82,6 +82,7 @@ const productoController = {
                 valores: req.body,
                 origins: origins,
                 category: category}
+  
                 if(req.session.userLogged){
                     viewData.userLogged =req.session.userLogged
                 }       
@@ -89,7 +90,7 @@ const productoController = {
                 return res.render('formCarga', viewData )
         }
 
-        //--Logica con BD--//
+        
 
         //--Variable que toma los datos del formulario--//
         let product = {

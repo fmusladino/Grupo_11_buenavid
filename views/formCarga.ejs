@@ -57,11 +57,10 @@
 
                         <p>
                             <label for="">Origen</label>
-
                             <select name="origin">
                                 <option value="">Selecciona un origen</option>
                                 <% origins.forEach(origin => { %>
-                                    <option value="<%=origin.id %>"<%= locals.valores && (origin.id === origin.region) ? 'selected' : null%>><%=origin.region %></option>
+                                    <option value="<%= origin.id %>" <%= locals.selectedOrigin === origin.id ? 'selected' : '' %>><%= origin.region %></option>
                                   <% }); %>
                             </select>
                             <% if (locals.errors && errors.origin) { %>
