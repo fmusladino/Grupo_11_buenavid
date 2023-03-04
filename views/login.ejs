@@ -9,10 +9,15 @@
 
         <div class="cuadro-formularios">
             <h2>Ingresá con tu cuenta</h2>
-            <form action="/usuario/login" method="POST">
+
+            <div id= "errores-front">
+
+            </div>
+
+            <form id = "formulario-login" action="/usuario/login" method="POST">
                 <p>
                     <label>Correo Electrónico</label>
-                    <input type="email" name="email" >
+                    <input type="email" name="email" id="email">
                     <% if (locals.errors && errors.email) { %>
                         <div class="errores-de-formularios">
                             <%= errors.email.msg %>
@@ -22,7 +27,7 @@
 
                 <p>
                     <label>Contraseña</label>
-                    <input type="password" name="password" >
+                    <input type="password" name="password" id="password">
                     <% if (locals.errors && errors.password) { %>
                         <div class="errores-de-formularios">
                             <%= errors.password.msg %>
@@ -44,6 +49,8 @@
         </div>
 
     </main>
+
+    <script src="/ValidatorsFront/loginFrontEnd.js"></script>
 
     <%- include ('partials/footer') %> 
 

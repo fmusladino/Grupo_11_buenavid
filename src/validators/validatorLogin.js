@@ -8,9 +8,7 @@ const validacionesParaLogin = [
 
     body('password')
         .notEmpty().withMessage('Debes completar la contraseña').bail()
-        .isLength({min: 6}).withMessage('La contraseña debe tener al menos 6 caracteres')
-  
-                
+        .isLength({min: 6}).withMessage('La contraseña debe tener al menos 6 caracteres')   
 
 ];
 

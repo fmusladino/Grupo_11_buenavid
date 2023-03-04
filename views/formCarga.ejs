@@ -106,7 +106,7 @@
                      
                         <p>
                             <label>Agregue la foto del artículo en formato .jpg o .png</label>
-                            <input type="file" name="image">
+                            <input type="file" name="image" id="file">
                             <% if (locals.errors && errors.image) { %>
                                 <div class="errores-de-formularios">
                                     <%= errors.image.msg %>
@@ -138,7 +138,7 @@
 
             </main>
 
-            <script src="/src/validators/cargaFrontEnd.js"></script>
+            <script src="/ValidatorsFront/cargaFrontEnd.js"></script>
 
         </body>
 

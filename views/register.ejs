@@ -5,8 +5,12 @@
     
     <div class="cuadro-formularios">
         <h2>Registrate</h2>
-        <form action="/usuario/registro" method="post">
-            
+
+        <div id= "errores-front">
+
+        </div>
+
+        <form id = "formulario-registro" action="/usuario/registro" method="post">    
             
             <p>
                 Nota (Bauti):averiguar como mostrar solo para Administradores.
@@ -93,6 +97,8 @@
     </div>
 
    </main>
+
+   <script src="/ValidatorsFront/registroFrontEnd.js"></script>
     
    <%- include ('partials/footer') %> 
 </html>
